@@ -1,4 +1,7 @@
 import { Link } from 'react-router-dom';
+
+import Helmet from 'react-helmet';
+
 import { FiUser, FiLock } from 'react-icons/fi';
 import { BsArrowRight, BsArrowLeft } from 'react-icons/bs';
 
@@ -9,6 +12,9 @@ import { Logo } from '../../components/Logo';
 export function Login() {
     return (
         <Content>
+            <Helmet>
+                <title>Loquei | Login</title>
+            </Helmet>
             <ContentLeft>
                 <div>
                     <h1>Locação é <span>aqui.</span></h1>

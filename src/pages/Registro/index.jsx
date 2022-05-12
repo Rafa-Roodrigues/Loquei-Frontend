@@ -1,4 +1,7 @@
 import { Link } from 'react-router-dom';
+
+import Helmet from 'react-helmet';
+
 import { BoxContent, RegistroContainer } from "./styles";
 
 import { Logo } from '../../components/Logo';
@@ -6,6 +9,9 @@ import { Logo } from '../../components/Logo';
 export function Registro() {
   return (
     <RegistroContainer>
+      <Helmet>
+        <title>Loquei | Registro</title>
+      </Helmet>
       <BoxContent>
         <Logo marginBot={40} />
 
