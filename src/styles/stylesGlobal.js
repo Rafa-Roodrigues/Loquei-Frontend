@@ -14,6 +14,7 @@ export const GlobalStyles = createGlobalStyle`
         --branco: #ffffff;
         --branco-escuro: #F5F5F5;
         --background: #FAFAFA;
+        --cinza: #D4D4D4;
         --cinza-claro:#A0A0A0;
         --cinza-escuro:#616161;
         --laranja: #FF6B00;
@@ -34,6 +35,7 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     button {
+        outline: none;
         background-color: transparent;
         cursor: pointer;
     }

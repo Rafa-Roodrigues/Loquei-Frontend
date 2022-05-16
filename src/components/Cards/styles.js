@@ -68,7 +68,7 @@ export const CardVerticalContainer = styled.article `
       }
     }
 
-    span {
+    .information {
       color: var(--laranja);
       font-size: 14px;
       transition: color .2s;
@@ -77,15 +77,105 @@ export const CardVerticalContainer = styled.article `
         color: var(--laranja-hover);
       }
     }
+
+    button {
+      background-color: transparent;
+      color: #ff5658;
+      font-weight: 700;
+      font-size: 14px;
+      transition: color .2s;
+
+      &:hover {
+        color: red;
+      }
+    }
+  }
+
+  .pop_confirmation {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 85%);
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .pop {
+      width: 380px;
+      height: 200px;
+      border: 2px solid var(--preto);
+      border-radius: 5px;
+      background-color: ${({ theme }) => theme.colors.background};
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      h2 {
+        margin-bottom: 10px;
+        color: ${({ theme }) => theme.colors.colorTitulo};
+      }
+
+      p {
+        margin-bottom: 20px;
+        color: ${({ theme }) => theme.colors.colorText};
+      }
+
+      .box_buttons {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        button {
+          padding: 8px;
+          border-radius: 5px;
+        }
+
+        .delete {
+          margin-right: 10px;
+          border: 2px solid red;
+          background-color: transparent;
+          transition: background .2s;
+          
+          color: red;
+          transition: color .2s;
+
+          &:hover {
+            background-color: red;
+            color: var(--branco);
+          }
+        }
+
+        .cancel {
+          border: 2px solid dodgerblue;
+          transition: border .2s;
+          background-color: dodgerblue;
+          transition: background .2s;
+
+          color: var(--branco);
+
+          &:hover {
+            border: 2px solid #42b0f5;
+            background-color: #42b0f5;
+          }
+        }
+      }
+    }
   }
 `;
 
 export const CardHorizontalContainer = styled.article `
   width: 100%;
-  min-width: 400px;
+  min-width: 375px;
   height: 150px;
   padding: 10px;
-  background-color: ${({ theme }) => theme.colors.backgroundSecundario};
+  overflow: hidden;
+  background-color: ${({ theme }) => theme.colors.backgroundCard};
   /* background-color: red; */
 
   display: grid;
@@ -100,8 +190,8 @@ export const CardHorizontalContainer = styled.article `
   }
 
   &:nth-of-type(even) {
-  background-color: ${({ theme }) => theme.colors.background};
-}
+    background-color: ${({ theme }) => theme.colors.backgroundCardSecundario};
+  }
 
   &:first-child {
     border-radius: 5px 5px 0 0;
@@ -112,6 +202,7 @@ export const CardHorizontalContainer = styled.article `
   }
 
   .box_info {
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -190,6 +281,105 @@ export const CardHorizontalContainer = styled.article `
 
       .icons {
         margin-left: 8px;
+      }
+    }
+
+    button {
+      width: fit-content;
+      padding: 6px 8px;
+      border-radius: 5px;
+      background-color: red;
+      transition: filter .2s;
+
+      color: var(--branco);
+      font-weight: 800;
+      font-size: 12px;
+      text-transform: uppercase;
+      transition: color .2s;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &:hover {
+        filter: brightness(0.9);
+      }
+    }
+  }
+
+  .pop_confirmation {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 85%);
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .pop {
+      width: 380px;
+      height: 200px;
+      border: 2px solid var(--preto);
+      border-radius: 5px;
+      background-color: ${({ theme }) => theme.colors.background};
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      h2 {
+        margin-bottom: 10px;
+        color: ${({ theme }) => theme.colors.colorTitulo};
+      }
+
+      p {
+        margin-bottom: 20px;
+        color: ${({ theme }) => theme.colors.colorText};
+      }
+
+      .box_buttons {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        button {
+          padding: 8px;
+          border-radius: 5px;
+        }
+
+        .delete {
+          margin-right: 10px;
+          border: 2px solid red;
+          background-color: transparent;
+          transition: background .2s;
+          
+          color: red;
+          transition: color .2s;
+
+          &:hover {
+            background-color: red;
+            color: var(--branco);
+          }
+        }
+
+        .cancel {
+          border: 2px solid dodgerblue;
+          transition: border .2s;
+          background-color: dodgerblue;
+          transition: background .2s;
+
+          color: var(--branco);
+
+          &:hover {
+            border: 2px solid #42b0f5;
+            background-color: #42b0f5;
+          }
+        }
       }
     }
   }

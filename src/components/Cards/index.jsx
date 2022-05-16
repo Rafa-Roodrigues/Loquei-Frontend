@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import { BiArea, BiCar, BiBed } from 'react-icons/bi';
@@ -7,6 +8,16 @@ import { BsArrowRight } from 'react-icons/bs';
 import { CardVerticalContainer, CardHorizontalContainer } from "./styles";
 
 export function CardVertical(props) {
+  const [statePop, setStatePop] = useState(false);
+
+  function haddleOpenPop() {
+    setStatePop(true);
+  }
+
+  function haddleClosePop() {
+    setStatePop(false);
+  }
+
   return (
     <CardVerticalContainer>
       <img src={props.imgURL} alt="..." />
@@ -22,14 +33,41 @@ export function CardVertical(props) {
             <li><BiCar className="icons" size={16} /> 10</li>
           </ul>
 
-          <span to="/">Mais informações...</span>
         </Link>
+        {
+          !props.delete 
+          ? <Link className="information" to="/">Mais informações...</Link> 
+          : <button onClick={haddleOpenPop}>Excluir anúncio</button>
+        }
       </div>
+
+      {(statePop) && (
+        <div className="pop_confirmation">
+          <div className="pop">
+            <h2>Confirme!</h2>
+            <p>Você deseja mesmo excluir este post?</p>
+            <div className="box_buttons">
+              <button className="delete">Deletar</button>
+              <button className="cancel" onClick={haddleClosePop}>Cancelar</button>
+            </div>
+          </div>
+        </div>
+      )}
     </CardVerticalContainer>
   );
 }
 
 export function CardHorizontal(props) {
+  const [statePop, setStatePop] = useState(false);
+
+  function haddleOpenPop() {
+    setStatePop(true);
+  }
+
+  function haddleClosePop() {
+    setStatePop(false);
+  }
+
   return (
     <CardHorizontalContainer>
       <img src={props.imgURL} alt="..." />
@@ -44,7 +82,24 @@ export function CardHorizontal(props) {
           <li><BiCar className="icons" size={16} /> 10</li>
         </ul>
 
-        <Link to="/">Contatar <BsArrowRight className="icons" size={16} /></Link>
+        {
+          !props.delete 
+          ? <Link to="/">Contatar <BsArrowRight className="icons" size={16} /></Link>
+          : <button className="delete" onClick={haddleOpenPop}>Excluir anúncio</button>
+        }
+
+      {(statePop) && (
+        <div className="pop_confirmation">
+          <div className="pop">
+            <h2>Confirme!</h2>
+            <p>Você deseja mesmo excluir este post?</p>
+            <div className="box_buttons">
+              <button className="delete">Deletar</button>
+              <button className="cancel" onClick={haddleClosePop}>Cancelar</button>
+            </div>
+          </div>
+        </div>
+      )}
       </div>
     </CardHorizontalContainer>
   );

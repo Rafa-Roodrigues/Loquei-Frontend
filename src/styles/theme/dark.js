@@ -4,6 +4,10 @@ export const dark = {
         backgroundSecundario: "#232129",
         backgroundCategoria: "#232129",
         backgroundCaixaIconeCategoria: "#FF6B00",
+
+        backgroundCard: "#26242C",
+        backgroundCardSecundario: "#232129",
+
         colorIconeCategoria: "#FFFFFF",
         colorTextoCategoria: "#FFFFFF",
         colorText: "#D9D9D9",

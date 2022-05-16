@@ -32,7 +32,7 @@ export function Header() {
             <BiSearch className="icons" size={24} />
           </li>
           <li>
-            <Link to="/"> Meus anúncios</Link>
+            <Link to="/meus-anuncios"> Meus anúncios</Link>
             <BiGridAlt className="icons" size={24} />
           </li>
           <li>
@@ -65,7 +65,7 @@ export function Header() {
               <BiSearch className="icons" size={24} />
             </li>
             <li>
-              <Link to="/"> Meus anúncios</Link>
+              <Link to="/meus-anuncios"> Meus anúncios</Link>
               <BiGridAlt className="icons" size={24} />
             </li>
             <li>
