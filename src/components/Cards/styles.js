@@ -173,6 +173,7 @@ export const CardHorizontalContainer = styled.article `
   width: 100%;
   min-width: 375px;
   height: 150px;
+  min-height: 150px;
   padding: 10px;
   overflow: hidden;
   background-color: ${({ theme }) => theme.colors.backgroundCard};

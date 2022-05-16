@@ -81,6 +81,12 @@ export function MeusAnuncios() {
               address="Rua Fidélis Papini, 28 - Vila Prudente"
               delete={true}
             />
+            <CardHorizontal 
+              imgURL={imgNone}
+              title="Garagem grande"
+              address="Rua Fidélis Papini, 28 - Vila Prudente"
+              delete={true}
+            />
           </div>
         </section>
       </div>

@@ -14,7 +14,7 @@ export const GlobalStyles = createGlobalStyle`
         --branco: #ffffff;
         --branco-escuro: #F5F5F5;
         --background: #FAFAFA;
-        --cinza: #D4D4D4;
+        --cinza: #DFDFDF;
         --cinza-claro:#A0A0A0;
         --cinza-escuro:#616161;
         --laranja: #FF6B00;
@@ -46,11 +46,11 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     ::-webkit-scrollbar-track {
-        background-color: var(--background);
+        background-color: ${({ theme }) => theme.colors.background};
     }
     ::-webkit-scrollbar {
         width: 7px;
-        background: var(--background);
+        background-color: ${({ theme }) => theme.colors.background};
     }
     ::-webkit-scrollbar-thumb {
         border-radius: 50px;

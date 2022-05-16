@@ -19,11 +19,11 @@ export const MeusAnunciosContainer = styled.div `
 
       form {
         width: 100%;
-        padding: 20px;
+        padding: 15px;
         border-bottom: 1px solid var(--cinza);
 
         span {
-          margin-bottom: 8px;
+          margin-bottom: 6px;
           display: block;
           color: var(--cinza-escuro);
           font-size: 0.8rem;

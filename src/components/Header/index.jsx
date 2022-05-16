@@ -28,7 +28,7 @@ export function Header() {
       <nav className="navigation">
         <ul>
           <li>
-            <Link to="/">Buscar</Link>
+            <Link to="/buscar">Buscar</Link>
             <BiSearch className="icons" size={24} />
           </li>
           <li>
@@ -61,7 +61,7 @@ export function Header() {
           </header>
           <ul>
             <li>
-              <Link to="/">Buscar</Link>
+              <Link to="/buscar">Buscar</Link>
               <BiSearch className="icons" size={24} />
             </li>
             <li>
