@@ -28,7 +28,7 @@ export const HeaderContainer = styled.header `
           margin-right: 0;
         }
 
-        a {
+        .link {
           color: ${({ theme }) => theme.colors.colorText};
           font-weight: 500;
           transition: color .2s;
@@ -41,16 +41,17 @@ export const HeaderContainer = styled.header `
         .icons {
           margin-right: 10px;
           color: ${({ theme }) => theme.colors.colorText};
+          transition: color .2s ease-out;
         }
 
-        button {
-          padding: 10px 25px;
+        .button_registrar {
+          padding: 10px 20px;
           border-radius: 50px;
           background-color: var(--verde);
           transition: background .2s;
 
           color: var(--branco);
-          font-weight: 700;
+          font-size: 0.95rem;
 
           &:hover {
             background-color: var(--verde-hover);
@@ -66,7 +67,7 @@ export const HeaderContainer = styled.header `
 
   
 
-  @media screen and (max-width: 870px) {
+  @media screen and (max-width: 720px) {
     padding: 0 20px;
 
     .navigation {
@@ -79,15 +80,15 @@ export const HeaderContainer = styled.header `
       align-items: center;
       justify-content: center;
 
-      .button_anunciar {
+      .button_registrar {
         margin-right: 15px;
-        padding: 8px 25px;
+        padding: 10px 20px;
         border-radius: 50px;
         background-color: var(--verde);
         transition: background .2s;
 
         color: var(--branco);
-        font-weight: 700;
+        font-size: 0.95rem;
 
         &:hover {
           background-color: var(--verde-hover);
@@ -168,7 +169,7 @@ export const HeaderContainer = styled.header `
     padding: 0 10px;
 
     .navigation_mobile {
-      .button_anunciar {
+      .button_registrar {
         margin-right: 5px;
       }
     }

@@ -25,7 +25,7 @@ export function Login() {
             </ContentLeft>
             <ContentRight>
                 <form>
-                    <Logo marginBot={40} />
+                    <Logo marginBot={40} size={200} />
                     <div className='box_input'>
                         <input placeholder='E-mail' required />
                         <FiUser className="icons" size={23} />

@@ -22,8 +22,8 @@ export const MeusAnunciosContainer = styled.div `
         padding: 15px;
         border-bottom: 1px solid var(--cinza);
 
-        span {
-          margin-bottom: 6px;
+        h3 {
+          margin-bottom: 8px;
           display: block;
           color: var(--cinza-escuro);
           font-size: 0.8rem;

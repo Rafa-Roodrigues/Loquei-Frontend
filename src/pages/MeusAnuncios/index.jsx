@@ -13,7 +13,7 @@ export function MeusAnuncios() {
       <div class="box_grid">
         <aside>
           <form>
-            <span>Encontar meus anúncios</span>
+            <h3>Encontar meus anúncios</h3>
             <input type="text" placeholder="Digite alguma informação do anuncio" />
           </form>
 

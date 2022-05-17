@@ -31,8 +31,8 @@ export const ContainerBuscar = styled.div `
           border-bottom: 1px solid var(--cinza);
           position: relative;
 
-          span {
-            margin-bottom: 6px;
+          h3 {
+            margin-bottom: 8px;
             display: block;
             color: var(--cinza-escuro);
             font-size: 0.8rem;
@@ -63,6 +63,66 @@ export const ContainerBuscar = styled.div `
             top: calc(50% + 12px);
             right: 25px;
             transform: translateY(-50%);
+          }
+
+          .grid_checkbox {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(4, auto);
+
+            .checkbox {
+              width: fit-content;
+              margin-top: 10px;
+              padding-left: 20px;
+              position: relative;
+
+              display: flex;
+              align-items: center;
+              justify-content: flex-start;
+
+              color: ${({ theme }) => theme.colors.colorText};
+              font-weight: 500;
+              font-size: 0.85rem;
+
+              input[type="checkbox"] {
+                opacity: 0;
+                position: absolute;
+                top: 50%;
+                left: -20px;
+                transform: translateY(-50%);
+
+                &:checked ~ span {
+                  background-color: var(--laranja);
+                  border: 2px solid var(--laranja);
+
+                  .icons {
+                    display: inline-block;
+                  }
+                }
+              }
+
+              span {
+                width: 15px;
+                height: 15px;
+                border: 2px solid var(--cinza);
+                border-radius: 4px;
+                background-color: transparent;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                position: absolute;
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%);
+
+                .icons {
+                  display: none;
+                  color: var(--branco);
+                }
+              }
+            }
           }
         }
       }

@@ -24,29 +24,25 @@ export function Header() {
 
   return (
     <HeaderContainer>
-      <Logo imageHeight={38} imageWidth={38} textSize={35} />
+      <Logo size={140} />
       <nav className="navigation">
         <ul>
-          <li>
-            <Link to="/buscar">Buscar</Link>
+          <li className="search">
+            <Link className="link" to="/buscar">Buscar</Link>
             <BiSearch className="icons" size={24} />
           </li>
           <li>
-            <Link to="/meus-anuncios"> Meus anúncios</Link>
-            <BiGridAlt className="icons" size={24} />
-          </li>
-          <li>
-            <Link to="/login">Entrar</Link>
+            <Link className="link" to="/login">Entrar</Link>
             <BiUser className="icons" size={24} />
           </li>
           <li>
-            <button>Anunciar</button>
+            <Link className="button_registrar" to="/registro">Cadastrar-se</Link>
           </li>
         </ul>
       </nav>
 
       <nav className="navigation_mobile">
-        <button className="button_anunciar">Anunciar</button>
+        <Link className="button_registrar" to="/registro">Cadastrar-se</Link>
         <button className="button_menu" onClick={changeStateMenu}>
           <HiMenu size={32} color="#616161" />
         </button>
@@ -64,10 +60,10 @@ export function Header() {
               <Link to="/buscar">Buscar</Link>
               <BiSearch className="icons" size={24} />
             </li>
-            <li>
+            {/* <li>
               <Link to="/meus-anuncios"> Meus anúncios</Link>
               <BiGridAlt className="icons" size={24} />
-            </li>
+            </li> */}
             <li>
               <Link to="/login">Entrar</Link>
               <BiUser className="icons" size={24} />

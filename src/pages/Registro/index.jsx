@@ -13,7 +13,7 @@ export function Registro() {
         <title>Loquei | Registro</title>
       </Helmet>
       <BoxContent>
-        <Logo marginBot={40} />
+        <Logo marginBot={40} size={200} />
 
         <form>
           <div className="box_inputs">
