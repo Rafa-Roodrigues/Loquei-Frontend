@@ -42,43 +42,43 @@ export function Home() {
       <section className="box_categorias">
         <ul>
           <li>
-            <Link to="/">
+            <Link to="/buscar">
               <MdOutlineMapsHomeWork className="icons" size="30" />
             </Link>
             <span>Casa & Apartamentos</span>
           </li>
           <li>
-            <Link to="/">
+            <Link to="/buscar">
               <BiCar className="icons" size="30" />
             </Link>
             <span>Garagem</span>
           </li>
           <li>
-            <Link to="/">
+            <Link to="/buscar">
               <AiFillShop className="icons" size="30" />
             </Link>
             <span>Comércio</span>
           </li>
           <li>
-            <Link to="/">
+            <Link to="/buscar">
               <RiHomeSmile2Line className="icons" size="30" />
             </Link>
             <span>Salão de Festa</span>
           </li>
           <li>
-            <Link to="/">
+            <Link to="/buscar">
               <BsBoundingBoxCircles className="icons" size="30" />
             </Link>
             <span>Box</span>
           </li>
           <li>
-            <Link to="/">
+            <Link to="/buscar">
               <MdOutlineBusiness className="icons" size="30" />
             </Link>
             <span>Escritório</span>
           </li>
           <li>
-            <Link to="/">
+            <Link to="/buscar">
               <BiCurrentLocation className="icons" size="30" />
             </Link>
             <span>Pequenos espaços</span>
@@ -90,7 +90,7 @@ export function Home() {
           <span className="title_box">Onde você quer buscar?</span>
           <ul>
             {states.map(states => (
-              <li><Link to="/">{states}</Link></li>
+              <li><Link to="/buscar">{states}</Link></li>
             ))}
           </ul>
         </section>

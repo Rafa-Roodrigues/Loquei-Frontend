@@ -14,13 +14,15 @@ export function Buscar() {
       <Header />
 
       <div className="box_grid">
-        <section className="box_filtro">
+        <aside className="box_filtro">
           <form>
+            {/* Buscar */}
             <div className="box_input">
               <h3>Localização</h3>
               <input class="input_busca" type="text" placeholder="Digite algum endereço" />
               <BiTargetLock className="icon" size="25 " />
             </div>
+            {/* Checkbox */}
             <div className="box_input">
               <h3>Tipo de espaço</h3>
               <div className="grid_checkbox">
@@ -61,8 +63,56 @@ export function Buscar() {
                 </label>
               </div>
             </div>
+            {/* Metragem */}
+            <div className="box_input">
+              <h3>Metragem do espaço - m²</h3>
+              <div className="grid_input">
+                <input type="text" placeholder="de" />
+                <span>ex: 30</span>
+              </div>
+              <div className="grid_input">
+                <input type="text" placeholder="até" />
+                <span>ex: 100</span>
+              </div>
+            </div>
+            {/* Quantidade de Garagens */}
+            <div className="box_input">
+              <h3>Quantidade de garagens</h3>
+              <div className="grid_input">
+                <input type="text" placeholder="de" />
+                <span>ex: 0</span>
+              </div>
+              <div className="grid_input">
+                <input type="text" placeholder="até" />
+                <span>ex: 15</span>
+              </div>
+            </div>
+            {/* Quantidade de Quartos */}
+            <div className="box_input">
+              <h3>Quantidade de quartos</h3>
+              <div className="grid_input">
+                <input type="text" placeholder="de" />
+                <span>ex: 2</span>
+              </div>
+              <div className="grid_input">
+                <input type="text" placeholder="até" />
+                <span>ex: 4</span>
+              </div>
+            </div>
+            {/* Quantidade de Banheiros */}
+            <div className="box_input">
+              <h3>Quantidade de banheiros</h3>
+              <div className="grid_input">
+                <input type="text" placeholder="de" />
+                <span>ex: 0</span>
+              </div>
+              <div className="grid_input">
+                <input type="text" placeholder="até" />
+                <span>ex: 15</span>
+              </div>
+            </div>
           </form>
-        </section>
+        </aside>
         <section className="box_content">
           <CardHorizontal 
             imgURL={imgNone}

@@ -12,14 +12,29 @@ export const ContainerBuscar = styled.div `
     height: calc(100vh - 90px);
     position: relative;
 
+    column-gap: 5px;
     display: grid;
     grid-template-columns: 0.7fr 1.6fr 0.7fr;
 
     .box_filtro {
       width: 100%;
       height: 100%;
+      margin-right: 5px;
+      padding-right: 5px;
       overflow-y: auto;
       background-color: ${({ theme }) => theme.colors.background};
+
+      &::-webkit-scrollbar-track {
+        background-color: ${({ theme }) => theme.colors.background};
+      }
+      &::-webkit-scrollbar {
+        width: 5px;
+        background-color: ${({ theme }) => theme.colors.background};
+      }
+      &::-webkit-scrollbar-thumb {
+        border-radius: 50px;
+        background: var(--cinza);
+      }
 
       form {
         width: 100%;
@@ -82,7 +97,7 @@ export const ContainerBuscar = styled.div `
 
               color: ${({ theme }) => theme.colors.colorText};
               font-weight: 500;
-              font-size: 0.85rem;
+              font-size: 0.75rem;
 
               input[type="checkbox"] {
                 opacity: 0;
@@ -124,6 +139,26 @@ export const ContainerBuscar = styled.div `
               }
             }
           }
+
+          .grid_input {
+            width: fit-content;
+            margin-top: 5px;
+            margin-right: 20px;
+            display: inline-block;
+
+            input {
+              width: 80px;
+              padding: 8px 10px;
+            }
+            
+            span {
+              display: block;
+
+              color: var(--cinza);
+              font-weight: 500;
+              font-size: 0.7rem;
+            }
+          }
         }
       }
     }
@@ -141,11 +176,11 @@ export const ContainerBuscar = styled.div `
       justify-content: flex-start;
 
       &::-webkit-scrollbar-track {
-        background-color: transparent;
+        background-color: ${({ theme }) => theme.colors.background};
       }
       &::-webkit-scrollbar {
-          width: 3px;
-          background-color: transparent;
+          width: 5px;
+          background-color: ${({ theme }) => theme.colors.background};
       }
       &::-webkit-scrollbar-thumb {
           border-radius: 50px;
