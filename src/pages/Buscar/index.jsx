@@ -1,7 +1,10 @@
+import { useState } from 'react';
+
 import { Header } from '../../components/Header';
 import { CardHorizontal } from '../../components/Cards';
 
-import { BiTargetLock } from 'react-icons/bi';
+import { BiFilterAlt, BiTargetLock, BiSearch } from 'react-icons/bi';
+import { IoMdClose } from 'react-icons/io';
 import { FaCheck } from 'react-icons/fa';
 
 import { ContainerBuscar } from "./styles";
@@ -9,17 +12,41 @@ import imgNone from '../../assets/img/img-none.jpg';
 
 
 export function Buscar() {
+  const [stateMenu, setStateMenu] = useState('block');
+
+  function handleOpenMenu() {
+    setStateMenu('block');
+    console.log(stateMenu);
+  }
+  
+  function handleCloseMenu() {
+    setStateMenu('none');
+    console.log(stateMenu);
+  }
+
   return (
     <ContainerBuscar>
       <Header />
 
       <div className="box_grid">
-        <aside className="box_filtro">
+        <section className="box_mobile">
+          <form>
+            <input type="text" placeholder="Pesquisar por algum local..." />
+            <button><BiSearch size={30} /></button>
+          </form>
+          <button className="button_open" onClick={handleOpenMenu}>
+            <BiFilterAlt size={30} />
+          </button>
+        </section>
+        <aside className="box_filtro" style={{display: stateMenu}}>
+          <button className="button_close" onClick={handleCloseMenu}>
+            <IoMdClose size={20} color="#FFF" />
+          </button>
           <form>
             {/* Buscar */}
             <div className="box_input">
               <h3>Localização</h3>
-              <input class="input_busca" type="text" placeholder="Digite algum endereço" />
+              <input type="text" placeholder="Digite algum endereço" />
               <BiTargetLock className="icon" size="25 " />
             </div>
             {/* Checkbox */}

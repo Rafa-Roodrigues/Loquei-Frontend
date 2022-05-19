@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { LogoContainer } from './styles';
-import logoLight from '../../assets/img/logo-light.svg';
+import logoLight from '../../assets/img/logo.svg';
 import logoDark from '../../assets/img/logo-dark.svg';
 import { useTheme } from '../../hooks/useTheme';
 
