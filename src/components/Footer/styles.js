@@ -1,21 +1,42 @@
-import styled from 'styled-components';
+import styled, {} from 'styled-components';
 
-export const Container = styled.div`
-    height: 120px;
-    background-color: ${({ theme}) => theme.colors.backgroundSecundario};
+export const FooterContainer = styled.div `
+  width: 100%;
+  position: relative;
+  background-color: ${({ theme }) => theme.colors.backgroundSecundario};
 
+  .box_content {
+    width: 100%;
+    padding: 20px 100px;
+    position: relative;
+  }
+
+  .box_politica {
+    width: 100%;
+    padding: 50px 100px;
+    border-top: 1px solid var(--cinza);
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    color: ${({ theme}) => theme.colors.colorText};
+    justify-content: flex-start;
 
-    button {
-        display: flex;
-        align-items: center;
+    p {
+      opacity: 0.8;
+      color: ${({  theme }) => theme.colors.colorTitulo};
+      font-weight: 300;
+      font-size: 0.8rem;
 
-        svg {
-            margin-right: 5px;
-        }
+      a {
+        text-decoration: underline;
+      }
     }
 
-`;
+    span {
+      margin-top: 8px;
+      opacity: 0.8;
+      color: ${({  theme }) => theme.colors.colorTitulo};
+      font-weight: 400;
+      font-size: 0.8rem;
+    }
+  }
+`

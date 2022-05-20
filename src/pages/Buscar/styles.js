@@ -37,7 +37,7 @@ export const ContainerBuscar = styled.div `
       }
       &::-webkit-scrollbar-thumb {
         border-radius: 50px;
-        background: rgba(0, 0, 0, 1%);
+        background: rgba(0, 0, 0, 3%);
       }
 
       .button_close {
@@ -51,13 +51,13 @@ export const ContainerBuscar = styled.div `
 
         .box_input {
           padding: 20px 15px;
-          border-bottom: 1px solid var(--cinza);
+          border-bottom: 1px solid ${({ theme }) => theme.colors.backgroundSecundario};
           position: relative;
 
           h3 {
             margin-bottom: 8px;
             display: block;
-            color: var(--cinza-escuro);
+            color: ${({ theme }) => theme.colors.colorText};
             font-size: 0.8rem;
           }
 
@@ -67,7 +67,7 @@ export const ContainerBuscar = styled.div `
             outline: none;
             border: 2px solid var(--cinza);
             border-radius: 5px;
-            background: transparent;
+            background-color: transparent;
 
             color: var(--cinza-escuro);
 
@@ -77,6 +77,16 @@ export const ContainerBuscar = styled.div `
 
             &.input_busca {
               padding: 12px 40px 12px 10px;
+            }
+
+            &.dark {
+              border: none;
+              background-color: ${({  theme }) => theme.colors.backgroundSecundario};
+              color: ${({  theme }) => theme.colors.cinza};
+
+              &::placeholder {
+                color: ${({  theme }) => theme.colors.cinza};
+              }
             }
           }
 
@@ -155,7 +165,7 @@ export const ContainerBuscar = styled.div `
             display: inline-block;
 
             input {
-              width: 80px;
+              width: 100px;
               padding: 8px 10px;
             }
             

@@ -11,6 +11,12 @@ export const light = {
         colorIconeCategoria: "#FF6B00",
         colorTextoCategoria: "#FFFFFF",
         colorText: "#616161",
-        colorTitulo: "#303030"
+        colorTitulo: "#303030",
+
+        branco: "#ffffff",
+        brancoEscuro: "#F5F5F5",
+        cinza: "#DFDFDF",
+        cinzaClaro: "#A0A0A0",
+        cinzaEscuro: "#616161",
     }
 }

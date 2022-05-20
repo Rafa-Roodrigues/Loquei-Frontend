@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import { Header } from '../../components/Header';
 import { CardHorizontal } from '../../components/Cards';
+import { useTheme } from '../../hooks/useTheme';
 
 import { BiFilterAlt, BiTargetLock, BiSearch } from 'react-icons/bi';
 import { IoMdClose } from 'react-icons/io';
@@ -12,6 +13,7 @@ import imgNone from '../../assets/img/img-none.jpg';
 
 
 export function Buscar() {
+  const { themeIsActive } = useTheme();
   const [stateMenu, setStateMenu] = useState('block');
 
   function handleOpenMenu() {
@@ -46,7 +48,7 @@ export function Buscar() {
             {/* Buscar */}
             <div className="box_input">
               <h3>Localização</h3>
-              <input type="text" placeholder="Digite algum endereço" />
+              <input className={themeIsActive && "dark"} type="text" placeholder="Digite algum endereço" />
               <BiTargetLock className="icon" size="25 " />
             </div>
             {/* Checkbox */}
@@ -94,11 +96,11 @@ export function Buscar() {
             <div className="box_input">
               <h3>Metragem do espaço - m²</h3>
               <div className="grid_input">
-                <input type="text" placeholder="de" />
+                <input className={themeIsActive && "dark"} type="number" placeholder="de" />
                 <span>ex: 30</span>
               </div>
               <div className="grid_input">
-                <input type="text" placeholder="até" />
+                <input className={themeIsActive && "dark"} type="number" placeholder="até" />
                 <span>ex: 100</span>
               </div>
             </div>
@@ -106,11 +108,11 @@ export function Buscar() {
             <div className="box_input">
               <h3>Quantidade de garagens</h3>
               <div className="grid_input">
-                <input type="text" placeholder="de" />
+                <input className={themeIsActive && "dark"} type="number" placeholder="de" />
                 <span>ex: 0</span>
               </div>
               <div className="grid_input">
-                <input type="text" placeholder="até" />
+                <input className={themeIsActive && "dark"} type="number" placeholder="até" />
                 <span>ex: 15</span>
               </div>
             </div>
@@ -118,11 +120,11 @@ export function Buscar() {
             <div className="box_input">
               <h3>Quantidade de quartos</h3>
               <div className="grid_input">
-                <input type="text" placeholder="de" />
+                <input className={themeIsActive && "dark"} type="number" placeholder="de" />
                 <span>ex: 2</span>
               </div>
               <div className="grid_input">
-                <input type="text" placeholder="até" />
+                <input className={themeIsActive && "dark"} type="number" placeholder="até" />
                 <span>ex: 4</span>
               </div>
             </div>
@@ -130,11 +132,11 @@ export function Buscar() {
             <div className="box_input">
               <h3>Quantidade de banheiros</h3>
               <div className="grid_input">
-                <input type="text" placeholder="de" />
+                <input className={themeIsActive && "dark"} type="number" placeholder="de" />
                 <span>ex: 0</span>
               </div>
               <div className="grid_input">
-                <input type="text" placeholder="até" />
+                <input className={themeIsActive && "dark"} type="number" placeholder="até" />
                 <span>ex: 15</span>
               </div>
             </div>
