@@ -13,8 +13,8 @@ export const FooterContainer = styled.div `
 
   .box_politica {
     width: 100%;
-    padding: 50px 100px;
-    border-top: 1px solid var(--cinza);
+    padding: 40px 0;
+    border-top: 1px solid rgba(0, 0, 0, 10%);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -23,8 +23,9 @@ export const FooterContainer = styled.div `
     p {
       opacity: 0.8;
       color: ${({  theme }) => theme.colors.colorTitulo};
-      font-weight: 300;
-      font-size: 0.8rem;
+      font-weight: 500;
+      font-size: 0.75rem;
+      letter-spacing: 1px;
 
       a {
         text-decoration: underline;
@@ -35,8 +36,8 @@ export const FooterContainer = styled.div `
       margin-top: 8px;
       opacity: 0.8;
       color: ${({  theme }) => theme.colors.colorTitulo};
-      font-weight: 400;
       font-size: 0.8rem;
+      font-weight: 500;
     }
   }
 `

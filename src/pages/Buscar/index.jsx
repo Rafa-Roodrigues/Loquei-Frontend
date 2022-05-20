@@ -1,10 +1,13 @@
 import { useState } from 'react';
 
+import Helmet from "react-helmet";
+
 import { Header } from '../../components/Header';
 import { CardHorizontal } from '../../components/Cards';
 import { useTheme } from '../../hooks/useTheme';
 
-import { BiFilterAlt, BiTargetLock, BiSearch } from 'react-icons/bi';
+import { BiFilterAlt, BiSearch } from 'react-icons/bi';
+import { HiOutlineLocationMarker } from 'react-icons/hi';
 import { IoMdClose } from 'react-icons/io';
 import { FaCheck } from 'react-icons/fa';
 
@@ -28,6 +31,9 @@ export function Buscar() {
 
   return (
     <ContainerBuscar>
+      <Helmet>
+        <title>Loquei | Buscar</title>
+      </Helmet>
       <Header />
 
       <div className="box_grid">
@@ -45,114 +51,103 @@ export function Buscar() {
             <IoMdClose size={20} color="#FFF" />
           </button>
           <form>
-            {/* Buscar */}
             <div className="box_input">
               <h3>Localização</h3>
-              <input className={themeIsActive && "dark"} type="text" placeholder="Digite algum endereço" />
-              <BiTargetLock className="icon" size="25 " />
+              <input className={themeIsActive && "dark_input"} type="text" placeholder="Digite algum endereço" />
+              <HiOutlineLocationMarker className="icon" size="25 " />
             </div>
-            {/* Checkbox */}
+
             <div className="box_input">
               <h3>Tipo de espaço</h3>
               <div className="grid_checkbox">
                 <label className="checkbox">
                   Casa
                   <input type="checkbox" placeholder="Casa" />
-                  <span><FaCheck className="icons" /></span>
+                  <span className={themeIsActive && "dark_checkbox"}><FaCheck className="icons" /></span>
                 </label>
                 <label className="checkbox">
                   Pequenos espaços
                   <input type="checkbox" placeholder="Casa" />
-                  <span><FaCheck className="icons" /></span>
+                  <span className={themeIsActive && "dark_checkbox"}><FaCheck className="icons" /></span>
                 </label>
                 <label className="checkbox">
                   Garagem
                   <input type="checkbox" placeholder="Casa" />
-                  <span><FaCheck className="icons" /></span>
+                  <span className={themeIsActive && "dark_checkbox"}><FaCheck className="icons" /></span>
                 </label>
                 <label className="checkbox">
                   Salão de festa
                   <input type="checkbox" placeholder="Casa" />
-                  <span><FaCheck className="icons" /></span>
+                  <span className={themeIsActive && "dark_checkbox"}><FaCheck className="icons" /></span>
                 </label>
                 <label className="checkbox">
                   Comércio
                   <input type="checkbox" placeholder="Casa" />
-                  <span><FaCheck className="icons" /></span>
+                  <span className={themeIsActive && "dark_checkbox"}><FaCheck className="icons" /></span>
                 </label>
                 <label className="checkbox">
                   Escritório
                   <input type="checkbox" placeholder="Casa" />
-                  <span><FaCheck className="icons" /></span>
+                  <span className={themeIsActive && "dark_checkbox"}><FaCheck className="icons" /></span>
                 </label>
                 <label className="checkbox">
                   Box
                   <input type="checkbox" placeholder="Casa" />
-                  <span><FaCheck className="icons" /></span>
+                  <span className={themeIsActive && "dark_checkbox"}><FaCheck className="icons" /></span>
                 </label>
               </div>
             </div>
-            {/* Metragem */}
+
             <div className="box_input">
               <h3>Metragem do espaço - m²</h3>
               <div className="grid_input">
-                <input className={themeIsActive && "dark"} type="number" placeholder="de" />
+                <input className={themeIsActive && "dark_input"} type="number" placeholder="de" />
                 <span>ex: 30</span>
               </div>
               <div className="grid_input">
-                <input className={themeIsActive && "dark"} type="number" placeholder="até" />
+                <input className={themeIsActive && "dark_input"} type="number" placeholder="até" />
                 <span>ex: 100</span>
               </div>
             </div>
-            {/* Quantidade de Garagens */}
+
             <div className="box_input">
               <h3>Quantidade de garagens</h3>
               <div className="grid_input">
-                <input className={themeIsActive && "dark"} type="number" placeholder="de" />
+                <input className={themeIsActive && "dark_input"} type="number" placeholder="de" />
                 <span>ex: 0</span>
               </div>
               <div className="grid_input">
-                <input className={themeIsActive && "dark"} type="number" placeholder="até" />
+                <input className={themeIsActive && "dark_input"} type="number" placeholder="até" />
                 <span>ex: 15</span>
               </div>
             </div>
-            {/* Quantidade de Quartos */}
+
             <div className="box_input">
               <h3>Quantidade de quartos</h3>
               <div className="grid_input">
-                <input className={themeIsActive && "dark"} type="number" placeholder="de" />
+                <input className={themeIsActive && "dark_input"} type="number" placeholder="de" />
                 <span>ex: 2</span>
               </div>
               <div className="grid_input">
-                <input className={themeIsActive && "dark"} type="number" placeholder="até" />
+                <input className={themeIsActive && "dark_input"} type="number" placeholder="até" />
                 <span>ex: 4</span>
               </div>
             </div>
-            {/* Quantidade de Banheiros */}
+
             <div className="box_input">
               <h3>Quantidade de banheiros</h3>
               <div className="grid_input">
-                <input className={themeIsActive && "dark"} type="number" placeholder="de" />
+                <input className={themeIsActive && "dark_input"} type="number" placeholder="de" />
                 <span>ex: 0</span>
               </div>
               <div className="grid_input">
-                <input className={themeIsActive && "dark"} type="number" placeholder="até" />
+                <input className={themeIsActive && "dark_input"} type="number" placeholder="até" />
                 <span>ex: 15</span>
               </div>
             </div>
           </form>
         </aside>
         <section className="box_content">
-          <CardHorizontal 
-            imgURL={imgNone}
-            title="Garagem grande"
-            address="Rua Fidélis Papini, 28 - Vila Prudente"
-          />
-          <CardHorizontal 
-            imgURL={imgNone}
-            title="Garagem grande"
-            address="Rua Fidélis Papini, 28 - Vila Prudente"
-          />
           <CardHorizontal 
             imgURL={imgNone}
             title="Garagem grande"

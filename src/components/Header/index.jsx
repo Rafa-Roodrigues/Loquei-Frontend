@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 import { HeaderContainer } from './styles';
 
-import { BiSearch, BiGridAlt, BiUser } from 'react-icons/bi';
+import { BiSearch, BiUser } from 'react-icons/bi';
 import { HiMenu } from 'react-icons/hi';
 import { IoMdClose } from 'react-icons/io';
 import { Logo } from '../Logo';
@@ -60,10 +60,6 @@ export function Header() {
               <Link to="/buscar">Buscar</Link>
               <BiSearch className="icons" size={24} />
             </li>
-            {/* <li>
-              <Link to="/meus-anuncios"> Meus anúncios</Link>
-              <BiGridAlt className="icons" size={24} />
-            </li> */}
             <li>
               <Link to="/login">Entrar</Link>
               <BiUser className="icons" size={24} />

@@ -11,6 +11,7 @@ export const dark = {
         colorIconeCategoria: "#FFFFFF",
         colorTextoCategoria: "#FFFFFF",
         colorText: "#D9D9D9",
+        colorTextHover: "#616161",
         colorTitulo: "#FFFFFF",
 
         cinza: "#A0A0A0",

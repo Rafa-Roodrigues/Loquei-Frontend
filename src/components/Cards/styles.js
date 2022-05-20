@@ -6,6 +6,12 @@ export const CardVerticalContainer = styled.article `
   background-color: ${({ theme }) => theme.colors.background};
   box-shadow: 0 0 8px rgba(0, 0, 0, 10%);
 
+  .box_image {
+    width: 100%;
+    height: 140px;
+    background-color: var(--laranja);
+  }
+
   img {
     width: 100%;
     height: 140px;
@@ -13,7 +19,7 @@ export const CardVerticalContainer = styled.article `
   }
 
   .box_info {
-    padding: 0 8px;
+    padding: 4px 8px 0 8px;
 
     h2 {
       color: ${({ theme }) => theme.colors.colorTitulo};
@@ -182,6 +188,12 @@ export const CardHorizontalContainer = styled.article `
   display: grid;
   gap: 20px;
   grid-template-columns: 150px auto;
+
+  .box_image {
+    width: 100%;
+    height: 100%;
+    background-color: var(--laranja);
+  }
 
   img {
     width: 100%;

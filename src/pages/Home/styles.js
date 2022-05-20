@@ -56,23 +56,23 @@ export const HomeContainer = styled.div `
           height: 60px;
           border-radius: 50px;
           background-color: ${({ theme }) => theme.colors.backgroundCaixaIconeCategoria};
-          /* background-color: red; */
-          transition: background .2s;
+          transition: filter .2s;
 
           display: flex;
           align-items: center;
           justify-content: center;
 
+          .icons {
+            color: ${({ theme }) => theme.colors.colorIconeCategoria};
+            transition: color .2s;
+          }
+
           &:hover {
-            background-color: ${({ theme }) => theme.colors.laranjaHover};
+            filter: brightness(0.9);
           }
 
           &:hover ~ span {
-            color: var(--branco-escuro);
-          }
-
-          .icons {
-            color: ${({ theme }) => theme.colors.colorIconeCategoria};
+            color: ${({ theme }) => theme.colors.colorTextoCategoriaHover};
           }
         }
 
@@ -130,7 +130,7 @@ export const HomeContainer = styled.div `
             transition: color .2s;
 
             &:hover {
-              color: var(--cinza-escuro);
+              color: ${({ theme }) => theme.colors.colorTextHover};
             }
           }
         }
@@ -144,7 +144,6 @@ export const HomeContainer = styled.div `
       padding: 30px 50px 15px 50px;
       border-radius: 5px;
       background-color: transparent;
-      /* background-color: ${({ theme }) => theme.colors.backgroundSecundario}; */
       position: relative;
 
       .title {

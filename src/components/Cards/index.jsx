@@ -20,7 +20,12 @@ export function CardVertical(props) {
 
   return (
     <CardVerticalContainer>
-      <img src={props.imgURL} alt="..." />
+      {!props.imgURL ? (
+        <div className="box_image">
+        </div>
+      ) : (
+        <img src={props.imgURL} alt={props.title} />
+      )}
       <div className="box_info">
         <Link to="/">
           <h2>{props.title}</h2>
@@ -70,7 +75,12 @@ export function CardHorizontal(props) {
 
   return (
     <CardHorizontalContainer>
-      <img src={props.imgURL} alt="..." />
+      {props.imgURL == "" ? (
+        <img src={props.imgURL} alt={props.title} />
+      ) : (
+        <div className="box_image">
+        </div>
+      )}
       <div className="box_info">
         <h2>{props.title}</h2>
         <p>{props.address}</p>

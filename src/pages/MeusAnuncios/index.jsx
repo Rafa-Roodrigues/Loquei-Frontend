@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 
+import Helmet from "react-helmet";
+
 import { Header } from '../../components/Header';
 import { CardHorizontal, CardVertical } from "../../components/Cards";
 
@@ -9,6 +11,9 @@ import imgNone from '../../assets/img/img-none.jpg';
 export function MeusAnuncios() {
   return (
     <MeusAnunciosContainer>
+      <Helmet>
+        <title>Loquei | Meus Anuncios</title>
+      </Helmet>
       <Header />
       <div class="box_grid">
         <aside>

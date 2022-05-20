@@ -34,7 +34,7 @@ export const HeaderContainer = styled.header `
           transition: color .2s;
 
           &:hover, &:hover ~ .icons {
-            color: var(--cinza-escuro);
+            color: ${({ theme }) => theme.colors.colorTextHover};
           }
         }
 
@@ -64,8 +64,6 @@ export const HeaderContainer = styled.header `
   .navigation_mobile {
     display: none;
   }
-
-  
 
   @media screen and (max-width: 720px) {
     padding: 0 20px;
@@ -107,7 +105,7 @@ export const HeaderContainer = styled.header `
       position: absolute;
       top: 0;
       left: 0;
-      z-index: 1;
+      z-index: 9999;
 
       .menu {
         width: 300px;
