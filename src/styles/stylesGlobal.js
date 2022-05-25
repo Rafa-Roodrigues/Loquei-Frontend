@@ -24,8 +24,19 @@ export const GlobalStyles = createGlobalStyle`
         --verde-hover: #99D41C;
     }
 
+    html {
+        @media screen and (max-width: 1080px) {
+            font-size: 93.75%;
+        }
+
+        @media screen and (max-width: 720px) {
+            font-size: 87.5%;
+        }
+    }
+
     body {
         background-color: ${({ theme }) => theme.colors.background};
+        -webkit-font-smoothing: antialiased;
     }
 
     body, input, textarea, button {

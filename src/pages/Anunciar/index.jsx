@@ -150,18 +150,18 @@ export function Anunciar() {
               <BiListUl className="icons" size="22" />
             </div>
             <div className="card">
-              <label className={stateCard ? "upload" : "upload horizontal"}>
+              <label className={stateCard ? "upload horizontal" : "upload"}>
                 <input type="file" name="myImage" accept="image/*" />
                 <i><img src={iconImageUpload} /></i>
               </label>
               {stateCard ? (
-                <CardVertical 
+                <CardHorizontal
                   title="Digite seu título"
                   address="Rua Exenplo, 01 - Bairro, Cidade, Estado"
                   creation
                 />
               ) : (
-                <CardHorizontal
+                <CardVertical 
                   title="Digite seu título"
                   address="Rua Exenplo, 01 - Bairro, Cidade, Estado"
                   creation

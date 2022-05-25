@@ -75,11 +75,11 @@ export function CardHorizontal(props) {
 
   return (
     <CardHorizontalContainer>
-      {props.imgURL == "" ? (
-        <img src={props.imgURL} alt={props.title} />
-      ) : (
+      {!props.imgURL ? (
         <div className="box_image">
         </div>
+      ) : (
+        <img src={props.imgURL} alt={props.title} />
       )}
       <div className="box_info">
         <h2>{props.title}</h2>
