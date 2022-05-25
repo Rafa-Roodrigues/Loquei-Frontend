@@ -29,18 +29,18 @@ export const HeaderContainer = styled.header `
         }
 
         .link {
-          color: ${({ theme }) => theme.colors.colorText};
+          color: ${({ theme }) => theme.colors.textBody};
           font-weight: 500;
-          transition: color .2s;
+          transition: filter .2s;
 
           &:hover, &:hover ~ .icons {
-            color: ${({ theme }) => theme.colors.colorTextHover};
+            filter: brightness(0.5);
           }
         }
 
         .icons {
           margin-right: 10px;
-          color: ${({ theme }) => theme.colors.colorText};
+          color: ${({ theme }) => theme.colors.textBody};
           transition: color .2s ease-out;
         }
 
@@ -144,18 +144,18 @@ export const HeaderContainer = styled.header `
             }
   
             a {
-              color: ${({ theme }) => theme.colors.colorText};
+              color: ${({ theme }) => theme.colors.textBody};
               font-weight: 500;
               transition: color .2s;
   
               &:hover, &:hover ~ .icons {
-                color: ${({ theme }) => theme.colors.colorText};
+                color: ${({ theme }) => theme.colors.textBody};
               }
             }
 
             .icons {
               margin-right: 10px;
-              color: ${({ theme }) => theme.colors.colorText};
+              color: ${({ theme }) => theme.colors.textBody};
             }
           }
         }

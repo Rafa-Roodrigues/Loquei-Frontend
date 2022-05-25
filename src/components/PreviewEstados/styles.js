@@ -7,7 +7,7 @@ export const Container = styled.section`
   position: relative;
   
   border-radius: 5px;
-  background-color: ${({ theme }) => theme.colors.backgroundSecundario};
+  background-color: ${({ theme }) => theme.colors.backgroundSecondary};
 
   ul {
     padding: 30px 0;
@@ -24,12 +24,12 @@ export const Container = styled.section`
       }
 
       a {
-        color: ${({ theme }) => theme.colors.colorText};
+        color: ${({ theme }) => theme.colors.textBody};
         font-size: .85rem;
-        transition: color .2s;
+        transition: filter .2s;
 
         &:hover {
-          color: ${({ theme }) => theme.colors.colorTextHover};
+          filter: brightness(0.5);
         }
       }
     }

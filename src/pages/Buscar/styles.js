@@ -51,13 +51,13 @@ export const ContainerBuscar = styled.div `
 
         .box_input {
           padding: 20px 15px;
-          border-bottom: 1px solid ${({ theme }) => theme.colors.backgroundSecundario};
+          border-bottom: 1px solid ${({ theme }) => theme.colors.backgroundSecondary};
           position: relative;
 
           h3 {
             margin-bottom: 8px;
             display: block;
-            color: ${({ theme }) => theme.colors.colorText};
+            color: ${({ theme }) => theme.colors.textBody};
             font-size: 0.8rem;
           }
 
@@ -81,7 +81,7 @@ export const ContainerBuscar = styled.div `
 
             &.dark_input {
               border: none;
-              background-color: ${({  theme }) => theme.colors.backgroundSecundario};
+              background-color: ${({  theme }) => theme.colors.backgroundSecondary};
               color: ${({  theme }) => theme.colors.cinza};
               transition: color .2s;
 
@@ -90,7 +90,7 @@ export const ContainerBuscar = styled.div `
               }
 
               &:focus {
-                color: ${({  theme }) => theme.colors.colorText};
+                color: ${({  theme }) => theme.colors.textBody};
               }
             }
           }
@@ -118,7 +118,7 @@ export const ContainerBuscar = styled.div `
               align-items: center;
               justify-content: flex-start;
 
-              color: ${({ theme }) => theme.colors.colorText};
+              color: ${({ theme }) => theme.colors.textBody};
               font-weight: 500;
               font-size: 0.75rem;
 
@@ -196,7 +196,7 @@ export const ContainerBuscar = styled.div `
       height: 100%;
       padding: 20px;
       overflow-y: auto;
-      background-color: ${({ theme }) => theme.colors.backgroundSecundario};
+      background-color: ${({ theme }) => theme.colors.backgroundSecondary};
 
       display: flex;
       flex-direction: column;

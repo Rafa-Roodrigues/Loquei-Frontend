@@ -3,7 +3,7 @@ import styled, {} from 'styled-components';
 export const Container = styled.section`
   width: 100%;
   padding: 40px 10px 0px 10px;
-  background-color: ${({ theme }) => theme.colors.backgroundCategoria};
+  background-color: ${({ theme }) => theme.colors.categoryContainer};
 
   display: flex;
   align-items: center;
@@ -48,7 +48,7 @@ export const Container = styled.section`
         width: 60px;
         height: 60px;
         border-radius: 50px;
-        background-color: ${({ theme }) => theme.colors.backgroundCaixaIconeCategoria};
+        background-color: ${({ theme }) => theme.colors.categoryBoxIcon};
         transition: filter .2s;
 
         display: flex;
@@ -56,22 +56,18 @@ export const Container = styled.section`
         justify-content: center;
 
         .icons {
-          color: ${({ theme }) => theme.colors.colorIconeCategoria};
+          color: ${({ theme }) => theme.colors.categoryIcon};
           transition: color .2s;
         }
 
         &:hover {
           filter: brightness(0.9);
         }
-
-        &:hover ~ span {
-          color: ${({ theme }) => theme.colors.colorTextoCategoriaHover};
-        }
       }
 
       span {
         margin-top: 10px;
-        color: ${({ theme }) => theme.colors.colorTextoCategoria};
+        color: var(--branco);
         font-weight: 500;
         font-size: 0.8rem;
         transition: color .2s;

@@ -20,7 +20,7 @@ export const ContentLeft = styled.div`
     justify-content: center;
     align-items: flex-start;
 
-    color: ${({ theme }) => theme.colors.colorTitulo};
+    color: ${({ theme }) => theme.colors.textTitle};
 
     div {
         max-width: 610px;
@@ -93,7 +93,7 @@ export const ContentRight = styled.div`
         width: 100%;
 
         padding: 90px 30px;
-        background-color: ${({ theme }) => theme.colors.backgroundSecundario};
+        background-color: ${({ theme }) => theme.colors.backgroundSecondary};
         /* box-shadow: 0px 0px 6px #cccccc; */
         border-radius: 5px;
 
@@ -137,27 +137,27 @@ export const ContentRight = styled.div`
                 border-radius: 5px;
                 background-color: ${({ theme }) => theme.colors.background};
 
-                color: ${({ theme }) => theme.colors.colorText};
+                color: ${({ theme }) => theme.colors.textBody};
                 font-size: 16px;
                 transition: color .3s;
 
 
                 &::placeholder {
-                    color: ${({ theme }) => theme.colors.colorText};
+                    color: ${({ theme }) => theme.colors.textBody};
                 }
 
                 &:valid, &:valid ~ .icons {
-                    color: ${({ theme }) => theme.colors.colorText};
+                    color: ${({ theme }) => theme.colors.textBody};
                 }
 
                 &:focus {
-                    color: ${({ theme }) => theme.colors.colorText};
+                    color: ${({ theme }) => theme.colors.textBody};
                     outline: 2px solid var(--cinza-claro);
                 }
             }
 
             .icons {
-                color: ${({ theme }) => theme.colors.colorText};
+                color: ${({ theme }) => theme.colors.textBody};
 
                 position: absolute;
                 top: 50%;
@@ -167,7 +167,7 @@ export const ContentRight = styled.div`
         }
 
         span {
-            color: ${({ theme }) => theme.colors.colorText};
+            color: ${({ theme }) => theme.colors.textBody};
             font-size: 14px;
             font-weight: 700;
             display: block;

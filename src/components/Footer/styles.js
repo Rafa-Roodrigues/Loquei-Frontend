@@ -3,7 +3,7 @@ import styled, {} from 'styled-components';
 export const FooterContainer = styled.div `
   width: 100%;
   position: relative;
-  background-color: ${({ theme }) => theme.colors.backgroundSecundario};
+  background-color: ${({ theme }) => theme.colors.backgroundSecondary};
 
   .box_content {
     width: 100%;
@@ -22,7 +22,7 @@ export const FooterContainer = styled.div `
 
     p {
       opacity: 0.8;
-      color: ${({  theme }) => theme.colors.colorTitulo};
+      color: ${({ theme }) => theme.colors.textTitle};
       font-weight: 500;
       font-size: 0.75rem;
       letter-spacing: 1px;
@@ -35,7 +35,7 @@ export const FooterContainer = styled.div `
     span {
       margin-top: 8px;
       opacity: 0.8;
-      color: ${({  theme }) => theme.colors.colorTitulo};
+      color: ${({ theme }) => theme.colors.textTitle};
       font-size: 0.8rem;
       font-weight: 500;
     }

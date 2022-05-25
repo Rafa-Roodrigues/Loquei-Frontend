@@ -1,5 +1,12 @@
 import { createGlobalStyle } from 'styled-components';
 
+export const color = {
+    main: "#FF6B00",
+    white: "#FFFFFF",
+    whiteDark: "#F3F5FA",
+    black: "#303030",
+}
+
 export const GlobalStyles = createGlobalStyle`
     * {
         margin: 0;
@@ -11,17 +18,18 @@ export const GlobalStyles = createGlobalStyle`
     :root {
         --max-width: 1280px;
 
-        --branco: #ffffff;
-        --branco-escuro: #F5F5F5;
+        --branco: ${color.white};
+        --branco-escuro: ${color.whiteDark};
+        --preto: ${color.black};
+
         --background: #FAFAFA;
         --cinza: #DFDFDF;
         --cinza-claro:#A0A0A0;
         --cinza-escuro:#616161;
         --laranja: #FF6B00;
-        --laranja-hover: #ED6300;
-        --preto: #303030;
+        //--laranja-hover: #ED6300;
         --verde: #ADEA2C;
-        --verde-hover: #99D41C;
+        //--verde-hover: #99D41C;
     }
 
     html {

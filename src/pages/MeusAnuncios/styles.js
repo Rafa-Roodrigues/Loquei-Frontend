@@ -103,7 +103,7 @@ export const MeusAnunciosContainer = styled.div `
       height: calc(100vh - 90px);
       padding: 20px 50px;
       overflow-y: auto;
-      background-color: ${({ theme }) => theme.colors.backgroundSecundario};
+      background-color: ${({ theme }) => theme.colors.backgroundSecondary};
       
       .card_vertical {
         width: 100%;

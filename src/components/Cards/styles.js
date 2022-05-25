@@ -1,9 +1,9 @@
 import styled, {} from 'styled-components';
 
-export const CardVerticalContainer = styled.article `
+export const CardVerticalContainer = styled.article`
   width: 250px;
   height: 250px;
-  background-color: ${({ theme }) => theme.colors.background};
+  background-color: ${({ theme }) => theme.colors.cardVerticalBackground};
   box-shadow: 0 0 8px rgba(0, 0, 0, 10%);
 
   .box_image {
@@ -22,14 +22,14 @@ export const CardVerticalContainer = styled.article `
     padding: 4px 8px 0 8px;
 
     h2 {
-      color: ${({ theme }) => theme.colors.colorTitulo};
+      color: ${({ theme }) => theme.colors.textTitle};
       font-size: 0.95rem;
     }
 
     p {
       margin: 3px 0 5px 0;
 
-      color: ${({ theme }) => theme.colors.colorText};
+      color: ${({ theme }) => theme.colors.textBody};
       font-size: 0.75rem;
 
       overflow: hidden;
@@ -61,7 +61,7 @@ export const CardVerticalContainer = styled.article `
         align-items: center;
         justify-content: flex-start;
 
-        color: ${({ theme }) => theme.colors.colorText};
+        color: ${({ theme }) => theme.colors.textBody};
         font-size: 12px;
 
         &:last-child {
@@ -124,12 +124,12 @@ export const CardVerticalContainer = styled.article `
 
       h2 {
         margin-bottom: 10px;
-        color: ${({ theme }) => theme.colors.colorTitulo};
+        color: ${({ theme }) => theme.colors.textTitle};
       }
 
       p {
         margin-bottom: 20px;
-        color: ${({ theme }) => theme.colors.colorText};
+        color: ${({ theme }) => theme.colors.textBody};
       }
 
       .box_buttons {
@@ -175,15 +175,14 @@ export const CardVerticalContainer = styled.article `
   }
 `;
 
-export const CardHorizontalContainer = styled.article `
+export const CardHorizontalContainer = styled.article`
   width: 100%;
   min-width: 375px;
   height: 150px;
   min-height: 150px;
   padding: 10px;
   overflow: hidden;
-  background-color: ${({ theme }) => theme.colors.backgroundCard};
-  /* background-color: red; */
+  background-color: ${({ theme }) => theme.colors.cardHorizontalBackground};
 
   display: grid;
   gap: 20px;
@@ -203,7 +202,7 @@ export const CardHorizontalContainer = styled.article `
   }
 
   &:nth-of-type(even) {
-    background-color: ${({ theme }) => theme.colors.backgroundCardSecundario};
+    background-color: ${({ theme }) => theme.colors.cardHorizontalBackgroundSecondary};
   }
 
   &:first-child {
@@ -221,12 +220,12 @@ export const CardHorizontalContainer = styled.article `
     justify-content: space-between;
 
     h2 {
-      color: ${({ theme }) => theme.colors.colorTitulo};
+      color: ${({ theme }) => theme.colors.textTitle};
       font-size: 0.95rem;
     }
 
     p {
-      color: ${({ theme }) => theme.colors.colorText};
+      color: ${({ theme }) => theme.colors.textBody};
       font-size: 0.75rem;
 
       overflow: hidden;
@@ -258,7 +257,7 @@ export const CardHorizontalContainer = styled.article `
         align-items: center;
         justify-content: flex-start;
 
-        color: ${({ theme }) => theme.colors.colorText};
+        color: ${({ theme }) => theme.colors.textBody};
         font-size: 12px;
 
         &:last-child {
@@ -347,12 +346,12 @@ export const CardHorizontalContainer = styled.article `
 
       h2 {
         margin-bottom: 10px;
-        color: ${({ theme }) => theme.colors.colorTitulo};
+        color: ${({ theme }) => theme.colors.textTitle};
       }
 
       p {
         margin-bottom: 20px;
-        color: ${({ theme }) => theme.colors.colorText};
+        color: ${({ theme }) => theme.colors.textBody};
       }
 
       .box_buttons {

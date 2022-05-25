@@ -18,7 +18,7 @@ export const BoxContent = styled.div `
   width: fit-content;
   margin: auto auto;
   padding: 50px;
-  background-color: ${({ theme }) => theme.colors.backgroundSecundario};
+  background-color: ${({ theme }) => theme.colors.backgroundSecondary};
   box-shadow: 0 0 10px rgba(0, 0, 0, 10%);
 
   display: flex;
@@ -47,15 +47,15 @@ export const BoxContent = styled.div `
         transition: color .3s;
 
         &::placeholder {
-          color: ${({ theme }) => theme.colors.colorText};
+          color: ${({ theme }) => theme.colors.textBody};
         }
 
         &:valid {
-          color: ${({ theme }) => theme.colors.colorText};
+          color: ${({ theme }) => theme.colors.textBody};
         }
 
         &:focus {
-          color: ${({ theme }) => theme.colors.colorText};
+          color: ${({ theme }) => theme.colors.textBody};
           outline: 2px solid var(--cinza-claro);
         }
 
@@ -104,7 +104,7 @@ export const BoxContent = styled.div `
       span {
         font-weight: 700;
         font-size: 0.85rem;
-        color: ${({ theme }) => theme.colors.colorTitulo};
+        color: ${({ theme }) => theme.colors.textTitle};
 
         a {
           color: var(--laranja);

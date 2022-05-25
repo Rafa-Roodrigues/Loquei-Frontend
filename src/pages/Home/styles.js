@@ -29,13 +29,13 @@ export const Container = styled.div `
         
         outline: none;
         border-radius: 5px 0 0 5px;
-        background-color: ${({ theme }) => theme.colors.backgroundSecundario};
+        background-color: ${({ theme }) => theme.colors.backgroundSecondary};
 
         font-size: 1rem;
-        color: ${({ theme }) => theme.colors.colorTitulo};
+        color: ${({ theme }) => theme.colors.textTitle};
 
         &::placeholder {
-          color: ${({ theme }) => theme.colors.colorText}
+          color: ${({ theme }) => theme.colors.textBody}
         }
       }
 
@@ -60,7 +60,7 @@ export const Container = styled.div `
     }
 
     .title_box {
-      color: ${({ theme }) => theme.colors.colorText};
+      color: ${({ theme }) => theme.colors.textBody};
       font-size: .9rem;
 
       position: absolute;
@@ -73,7 +73,7 @@ export const Container = styled.div `
       margin: 0 auto;
       padding: 30px 30px 15px 30px;
       border-radius: 5px;
-      background-color: ${({ theme }) => theme.colors.backgroundSecundario};
+      background-color: ${({ theme }) => theme.colors.backgroundSecondary};
       position: relative;
 
       .box_margin {
