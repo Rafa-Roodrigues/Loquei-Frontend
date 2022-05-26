@@ -20,12 +20,11 @@ export const MeusAnunciosContainer = styled.div `
       form {
         width: 100%;
         padding: 15px;
-        border-bottom: 1px solid var(--cinza);
 
         h3 {
           margin-bottom: 8px;
           display: block;
-          color: var(--cinza-escuro);
+          color: ${({ theme }) => theme.colors.textTitle};
           font-size: 0.8rem;
         }
 
@@ -33,14 +32,14 @@ export const MeusAnunciosContainer = styled.div `
           width: 100%;
           padding: 12px 10px;
           outline: none;
-          border: 2px solid var(--cinza);
+          border: 2px solid ${({ theme }) => theme.colors.cinza};
           border-radius: 5px;
           background: transparent;
 
-          color: var(--cinza-escuro);
+          color: ${({ theme }) => theme.colors.textTitle};
 
           &::placeholder {
-            color: var(--cinza);
+            color: ${({ theme }) => theme.colors.textBody};
           }
         }
       }
@@ -92,7 +91,7 @@ export const MeusAnunciosContainer = styled.div `
         }
 
         p {
-          color: var(--cinza);
+          color: ${({ theme }) => theme.colors.cinza};;
         }
 
       }

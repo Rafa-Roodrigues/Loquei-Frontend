@@ -3,13 +3,19 @@ import { useState } from 'react';
 
 import { HeaderContainer } from './styles';
 
+import { useTheme } from "../../hooks/useTheme";
+
 import { BiSearch, BiUser } from 'react-icons/bi';
+import { MdOutlineLightMode, MdOutlineDarkMode } from 'react-icons/md';
 import { HiMenu } from 'react-icons/hi';
 import { IoMdClose } from 'react-icons/io';
+
 import { Logo } from '../Logo';
 
 
 export function Header() {
+  const { themeIsActive, changeTheme } = useTheme();
+
   const [stateMenu, setStateMenu] = useState('none');
 
   function changeStateMenu() {
@@ -36,6 +42,15 @@ export function Header() {
             <BiUser className="icons" size={24} />
           </li>
           <li>
+            <button type="button" onClick={changeTheme}>
+            {themeIsActive ? (
+              <MdOutlineLightMode className="icons" size={24} />
+            ) : (
+              <MdOutlineDarkMode className="icons" size={24} />
+            ) }
+            </button>
+          </li>
+          <li>
             <Link className="button_registrar" to="/registro">Cadastrar-se</Link>
           </li>
         </ul>
@@ -56,6 +71,13 @@ export function Header() {
             </button>
           </header>
           <ul>
+            <button type="button" onClick={changeTheme}>
+            {themeIsActive ? (
+              <MdOutlineLightMode className="icons" size={24} />
+            ) : (
+              <MdOutlineDarkMode className="icons" size={24} />
+            ) }
+            </button>
             <li>
               <Link to="/buscar">Buscar</Link>
               <BiSearch className="icons" size={24} />

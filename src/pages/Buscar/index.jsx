@@ -61,7 +61,7 @@ export function Buscar() {
               <h3>Tipo de espaço</h3>
               <div className="grid_checkbox">
                 <label className="checkbox">
-                  Casa
+                  Comércio
                   <input type="checkbox" placeholder="Casa" />
                   <span className={themeIsActive && "dark_checkbox"}><FaCheck className="icons" /></span>
                 </label>
@@ -77,16 +77,6 @@ export function Buscar() {
                 </label>
                 <label className="checkbox">
                   Salão de festa
-                  <input type="checkbox" placeholder="Casa" />
-                  <span className={themeIsActive && "dark_checkbox"}><FaCheck className="icons" /></span>
-                </label>
-                <label className="checkbox">
-                  Comércio
-                  <input type="checkbox" placeholder="Casa" />
-                  <span className={themeIsActive && "dark_checkbox"}><FaCheck className="icons" /></span>
-                </label>
-                <label className="checkbox">
-                  Escritório
                   <input type="checkbox" placeholder="Casa" />
                   <span className={themeIsActive && "dark_checkbox"}><FaCheck className="icons" /></span>
                 </label>
@@ -107,42 +97,6 @@ export function Buscar() {
               <div className="grid_input">
                 <input className={themeIsActive && "dark_input"} type="number" placeholder="até" />
                 <span>ex: 100</span>
-              </div>
-            </div>
-
-            <div className="box_input">
-              <h3>Quantidade de garagens</h3>
-              <div className="grid_input">
-                <input className={themeIsActive && "dark_input"} type="number" placeholder="de" />
-                <span>ex: 0</span>
-              </div>
-              <div className="grid_input">
-                <input className={themeIsActive && "dark_input"} type="number" placeholder="até" />
-                <span>ex: 15</span>
-              </div>
-            </div>
-
-            <div className="box_input">
-              <h3>Quantidade de quartos</h3>
-              <div className="grid_input">
-                <input className={themeIsActive && "dark_input"} type="number" placeholder="de" />
-                <span>ex: 2</span>
-              </div>
-              <div className="grid_input">
-                <input className={themeIsActive && "dark_input"} type="number" placeholder="até" />
-                <span>ex: 4</span>
-              </div>
-            </div>
-
-            <div className="box_input">
-              <h3>Quantidade de banheiros</h3>
-              <div className="grid_input">
-                <input className={themeIsActive && "dark_input"} type="number" placeholder="de" />
-                <span>ex: 0</span>
-              </div>
-              <div className="grid_input">
-                <input className={themeIsActive && "dark_input"} type="number" placeholder="até" />
-                <span>ex: 15</span>
               </div>
             </div>
           </form>

@@ -130,8 +130,8 @@ export const ContainerAnunciar = styled.div `
                 transform: translateY(-50%);
 
                 &:checked ~ span {
-                  background-color: var(--laranja);
-                  border: 2px solid var(--laranja);
+                  background-color: var(--main);
+                  border: 2px solid var(--main);
 
                   .icons {
                     display: inline-block;
@@ -215,7 +215,7 @@ export const ContainerAnunciar = styled.div `
           justify-content: center;
 
           .icons {
-            color: ${({ theme }) => theme.colors.textBody}
+            color: ${({ theme }) => theme.colors.textBody};
           }
 
           label {
@@ -223,7 +223,7 @@ export const ContainerAnunciar = styled.div `
             height: 22px;
             margin: 0 5px;
             border-radius: 50px;
-            background: var(--laranja);
+            background: var(--main);
             position: relative;
 
             input {
@@ -278,15 +278,15 @@ export const ContainerAnunciar = styled.div `
       .button_publicar {
         padding: 10px 30px;
         border-radius: 5px;
-        background-color: var(--verde);
-        transition: background .2s;
+        background-color: ${({ theme }) => theme.colors.buttonsGreen};
+        transition: filter .2s;
 
         color: var(--branco);
         font-size: 1rem;
         letter-spacing: 5%;
 
         &:hover {
-          background-color: var(--verde-hover);
+          filter: brightness(0.9);
         }
       }
     }
@@ -334,7 +334,7 @@ export const ContainerAnunciar = styled.div `
         width: 100%;
         padding: 15px 0;
         border-radius: 50px 50px 0 0;
-        background-color: var(--laranja);
+        background-color: var(--main);
         position: absolute;
         bottom: 0;
         transition: bottom .4s;

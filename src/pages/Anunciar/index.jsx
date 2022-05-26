@@ -6,15 +6,12 @@ import { Header } from '../../components/Header';
 import { CardHorizontal, CardVertical } from '../../components/Cards';
 import { useTheme } from '../../hooks/useTheme';
 
-import { BiFilterAlt, BiGridAlt, BiListUl, BiSearch } from 'react-icons/bi';
-import { HiOutlineLocationMarker } from 'react-icons/hi';
-import { IoMdClose } from 'react-icons/io';
+import { BiGridAlt, BiListUl } from 'react-icons/bi';
 import { FaCheck } from 'react-icons/fa';
 
 import { ContainerAnunciar } from "./styles";
 
 import iconImageUpload from '../../assets/img/image-upload.svg';
-import imgNone from '../../assets/img/img-none.jpg';
 
 export function Anunciar() {
   const { themeIsActive } = useTheme();
@@ -107,21 +104,6 @@ export function Anunciar() {
             <div className="box_input">
               <h3>Metragem do espaço - m²*</h3>
               <input className={themeIsActive && "dark_input"} type="number" placeholder="Digite metragem do espaço em m²" />
-            </div>
-
-            <div className="box_input">
-              <h3>Quantidade de garagens*</h3>
-              <input className={themeIsActive && "dark_input"} type="number" placeholder="Digite a quantidade de garagem" />
-            </div>
-
-            <div className="box_input">
-              <h3>Quantidade de quartos*</h3>
-              <input className={themeIsActive && "dark_input"} type="number" placeholder="Digite a quantidade de quartos" />
-            </div>
-
-            <div className="box_input">
-              <h3>Quantidade de banheiros*</h3>
-              <input className={themeIsActive && "dark_input"} type="number" placeholder="Quantidades de banheiros" />
             </div>
           </form>
         </aside>

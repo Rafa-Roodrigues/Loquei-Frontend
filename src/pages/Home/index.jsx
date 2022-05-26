@@ -28,7 +28,7 @@ export function Home() {
         <PreviewEstados />
 
         <div className="search">
-          <input type="text" placeholder="O que procura?" />
+          <input type="text" placeholder="Digite um endereço..." />
           <button type="button"><BiSearch size={24} /></button>
         </div>
 

@@ -44,7 +44,7 @@ export const Container = styled.div `
         height: 60px;
         border-radius: 0 5px 5px 0;
 
-        background-color: var(--laranja);
+        background-color: var(--main);
         color: var(--branco);
         transition: filter .2s;
 

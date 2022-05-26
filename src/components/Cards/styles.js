@@ -2,20 +2,23 @@ import styled, {} from 'styled-components';
 
 export const CardVerticalContainer = styled.article`
   width: 250px;
-  height: 250px;
+  height: 262px;
+  border-radius: 10px;
   background-color: ${({ theme }) => theme.colors.cardVerticalBackground};
   box-shadow: 0 0 8px rgba(0, 0, 0, 10%);
 
   .box_image {
     width: 100%;
     height: 140px;
-    background-color: var(--laranja);
+    border-radius: 10px 10px 0 0;
+    background-color: var(--main);
   }
 
   img {
     width: 100%;
     height: 140px;
     object-fit: cover;
+    border-radius: 10px 10px 0 0;
   }
 
   .box_info {
@@ -74,102 +77,43 @@ export const CardVerticalContainer = styled.article`
       }
     }
 
-    .information {
-      color: var(--laranja);
-      font-size: 14px;
-      transition: color .2s;
+    .details {
+      width: fit-content;
+      padding: 6px 8px;
+      border-radius: 4px;
+      background-color: var(--main);
+      transition: filter .2s;
+      
+      color: var(--branco);
+      font-size: 12px;
+      text-transform: uppercase;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
       &:hover {
-        color: var(--laranja-hover);
+        filter: brightness(0.8);
+      }
+
+      .icons {
+        margin-left: 8px;
       }
     }
 
     button {
-      background-color: transparent;
-      color: #ff5658;
-      font-weight: 700;
-      font-size: 14px;
-      transition: color .2s;
+      width: fit-content;
+      padding: 6px 8px;
+      border-radius: 4px;
+      background-color: ${({ theme }) => theme.colors.buttonRed};
+      transition: filter .2s;
+
+      color: #FFF;
+      font-weight: 600;
+      font-size: 12px;
 
       &:hover {
-        color: red;
-      }
-    }
-  }
-
-  .pop_confirmation {
-    width: 100%;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 85%);
-
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    .pop {
-      width: 380px;
-      height: 200px;
-      border: 2px solid var(--preto);
-      border-radius: 5px;
-      background-color: ${({ theme }) => theme.colors.background};
-
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-
-      h2 {
-        margin-bottom: 10px;
-        color: ${({ theme }) => theme.colors.textTitle};
-      }
-
-      p {
-        margin-bottom: 20px;
-        color: ${({ theme }) => theme.colors.textBody};
-      }
-
-      .box_buttons {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        button {
-          padding: 8px;
-          border-radius: 5px;
-        }
-
-        .delete {
-          margin-right: 10px;
-          border: 2px solid red;
-          background-color: transparent;
-          transition: background .2s;
-          
-          color: red;
-          transition: color .2s;
-
-          &:hover {
-            background-color: red;
-            color: var(--branco);
-          }
-        }
-
-        .cancel {
-          border: 2px solid dodgerblue;
-          transition: border .2s;
-          background-color: dodgerblue;
-          transition: background .2s;
-
-          color: var(--branco);
-
-          &:hover {
-            border: 2px solid #42b0f5;
-            background-color: #42b0f5;
-          }
-        }
+        filter: brightness(0.8);
       }
     }
   }
@@ -191,7 +135,7 @@ export const CardHorizontalContainer = styled.article`
   .box_image {
     width: 100%;
     height: 100%;
-    background-color: var(--laranja);
+    background-color: var(--main);
   }
 
   img {
@@ -274,21 +218,19 @@ export const CardHorizontalContainer = styled.article`
       width: fit-content;
       padding: 6px 8px;
       border-radius: 5px;
-      background-color: var(--laranja);
-      transition: background .2s;
+      background-color: var(--main);
+      transition: filter .2s;
       
       color: var(--branco);
       font-size: 12px;
       text-transform: uppercase;
-      transition: color .2s;
 
       display: flex;
       align-items: center;
       justify-content: center;
 
       &:hover {
-        background-color: var(--laranja-hover);
-        color: var(--branco-escuro);
+        filter: brightness(0.8);
       }
 
       .icons {
@@ -299,8 +241,8 @@ export const CardHorizontalContainer = styled.article`
     button {
       width: fit-content;
       padding: 6px 8px;
-      border-radius: 5px;
-      background-color: red;
+      border-radius: 3px;
+      background-color: ${({ theme }) => theme.colors.buttonRed};
       transition: filter .2s;
 
       color: var(--branco);
@@ -315,83 +257,6 @@ export const CardHorizontalContainer = styled.article`
 
       &:hover {
         filter: brightness(0.9);
-      }
-    }
-  }
-
-  .pop_confirmation {
-    width: 100%;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 85%);
-
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    .pop {
-      width: 380px;
-      height: 200px;
-      border: 2px solid var(--preto);
-      border-radius: 5px;
-      background-color: ${({ theme }) => theme.colors.background};
-
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-
-      h2 {
-        margin-bottom: 10px;
-        color: ${({ theme }) => theme.colors.textTitle};
-      }
-
-      p {
-        margin-bottom: 20px;
-        color: ${({ theme }) => theme.colors.textBody};
-      }
-
-      .box_buttons {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        button {
-          padding: 8px;
-          border-radius: 5px;
-        }
-
-        .delete {
-          margin-right: 10px;
-          border: 2px solid red;
-          background-color: transparent;
-          transition: background .2s;
-          
-          color: red;
-          transition: color .2s;
-
-          &:hover {
-            background-color: red;
-            color: var(--branco);
-          }
-        }
-
-        .cancel {
-          border: 2px solid dodgerblue;
-          transition: border .2s;
-          background-color: dodgerblue;
-          transition: background .2s;
-
-          color: var(--branco);
-
-          &:hover {
-            border: 2px solid #42b0f5;
-            background-color: #42b0f5;
-          }
-        }
       }
     }
   }

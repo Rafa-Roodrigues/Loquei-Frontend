@@ -27,7 +27,7 @@ export const ContentLeft = styled.div`
         h1 {
             font-size: 3.5rem;
             span {
-                color: var(--laranja);
+                color: var(--main);
             }
         }
 
@@ -41,11 +41,11 @@ export const ContentLeft = styled.div`
             font-weight: 600;
 
             a {
-                color: var(--laranja);
-                transition: color .2s;
+                color: var(--main);
+                transition: filter .2s;
                 
                 &:hover {
-                    color: var(--laranja-hover);
+                    filter: brightness(0.8);
                 }
             }
         }
@@ -55,8 +55,8 @@ export const ContentLeft = styled.div`
         width: 42px;
         height: 42px;
         border-radius: 50px;
-        background: var(--laranja);
-        transition: background .2s;
+        background: var(--main);
+        transition: filter .2s;
 
         display: flex;
         align-items: center;
@@ -66,7 +66,7 @@ export const ContentLeft = styled.div`
         bottom: 80px;
 
         &:hover {
-            background-color: var(--laranja-hover);
+            filter: brightness(0.8);
         }
     }  
 
@@ -94,7 +94,7 @@ export const ContentRight = styled.div`
 
         padding: 90px 30px;
         background-color: ${({ theme }) => theme.colors.backgroundSecondary};
-        /* box-shadow: 0px 0px 6px #cccccc; */
+        box-shadow: 0px 0px 6px rgba(0,0,0,10%);
         border-radius: 5px;
 
         button {
@@ -106,9 +106,9 @@ export const ContentRight = styled.div`
             font-size: 0.95rem;
             letter-spacing: 0.5px;
 
-            background-color: var(--laranja);
+            background-color: var(--main);
             border-radius: 0 5px 5px 0;
-            transition: background 0.2s;
+            transition: filter 0.2s;
 
             padding: 10px 20px;
             margin-top: 20px;
@@ -118,7 +118,7 @@ export const ContentRight = styled.div`
             }
 
             &:hover {
-               background-color: var(--laranja-hover);
+               filter: brightness(0.8);
             }
         }
 
@@ -214,7 +214,7 @@ export const ContentRight = styled.div`
                 
                 display: block;
                 a {
-                    color: var(--laranja);
+                    color: var(--main);
                 }
             }
         }

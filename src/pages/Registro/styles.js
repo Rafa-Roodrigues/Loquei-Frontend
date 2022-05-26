@@ -107,11 +107,11 @@ export const BoxContent = styled.div `
         color: ${({ theme }) => theme.colors.textTitle};
 
         a {
-          color: var(--laranja);
-          transition: color .2s;
+          color: var(--main);
+          transition: filter .2s;
           
           &:hover {
-              color: var(--laranja-hover);
+              filter: brightness(0.8);
           }
         }
       }
@@ -122,17 +122,17 @@ export const BoxContent = styled.div `
       width: fit-content;
       padding: 10px 20px;
       border-radius: 0 5px 5px 0;
-      background-color: var(--laranja);
+      background-color: var(--main);
 
       color: var(--branco);
       font-weight: 700;
       font-size: 0.95rem;
       letter-spacing: 0.5px;
 
-      transition: background .2s;
+      transition: filter .2s;
 
       &:hover {
-        background-color: var(--laranja-hover);
+        filter: brightness(0.8);
       }
     }
   }

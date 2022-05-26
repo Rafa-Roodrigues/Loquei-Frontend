@@ -130,8 +130,8 @@ export const ContainerBuscar = styled.div `
                 transform: translateY(-50%);
 
                 &:checked ~ span {
-                  background-color: var(--laranja);
-                  border: 2px solid var(--laranja);
+                  background-color: var(--main);
+                  border: 2px solid var(--main);
 
                   .icons {
                     display: inline-block;
@@ -290,7 +290,7 @@ export const ContainerBuscar = styled.div `
         .button_close {
           padding: 5px;
           border-radius: 50px;
-          background-color: var(--laranja);
+          background-color: var(--main);
           position: absolute;
           top: 10px;
           right: 20px;

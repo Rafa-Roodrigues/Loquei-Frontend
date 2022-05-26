@@ -44,17 +44,28 @@ export const HeaderContainer = styled.header `
           transition: color .2s ease-out;
         }
 
+        button {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: filter .2s;
+
+          &:hover {
+            filter: brightness(0.8);
+          }
+        }
+
         .button_registrar {
           padding: 10px 20px;
-          border-radius: 50px;
-          background-color: var(--verde);
-          transition: background .2s;
+          border-radius: 5px;
+          background-color: ${({ theme }) => theme.colors.buttonsGreen};
+          transition: filter .2s;
 
           color: var(--branco);
           font-size: 0.95rem;
 
           &:hover {
-            background-color: var(--verde-hover);
+            filter: brightness(0.9);
           }
         }
       }
@@ -81,15 +92,15 @@ export const HeaderContainer = styled.header `
       .button_registrar {
         margin-right: 15px;
         padding: 10px 20px;
-        border-radius: 50px;
-        background-color: var(--verde);
-        transition: background .2s;
+        border-radius: 5px;
+        background-color: ${({ theme }) => theme.colors.buttonsGreen};
+        transition: filter .2s;
 
         color: var(--branco);
         font-size: 0.95rem;
 
         &:hover {
-          background-color: var(--verde-hover);
+          filter: brightness(0.9)
         }
       }
     }

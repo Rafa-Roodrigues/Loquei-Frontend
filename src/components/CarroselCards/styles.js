@@ -21,8 +21,8 @@ export const Container = styled.section`
     width: 30px;
     height: 30px;
     border-radius: 50px;
-    background-color: var(--laranja);
-    transition: background .2s;
+    background-color: var(--main);
+    transition: filter .2s;
 
     display: flex;
     align-items: center;
@@ -41,7 +41,7 @@ export const Container = styled.section`
     }
 
     &:hover {
-      background-color: var(--laranja-hover);
+      filter: brightness(0.8);
     }
   }
 

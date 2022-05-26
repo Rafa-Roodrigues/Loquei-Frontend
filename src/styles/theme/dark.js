@@ -2,33 +2,28 @@ import { color } from "../stylesGlobal";
 
 export const dark = {
     colors: {
-        // background: "#312E38",
-        // backgroundSecundario: "#232129",
-        //backgroundCategoria: "#232129",
-        //backgroundCaixaIconeCategoria: main,
-        // colorIconeCategoria: "#FFFFFF",
-        // colorTextoCategoria: "#FFFFFF",
-        // colorTextHover: "#616161",
-        // backgroundCard: "#26242C",
-        // backgroundCardSecundario: "#232129",
-        // colorText: "#D9D9D9",
-        // colorTitulo: "#FFFFFF",
-
         cinza: "#A0A0A0",
 
-        background: "#312E38",
-        backgroundSecondary: "#232129",
+        background: "#1C1C1C",
+        backgroundSecondary: "#222225",
 
         textTitle: color.white,
         textBody: "#D9D9D9",
 
-        categoryContainer: "#232129",
+        categoryContainer: "#222225",
         categoryBoxIcon: color.main,
         categoryIcon: color.white,
 
         cardVerticalBackground: "#26242C",
 
         cardHorizontalBackground: "#26242C",
-        cardHorizontalBackgroundSecondary: "#232129",
+        cardHorizontalBackgroundSecondary: "#222225",
+
+        searchBackground: "#F0F0F0",
+        searchPlaceholder: "#D9D9D9",
+        searchText: color.white,
+
+        buttonsGreen: "#8fc227",
+        buttonRed: "#F03232",
     }
 }
