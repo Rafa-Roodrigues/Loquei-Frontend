@@ -64,7 +64,7 @@ export function Anunciar() {
                   <span className={themeIsActive && "dark_checkbox"}><FaCheck className="icons" /></span>
                 </label>
                 <label className="checkbox">
-                  Comércio
+                  Comercial
                   <input type="checkbox" placeholder="Casa" />
                   <span className={themeIsActive && "dark_checkbox"}><FaCheck className="icons" /></span>
                 </label>

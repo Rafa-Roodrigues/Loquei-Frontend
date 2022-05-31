@@ -13,52 +13,6 @@ export const Container = styled.div `
     padding: 50px;
     position: relative;
 
-    .search {
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 20px;
-      
-        
-      input {
-        width: 100%;
-        max-width: 500px;
-        height: 60px; 
-        padding: 0 20px;
-        
-        outline: none;
-        border-radius: 5px 0 0 5px;
-        background-color: ${({ theme }) => theme.colors.backgroundSecondary};
-
-        font-size: 1rem;
-        color: ${({ theme }) => theme.colors.textTitle};
-
-        &::placeholder {
-          color: ${({ theme }) => theme.colors.textBody}
-        }
-      }
-
-      button {
-        width: 60px;
-        height: 60px;
-        border-radius: 0 5px 5px 0;
-
-        background-color: var(--main);
-        color: var(--branco);
-        transition: filter .2s;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        &:hover {
-          filter: brightness(0.9);
-        }
-      }
-
-    }
-
     .title_box {
       color: ${({ theme }) => theme.colors.textBody};
       font-size: .9rem;

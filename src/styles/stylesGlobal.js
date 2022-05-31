@@ -49,7 +49,7 @@ export const GlobalStyles = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
   }
 
-  body, input, textarea, button {
+  body, input, textarea, button, select {
     font-family: 'Manrope', sans-serif;
     font-weight: 600;
     color: var(--black);
@@ -75,7 +75,7 @@ export const GlobalStyles = createGlobalStyle`
   }
   ::-webkit-scrollbar-thumb {
     border-radius: 50px;
-    background: var(--main);
+    background: var(--cinza-claro);
   }
 
   .react-modal-overlay {

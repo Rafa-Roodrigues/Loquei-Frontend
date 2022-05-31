@@ -6,11 +6,9 @@ import { Header } from "../../components/Header";
 import { Footer } from "../../components/Footer";
 import { CardVertical, CardHorizontal } from "../../components/Cards";
 
-import { PreviewCategorias } from "../../components/PreviewCategorias";
+import { PreviewFilter } from "../../components/PreviewFilter";
 import { PreviewEstados } from "../../components/PreviewEstados";
 import { CarroselCards } from "../../components/CarroselCards";
-
-import { BiSearch } from "react-icons/bi";
 
 import imgNone from '../../assets/img/img-none.jpg';
 
@@ -22,15 +20,10 @@ export function Home() {
       </Helmet>
 
       <Header />
-      <PreviewCategorias />
+      <PreviewFilter />
       
       <main className="content">
         <PreviewEstados />
-
-        <div className="search">
-          <input type="text" placeholder="Digite um endereço..." />
-          <button type="button"><BiSearch size={24} /></button>
-        </div>
 
         <CarroselCards />
 
