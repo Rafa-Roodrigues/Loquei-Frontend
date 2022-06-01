@@ -14,7 +14,7 @@ export const ContainerBuscar = styled.div `
 
     column-gap: 5px;
     display: grid;
-    grid-template-columns: 0.7fr 1.6fr 0.7fr;
+    grid-template-columns: 0.5fr 1.5fr;
 
     .box_mobile {
       display: none;
@@ -191,45 +191,17 @@ export const ContainerBuscar = styled.div `
       }
     }
 
-    .box_content {
+    .box_map {
       width: 100%;
-      height: 100%;
-      padding: 20px;
-      overflow-y: auto;
-      background-color: ${({ theme }) => theme.colors.backgroundSecondary};
-
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-
-      &::-webkit-scrollbar-track {
-        background-color: ${({ theme }) => theme.colors.background};
-      }
-      &::-webkit-scrollbar {
-          width: 5px;
-          background-color: ${({ theme }) => theme.colors.background};
-      }
-      &::-webkit-scrollbar-thumb {
-          border-radius: 50px;
-          background: var(--cinza);
-      }
+      background: ${({ theme }) => theme.colors.backgroundSecondary};
     }
   }
-
-  @media screen and (max-width: 1100px) {
-    .box_grid {
-      grid-template-columns: 0.7fr 1.3fr;
-      .box_anuncios {
-        display: none;
-      }
-    } 
-  }
-
-  @media screen and (max-width: 1100px) {
+  
+  @media screen and (max-width: 900px) {
     .box_grid {
       display: flex;
       flex-direction: column;
+      grid-template-columns: 0.7fr 1.3fr;
 
       .box_mobile {
         padding: 0 25px;

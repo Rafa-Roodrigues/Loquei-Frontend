@@ -19,11 +19,13 @@ export const light = {
         cardHorizontalBackground: "#FCFCFC",
         cardHorizontalBackgroundSecondary: "#F5F5F5",
 
-        searchBackground: "#F5F7FD",
-        searchPlaceholder: color.gray,
-        searchText: color.grayDark,
+        inputsBackground: "#F5F7FD",
+        inputsPlaceholder: color.gray,
+        inputsText: color.grayDark,
 
         buttonsGreen: color.green,
         buttonRed: "#E83939",
+
+        inputsBackground: "#F5F5F5",
     }
 }

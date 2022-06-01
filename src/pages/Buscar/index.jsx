@@ -3,7 +3,6 @@ import { useState } from 'react';
 import Helmet from "react-helmet";
 
 import { Header } from '../../components/Header';
-import { CardHorizontal } from '../../components/Cards';
 import { useTheme } from '../../hooks/useTheme';
 
 import { BiFilterAlt, BiSearch } from 'react-icons/bi';
@@ -12,8 +11,6 @@ import { IoMdClose } from 'react-icons/io';
 import { FaCheck } from 'react-icons/fa';
 
 import { ContainerBuscar } from "./styles";
-import imgNone from '../../assets/img/img-none.jpg';
-
 
 export function Buscar() {
   const { themeIsActive } = useTheme();
@@ -101,25 +98,7 @@ export function Buscar() {
             </div>
           </form>
         </aside>
-        <section className="box_content">
-          <CardHorizontal 
-            imgURL={imgNone}
-            title="Garagem grande"
-            address="Rua Fidélis Papini, 28 - Vila Prudente"
-          />
-          <CardHorizontal 
-            imgURL={imgNone}
-            title="Garagem grande"
-            address="Rua Fidélis Papini, 28 - Vila Prudente"
-          />
-          <CardHorizontal 
-            imgURL={imgNone}
-            title="Garagem grande"
-            address="Rua Fidélis Papini, 28 - Vila Prudente"
-          />
-        </section>
-        <section className="box_anuncios">
-          anuncios
+        <section className="box_map">
         </section>
       </div>
     </ContainerBuscar>

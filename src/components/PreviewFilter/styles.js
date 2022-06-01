@@ -2,7 +2,7 @@ import styled, {} from 'styled-components';
 
 export const Container = styled.section`
   width: 100%;
-  padding: 25px 0;
+  padding: 20px 0;
   position: relative;
   background-color: ${({ theme }) => theme.colors.categoryContainer};
 
@@ -10,53 +10,81 @@ export const Container = styled.section`
   align-items: center;
   justify-content: center;
 
-  > button {
-    height: 60px;
-    padding: 0 15px;
-    margin-right: 10px;
-    border-radius: 5px;
+  .button_localizar {
+    position: relative;
 
-    background-color: ${({ theme }) => theme.colors.backgroundSecondary};
-    color: var(--main);
-    transition: filter .2s;
+    span {
+      padding: 5px;
+      border-radius: 5px;
+      background-color: rgba(0, 0, 0, 80%);
+      position: absolute;
+      left: calc(50% + 5px);
+      bottom: -3px;
+      transform: translate(-50%, 100%);
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+      color: var(--branco);
+      font-size: 0.7rem;
+      text-align: center;
 
-    &:hover {
-      filter: brightness(0.9);
+      opacity: 0.95;
+
+      display: none;
+    }
+
+    button {
+      height: 55px;
+      padding: 0 12px;
+      margin-left: 8px;
+      border-radius: 5px;
+      background-color: ${({ theme }) => theme.colors.inputsBackground};
+      color: var(--main);
+      transition: filter .2s;
+  
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  
+      &:hover {
+        filter: brightness(0.9);
+      }
+
+      &:hover ~ span {
+        display: block;
+      }
     }
   }
 
-
   form {
     width: 100%;
-    max-width: 800px;
+    max-width: 720px;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 
     input, select {
       width: 100%;
       max-width: 500px; 
-      height: 60px; 
+      height: 55px; 
       padding: 0 20px;
-      margin-right: 10px;
+      margin-right: 8px;
       
       outline: none;
       border-radius: 5px;
-      background-color: ${({ theme }) => theme.colors.backgroundSecondary};
+      background-color: ${({ theme }) => theme.colors.inputsBackground};
 
       font-size: 1rem;
-      color: ${({ theme }) => theme.colors.textTitle};
+      color: ${({ theme }) => theme.colors.inputsText};
 
       &::placeholder {
-        color: ${({ theme }) => theme.colors.textBody}
+        color: ${({ theme }) => theme.colors.inputsPlaceholder}
       }
     }
-
+    
     select {
+      max-width: 260px;
+      color: ${({ theme }) => theme.colors.inputsPlaceholder};
+
       -webkit-appearance: none;
       -moz-appearance: none;
 
@@ -66,12 +94,12 @@ export const Container = styled.section`
     }
 
     button {
-      height: 60px;
+      height: 55px;
       padding: 0 15px;
       border-radius: 5px;
 
-      background-color: ${({ theme }) => theme.colors.backgroundSecondary};
-      color: var(--cinza-escuro);
+      background-color: ${({ theme }) => theme.colors.inputsBackground};
+      color: ${({ theme }) => theme.colors.inputsPlaceholder};
       transition: filter .2s;
 
       display: flex;

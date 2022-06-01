@@ -19,9 +19,9 @@ export const dark = {
         cardHorizontalBackground: "#26242C",
         cardHorizontalBackgroundSecondary: "#222225",
 
-        searchBackground: "#F0F0F0",
-        searchPlaceholder: "#D9D9D9",
-        searchText: color.white,
+        inputsBackground: "#1C1C1C",
+        inputsPlaceholder: "#C9C9C9",
+        inputsText: color.white,
 
         buttonsGreen: "#8fc227",
         buttonRed: "#F03232",

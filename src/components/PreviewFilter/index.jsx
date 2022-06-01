@@ -6,7 +6,6 @@ import { MdOutlineLocationOn } from 'react-icons/md';
 export function PreviewFilter() {
   return (
     <Container>
-      <button><MdOutlineLocationOn size={30} /></button>
       <form>
         <select>
           <option>Selecione uma categoria</option>
@@ -16,9 +15,15 @@ export function PreviewFilter() {
           <option>Comercial</option>
           <option>Pequenos espaço</option>
         </select>
-        <input type="text" placeholder="Digite um endereço..." />
-        <button type="button"><BiSearch size={24} /></button>
+        <input type="text" title="Faça uma busca" placeholder="Digite um endereço..." />
+        <button type="button" title="Buscar">
+          <BiSearch size={24} />
+        </button>
       </form>
+      <div className="button_localizar">
+        <button type="button"><MdOutlineLocationOn size={28} /></button>
+        <span>Localização atual</span>
+      </div>
     </Container>
   );
 }
