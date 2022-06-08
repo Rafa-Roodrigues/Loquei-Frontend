@@ -126,11 +126,19 @@ export const HeaderContainer = styled.header `
         header {
           height: 90px;
           padding: 0 20px;
-          background-color: ${({ theme }) => theme.colors.backgroundCategoria};
+          background-color: var(--main);
 
           display: flex;
           align-items: center;
-          justify-content: flex-end;
+          justify-content: space-between;
+
+          button {
+            transition: filter .2s;
+
+            &:hover {
+              filter: brightness(0.8);
+            }
+          }
         }
 
         ul {

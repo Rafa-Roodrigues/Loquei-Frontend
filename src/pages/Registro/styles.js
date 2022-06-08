@@ -1,9 +1,10 @@
 import styled, {} from "styled-components";
 
-export const RegistroContainer = styled.div `
+export const Container = styled.div `
   width: 100%;
   height: 100vh;
   position: relative;
+  background-color: var(--main);
 
   display: flex;
   justify-content: center;
@@ -18,8 +19,9 @@ export const BoxContent = styled.div `
   width: fit-content;
   margin: auto auto;
   padding: 50px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 20%);
   background-color: ${({ theme }) => theme.colors.backgroundSecondary};
-  box-shadow: 0 0 10px rgba(0, 0, 0, 10%);
 
   display: flex;
   flex-direction: column;
@@ -29,8 +31,7 @@ export const BoxContent = styled.div `
   form {
     display: grid;
     gap: 15px;
-    grid-template-areas: 'nome sobrenome cpf'
-                         'cep endereco endereco'
+    grid-template-areas: 'nome nome cpf'
                          'email senha confirme'
                          'login login login'
                          'button button button';
@@ -68,34 +69,15 @@ export const BoxContent = styled.div `
         grid-area: nome;
       }
       &:nth-child(2) {
-        grid-area: sobrenome;
-      }
-      &:nth-child(3) {
         grid-area: cpf;
       }
-      &:nth-child(4) {
-        grid-area: cep;
-
-        input {
-          &:first-child {
-            width: calc(70% - 15px);
-            margin-right: 15px;
-          }
-          &:last-child {
-            width: 30%;
-          }
-        }
-      }
-      &:nth-child(5) {
-        grid-area: endereco;
-      }
-      &:nth-child(6) {
+      &:nth-child(3) {
         grid-area: email;
       }
-      &:nth-child(7) {
+      &:nth-child(4) {
         grid-area: senha;
       }
-      &:nth-child(8) {
+      &:nth-child(5) {
         grid-area: confirme;
       }
     }
@@ -104,7 +86,7 @@ export const BoxContent = styled.div `
       span {
         font-weight: 700;
         font-size: 0.85rem;
-        color: ${({ theme }) => theme.colors.textTitle};
+        color: ${({ theme }) => theme.colors.textBody};
 
         a {
           color: var(--main);
@@ -122,7 +104,7 @@ export const BoxContent = styled.div `
       width: fit-content;
       padding: 10px 20px;
       border-radius: 0 5px 5px 0;
-      background-color: var(--main);
+      background-color: var(--verde);
 
       color: var(--branco);
       font-weight: 700;
@@ -137,30 +119,17 @@ export const BoxContent = styled.div `
     }
   }
 
-  @media screen and (max-width: 910px) {
+  @media screen and (max-width: 820px) {
+    max-width: 500px;
+    width: 100%;
     height: 100vh;
     padding: 0px 20px;
 
-    .box_title {
-      margin-bottom: 20px;
-
-      img {
-        width: 40px;
-        height: 40px;
-      }
-
-      h2 {
-        font-size: 38px;
-      }
-    }
-
     form {
+      width: 100%;
       gap: 8px;
       grid-template-areas: 'nome'
-                           'sobrenome'
                            'cpf'
-                           'cep'
-                           'endereco'
                            'email'
                            'senha'
                            'confirme'
@@ -170,19 +139,6 @@ export const BoxContent = styled.div `
       .box_inputs {
         input {
           font-size: 0.85rem;
-        }
-
-        &:nth-child(4) {
-          input {
-            &:first-child {
-              width: calc(60% - 8px);
-              margin-right: 8px;
-            }
-
-            &:last-child {
-              width: 40%;
-            }
-          }
         }
       }
     }

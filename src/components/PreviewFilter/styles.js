@@ -12,6 +12,7 @@ export const Container = styled.section`
 
   .button_localizar {
     position: relative;
+    margin-left: 8px;
 
     span {
       padding: 5px;
@@ -32,9 +33,8 @@ export const Container = styled.section`
     }
 
     button {
+      width: 50px;
       height: 55px;
-      padding: 0 12px;
-      margin-left: 8px;
       border-radius: 5px;
       background-color: ${({ theme }) => theme.colors.inputsBackground};
       color: var(--main);
@@ -93,9 +93,9 @@ export const Container = styled.section`
       }
     }
 
-    button {
+    button[type="submit"] {
+      padding: 12px;
       height: 55px;
-      padding: 0 15px;
       border-radius: 5px;
 
       background-color: ${({ theme }) => theme.colors.inputsBackground};
@@ -113,11 +113,35 @@ export const Container = styled.section`
 
   }
 
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 560px) {
+    padding: 20px;
+
     form {
-      .search {
-        width: calc(100% - 40px);
-        margin: 0 20px;
+      display: grid;
+      gap: 10px;
+      grid-template-columns: 1.8fr 0.2fr;
+      grid-template-areas: 'select localization'
+                           'text search';
+
+      select {
+        grid-area: select;
+        margin: 0;
+        max-width: 100%;
+      }
+
+      input {
+        grid-area: text;
+        margin: 0;
+        max-width: 100%;
+      }
+
+      .button_localizar {
+        grid-area: localization;
+        margin: 0;
+      }
+
+      > button {
+        grid-area: search;
       }
     }
   }

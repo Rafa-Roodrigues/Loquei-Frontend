@@ -2,13 +2,13 @@ import { Link } from 'react-router-dom';
 
 import Helmet from 'react-helmet';
 
-import { BoxContent, RegistroContainer } from "./styles";
+import { Container, BoxContent } from "./styles";
 
 import { Logo } from '../../components/Logo';
 
 export function Registro() {
   return (
-    <RegistroContainer>
+    <Container>
       <Helmet>
         <title>Loquei | Registro</title>
       </Helmet>
@@ -17,20 +17,10 @@ export function Registro() {
 
         <form>
           <div className="box_inputs">
-            <input placeholder="Primeiro nome" required />
-          </div>
-          <div className="box_inputs">
-            <input placeholder="Sobrenome" required />
+            <input placeholder="Nome completo" required />
           </div>
           <div className="box_inputs">
             <input placeholder="CPF" required />
-          </div>
-          <div className="box_inputs">
-            <input placeholder="CEP" required />
-            <input placeholder="Número" required />
-          </div>
-          <div className="box_inputs">
-            <input placeholder="Seu endereço aqui..." disabled />
           </div>
           <div className="box_inputs">
             <input placeholder="E-mail" required />
@@ -49,6 +39,6 @@ export function Registro() {
           </button>
         </form>
       </BoxContent>
-    </RegistroContainer>
+    </Container>
   );
 }

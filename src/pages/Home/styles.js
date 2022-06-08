@@ -18,7 +18,7 @@ export const Container = styled.div `
       font-size: .9rem;
 
       position: absolute;
-      top: -22px;
+      top: -26px;
       left: 0;
     }
 

@@ -9,6 +9,7 @@ import { CardVertical, CardHorizontal } from "../../components/Cards";
 import { PreviewFilter } from "../../components/PreviewFilter";
 import { PreviewEstados } from "../../components/PreviewEstados";
 import { CarroselCards } from "../../components/CarroselCards";
+import { CategorySpecifications } from "../../components/CategorySpecifications";
 
 import imgNone from '../../assets/img/img-none.jpg';
 
@@ -84,6 +85,8 @@ export function Home() {
             address="Rua Fidélis Papini, 28 - Vila Prudente"
           />
         </section>
+
+        <CategorySpecifications />
       </main>
       <Footer/>
     </Container>

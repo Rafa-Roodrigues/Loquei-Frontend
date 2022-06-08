@@ -3,7 +3,7 @@ import styled, {} from 'styled-components';
 export const Container = styled.section`
   max-width: var(--max-width);
   margin: 0 auto;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   padding: 30px 50px 15px 50px;
   border-radius: 5px;
   background-color: transparent;
@@ -72,6 +72,14 @@ export const Container = styled.section`
       width: fit-content;
       margin-right: 20px;
       scroll-snap-align: start;
+    }
+  }
+
+  @media screen and (max-width: 560px) {
+    padding: 30px 10px 15px 10px;
+
+    .button_arrow {
+      display: none;
     }
   }
 `;

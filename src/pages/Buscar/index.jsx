@@ -59,27 +59,27 @@ export function Buscar() {
               <div className="grid_checkbox">
                 <label className="checkbox">
                   Comercial
-                  <input type="checkbox" placeholder="Casa" />
+                  <input type="checkbox" placeholder="Comercial" />
                   <span className={themeIsActive && "dark_checkbox"}><FaCheck className="icons" /></span>
                 </label>
                 <label className="checkbox">
-                  Pequenos espaços
-                  <input type="checkbox" placeholder="Casa" />
+                  Espaço eventual
+                  <input type="checkbox" placeholder="Espaço eventual" />
                   <span className={themeIsActive && "dark_checkbox"}><FaCheck className="icons" /></span>
                 </label>
                 <label className="checkbox">
                   Garagem
-                  <input type="checkbox" placeholder="Casa" />
+                  <input type="checkbox" placeholder="Garagem" />
                   <span className={themeIsActive && "dark_checkbox"}><FaCheck className="icons" /></span>
                 </label>
                 <label className="checkbox">
-                  Salão de festa
-                  <input type="checkbox" placeholder="Casa" />
+                Outros espaços
+                  <input type="checkbox" placeholder="Outros espaços" />
                   <span className={themeIsActive && "dark_checkbox"}><FaCheck className="icons" /></span>
                 </label>
                 <label className="checkbox">
                   Box
-                  <input type="checkbox" placeholder="Casa" />
+                  <input type="checkbox" placeholder="Box" />
                   <span className={themeIsActive && "dark_checkbox"}><FaCheck className="icons" /></span>
                 </label>
               </div>

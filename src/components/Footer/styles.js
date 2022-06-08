@@ -1,43 +1,84 @@
 import styled, {} from 'styled-components';
 
-export const FooterContainer = styled.div `
+export const Container = styled.div `
   width: 100%;
   position: relative;
   background-color: ${({ theme }) => theme.colors.backgroundSecondary};
+`
 
-  .box_content {
-    width: 100%;
-    padding: 20px 100px;
-    position: relative;
-  }
+export const Content = styled.div `
+  width: 100%;
+  padding: 20px;
 
-  .box_politica {
+  > div {
+    margin-bottom: 20px;
     width: 100%;
-    padding: 40px 0;
-    border-top: 1px solid rgba(0, 0, 0, 10%);
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
 
-    p {
-      opacity: 0.8;
-      color: ${({ theme }) => theme.colors.textTitle};
-      font-weight: 500;
-      font-size: 0.75rem;
-      letter-spacing: 1px;
+    a {
+      margin-bottom: 10px;
+      color: var(--cinza-escuro);
+      transition: color .2s;
 
-      a {
-        text-decoration: underline;
+      &:hover {
+        color: var(--main);
       }
     }
 
-    span {
-      margin-top: 8px;
-      opacity: 0.8;
-      color: ${({ theme }) => theme.colors.textTitle};
-      font-size: 0.8rem;
-      font-weight: 500;
+    img {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 5px;
+      padding-bottom: 5px;
     }
   }
-`
+
+  ul {
+    list-style: none;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    li {
+      margin-right: 20px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+`;
+
+export const PolicyAndTerms = styled.div`
+  width: 100%;
+  padding: 40px 0;
+  border-top: 1px solid rgba(0, 0, 0, 10%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+  p {
+    opacity: 0.8;
+    color: ${({ theme }) => theme.colors.textTitle};
+    font-weight: 500;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+
+    a {
+      text-decoration: underline;
+    }
+  }
+
+  span {
+    margin-top: 8px;
+    opacity: 0.8;
+    color: ${({ theme }) => theme.colors.textTitle};
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+`;

@@ -81,7 +81,7 @@ export const CardVerticalContainer = styled.article`
       width: fit-content;
       padding: 6px 8px;
       border-radius: 4px;
-      background-color: var(--main);
+      background-color: var(--verde);
       transition: filter .2s;
       
       color: var(--branco);
@@ -218,7 +218,7 @@ export const CardHorizontalContainer = styled.article`
       width: fit-content;
       padding: 6px 8px;
       border-radius: 5px;
-      background-color: var(--main);
+      background-color: var(--verde);
       transition: filter .2s;
       
       color: var(--branco);

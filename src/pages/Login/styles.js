@@ -106,7 +106,7 @@ export const ContentRight = styled.div`
             font-size: 0.95rem;
             letter-spacing: 0.5px;
 
-            background-color: var(--main);
+            background-color: var(--verde);
             border-radius: 0 5px 5px 0;
             transition: filter 0.2s;
 
@@ -208,7 +208,7 @@ export const ContentRight = styled.div`
             align-items: center;
 
             span {
-                color: var(--preto);
+                color: ${({ theme }) => theme.colors.textBody};
                 font-size: 14px;
                 font-weight: 700;
                 

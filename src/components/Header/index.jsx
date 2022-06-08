@@ -66,18 +66,18 @@ export function Header() {
       <div className="box_menu" style={{display: stateMenu}}>
         <div className="menu">
           <header>
+            <button type="button" onClick={changeTheme}>
+              {themeIsActive ? (
+                <MdOutlineLightMode size={30} color="#fff" />
+              ) : (
+                <MdOutlineDarkMode size={30} color="#fff" />
+              ) }
+            </button>
             <button onClick={changeStateMenu}>
-              <IoMdClose size={40} color="#fff" />
+              <IoMdClose size={35} color="#fff" />
             </button>
           </header>
           <ul>
-            <button type="button" onClick={changeTheme}>
-            {themeIsActive ? (
-              <MdOutlineLightMode className="icons" size={24} />
-            ) : (
-              <MdOutlineDarkMode className="icons" size={24} />
-            ) }
-            </button>
             <li>
               <Link to="/buscar">Buscar</Link>
               <BiSearch className="icons" size={24} />
