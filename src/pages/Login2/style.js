@@ -5,10 +5,10 @@ export const Container = styled.div`
     height: 100vh;
 `;
 
-export const ContentLeft = styled.div`
+export const ContentRight = styled.div`
     width: 50%;
     height: 100%;
-    background-color: #7A46DB;
+    background-color: ${({ theme }) => theme.colors.categoryContainer};
 
     display: flex;
     justify-content: center;
@@ -30,10 +30,11 @@ export const ContentLeft = styled.div`
     }
 `;
 
-export const ContentRight = styled.div`
+export const ContentLeft = styled.div`
     width: 50%;
     height: 100%;
-    background-color: #FFFFFF;
+    background-color: ${({ theme }) => theme.colors.background};
+
 
     display: flex;
     flex-direction: column;
@@ -66,8 +67,6 @@ export const ContentRight = styled.div`
             color: #7A46DB;
             text-align: center;
             font-size: 2.5rem;
-
-            display: none;
         }
 
     }
@@ -93,9 +92,6 @@ export const ContentRight = styled.div`
                 display: none;
             }
 
-            h2 {
-                display: block;
-            }
         }
 
     }
@@ -106,57 +102,9 @@ export const ContentRight = styled.div`
     max-width: inherit;
     width: 100%;
 
-    display: grid;
-    gap: 10px;
-    grid-template-areas:'nome sobrenome'
-                        'cpf whats'
-                        'email email'
-                        'senha senha'
-                        'confirmar confirmar'
-                        'botao botao';
-
     > p {
         font-size: 13px;
     }
-
-    #box_nome {
-        grid-area: nome;
-    }
-
-    #box_sobrenome {
-        grid-area: sobrenome;
-    }
-
-    #box_cpf {
-        grid-area: cpf;
-    }
-
-    #box_whatsapp {
-        grid-area: whats;
-    }
-
-    #box_email {
-        grid-area: email;
-    }
-
-    #box_senha {
-        grid-area: senha;
-    }
-
-    #box_confirmar {
-        grid-area: confirmar;
-    }
-
-    /* @media screen and (max-width: 450px) {
-        grid-template-areas:'nome nome'
-                            'sobrenome sobrenome'
-                            'cpf cpf'
-                            'whats whats'
-                            'email email'
-                            'senha senha'
-                            'confirmar confirmar'
-                            'botao botao';
-    } */
  `;
 
  export const Footer = styled.footer`
@@ -189,15 +137,24 @@ export const ContentRight = styled.div`
     display: block;
     font-size: 13px;
 
+    margin-bottom: 10px;
+
+
+
     input {
         width: 100%;
         height: 40px;
 
-        background-color: #eeeeee;
+        background-color: ${({ theme }) => theme.colors.inputsBackground};
+        color: ${({ theme }) => theme.colors.inputsText};
 
         padding-left: 10px;
         border-radius: 5px;
 
         border: 2px solid ${({error}) => error ? '#e84118': 'transparent'};
+
+        &::placeholder {
+            color: ${({ theme }) => theme.colors.inputsPlaceholder};
+        }
     }
  `;

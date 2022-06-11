@@ -10,7 +10,7 @@ export function Cadastrar() {
     const schema = yup.object({
         nome: yup.string().trim().required('Campo obrigatório'),
         sobrenome: yup.string().trim().required('Campo obrigatório'),
-        cpf: yup.string().min(14, 'CPF inválido MIN').max(14, 'CPF inválido MAX'),
+        cpf: yup.string().min(14, 'CPF inválido').max(14, 'CPF inválido'),
         whatsapp: yup.string().min(15, 'Numero inválido').max(15, 'Numero inválido'),
         email: yup.string().email('E-mail inválido').trim().required('Campo obrigatório'),
         senha: yup.string().min(6, 'Minímo de 6 caracteres').max(30, 'Maximo de 30 caracteres'),

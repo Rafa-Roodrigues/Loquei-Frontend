@@ -7,6 +7,7 @@ import { Buscar } from '../pages/Buscar';
 import { Anunciar } from '../pages/Anunciar';
 import { Perfil } from '../pages/Perfil';
 import { Cadastrar } from '../pages/Cadastrar';
+import { Login2 } from '../pages/Login2';
 
 export function Router() {
     return (
@@ -14,6 +15,7 @@ export function Router() {
             <Routes>
                 <Route path="/" element={<Home />}/>
                 <Route path="/login" element={<Login />}/>
+                <Route path="/loginn" element={<Login2 />}/>
                 <Route path="/registro" element={<Registro />}/>
                 <Route path="/cadastrar" element={<Cadastrar/>}/>
                 <Route path="/meus-anuncios" element={<MeusAnuncios />}/>
