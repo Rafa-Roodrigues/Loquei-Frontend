@@ -6,6 +6,7 @@ import { MeusAnuncios } from '../pages/MeusAnuncios';
 import { Buscar } from '../pages/Buscar';
 import { Anunciar } from '../pages/Anunciar';
 import { Perfil } from '../pages/Perfil';
+import { Cadastrar } from '../pages/Cadastrar';
 
 export function Router() {
     return (
@@ -14,6 +15,7 @@ export function Router() {
                 <Route path="/" element={<Home />}/>
                 <Route path="/login" element={<Login />}/>
                 <Route path="/registro" element={<Registro />}/>
+                <Route path="/cadastrar" element={<Cadastrar/>}/>
                 <Route path="/meus-anuncios" element={<MeusAnuncios />}/>
                 <Route path="/buscar" element={<Buscar />}/>
                 <Route path="/anunciar" element={<Anunciar />}/>
