@@ -1,16 +1,22 @@
-import { ContentLeft, ContentRight, Container, BoxInputs, Footer, Error, Input } from './style';
+import { ContentLeft, ContentRight, Container, BoxInputs, Footer, Error, Input, BoxError } from './style';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useEffect, useState } from 'react';
 import { mascaraCPF } from '../../utils/mascaraCpf';
 import { mascaraCelular } from '../../utils/mascaraCelular';
+import { api } from '../../services/axios';
+import toast from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
 
 export function Cadastrar() {
+    const [error, setError] = useState('');
+    const navigate = useNavigate();
+
     const schema = yup.object({
         nome: yup.string().trim().required('Campo obrigatório'),
         sobrenome: yup.string().trim().required('Campo obrigatório'),
-        cpf: yup.string().min(14, 'CPF inválido').max(14, 'CPF inválido'),
+        cpf: yup.string().min(14, 'CPF inválido'),
         whatsapp: yup.string().min(15, 'Numero inválido').max(15, 'Numero inválido'),
         email: yup.string().email('E-mail inválido').trim().required('Campo obrigatório'),
         senha: yup.string().min(6, 'Minímo de 6 caracteres').max(30, 'Maximo de 30 caracteres'),
@@ -23,10 +29,6 @@ export function Cadastrar() {
         resolver: yupResolver(schema),
     });    
 
-    function handleForm(data){
-        console.log("DADOS", data)
-    }
-
     useEffect(() => {
         const cpf = watch('cpf');
         const whatsapp = watch('whatsapp');
@@ -37,7 +39,31 @@ export function Cadastrar() {
         setValue('cpf', cpfFormatado);
         setValue('whatsapp', whatsappFormatado)
         
-    }, [watch('cpf'), watch('whatsapp')])
+    }, [watch('cpf'), watch('whatsapp')]);
+
+    async function handleForm(data){
+        try {
+            await api.post('/users', {
+                name: data.nome,
+                lastname: data.sobrenome,
+                cpf: data.cpf,
+                whatsapp: data.whatsapp,
+                email: data.email,
+                password: data.senha
+            });
+
+            toast.success('Cadastro realizado com sucesso!');
+            navigate('/loginn');
+
+        } catch(err) {
+            if(err.status === 500){
+                toast.error('Não foi possível realizar seu cadastro!');
+            }
+
+            setError(err.response.data.message);
+        }
+        
+    }
 
     return (
         <Container>
@@ -50,6 +76,7 @@ export function Cadastrar() {
             <ContentRight>
                 <form onSubmit={handleSubmit(handleForm)}>
                     <h2>Cadastre-se</h2>
+                    {error && <BoxError>{error}</BoxError>}
                     <BoxInputs>
                         <Input error={errors.nome} id="box_nome">
                             Nome:

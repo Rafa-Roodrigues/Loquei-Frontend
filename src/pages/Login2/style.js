@@ -109,7 +109,7 @@ export const ContentLeft = styled.div`
 
  export const Footer = styled.footer`
     width: 100%;
-    height: 100px;
+    height: 70px;
     background-color: #7A46DB;
 
     display: none;

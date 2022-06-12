@@ -66,6 +66,7 @@ export const ContentRight = styled.div`
             color: #7A46DB;
             text-align: center;
             font-size: 2.5rem;
+            margin-bottom: 1rem;
 
             display: none;
         }
@@ -102,9 +103,10 @@ export const ContentRight = styled.div`
 `;
 
  export const BoxInputs = styled.div`
-    margin-top: 2rem;
     max-width: inherit;
     width: 100%;
+    margin-bottom: 1rem;
+
 
     display: grid;
     gap: 10px;
@@ -161,7 +163,7 @@ export const ContentRight = styled.div`
 
  export const Footer = styled.footer`
     width: 100%;
-    height: 100px;
+    height: 70px;
     background-color: #7A46DB;
 
     display: none;
@@ -200,4 +202,19 @@ export const ContentRight = styled.div`
 
         border: 2px solid ${({error}) => error ? '#e84118': 'transparent'};
     }
+ `;
+
+ export const BoxError = styled.div`
+    width: 100%;
+    background-color: #FFE1E1;
+    padding: 10px 0;
+
+    margin-bottom: 1rem;
+
+    font-size: 13px;
+
+    /* border: 1px solid red; */
+    color: #e84118;
+    border-radius: 5px;
+    text-align: center;
  `;
