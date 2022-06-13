@@ -1,5 +1,6 @@
 import { Router } from "./routes";
 import { GlobalStyles } from "./styles/stylesGlobal";
+import { Toaster } from 'react-hot-toast';
 
 import { ThemeProvider } from 'styled-components';
 
@@ -13,6 +14,11 @@ export function App() {
     <ThemeProvider theme={themeIsActive ? dark : light}>
       <Router/>
       <GlobalStyles/>
+      <Toaster
+        position="top-right"
+        reverseOrder={false}
+        toastOptions={{duration: '400'}}
+      />
     </ThemeProvider>
   );
 }
