@@ -53,6 +53,8 @@ export const GlobalStyles = createGlobalStyle`
     font-family: 'Manrope', sans-serif;
     font-weight: 600;
     color: var(--black);
+    
+    outline: none;
   }
 
   button {
@@ -64,6 +66,11 @@ export const GlobalStyles = createGlobalStyle`
   a {
     text-decoration: none;
     color: inherit;
+  }
+
+  input[disabled] {
+    opacity: 0.75;
+
   }
 
   ::-webkit-scrollbar-track {

@@ -4,6 +4,7 @@ export const HeaderContainer = styled.header `
   width: 100%;
   height: 90px;
   padding: 0 50px;
+  border: 1px solid ${({ theme }) => theme.colors.backgroundSecondary};
   background-color: ${({ theme }) => theme.colors.background};
 
   display: flex;
