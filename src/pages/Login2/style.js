@@ -67,6 +67,7 @@ export const ContentLeft = styled.div`
             color: #7A46DB;
             text-align: center;
             font-size: 2.5rem;
+            margin-bottom: 1rem;
         }
 
     }
@@ -98,7 +99,6 @@ export const ContentLeft = styled.div`
 `;
 
  export const BoxInputs = styled.div`
-    margin-top: 2rem;
     max-width: inherit;
     width: 100%;
 
@@ -158,3 +158,17 @@ export const ContentLeft = styled.div`
         }
     }
  `;
+
+export const BoxError = styled.div`
+    width: 100%;
+    background-color: #FFE1E1;
+    padding: 10px 0;
+
+    margin-bottom: 1rem;
+
+    font-size: 13px;
+
+    color: #e84118;
+    border-radius: 5px;
+    text-align: center;
+`;

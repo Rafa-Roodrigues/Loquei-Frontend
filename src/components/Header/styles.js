@@ -11,6 +11,9 @@ export const HeaderContainer = styled.header `
   justify-content: space-between;
 
   .navigation {
+
+    display: flex;
+
     ul {
       list-style: none;
       display: flex;
@@ -132,6 +135,9 @@ export const HeaderContainer = styled.header `
           align-items: center;
           justify-content: space-between;
 
+          color: #ffffff;
+          font-size: 15px;
+
           button {
             transition: filter .2s;
 
@@ -162,7 +168,7 @@ export const HeaderContainer = styled.header `
               margin-bottom: 0;
             }
   
-            a {
+            a, button {
               color: ${({ theme }) => theme.colors.textBody};
               font-weight: 500;
               transition: color .2s;
@@ -192,3 +198,97 @@ export const HeaderContainer = styled.header `
     }
   }
 `;
+
+export const Perfil = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: left;
+  margin-left: 20px;
+
+  position: relative;
+  cursor: pointer;
+
+  img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+
+  #box_image {
+    background-color: #7A46DB;
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 18px;
+
+    color: #ffffff;
+  }
+
+  #box_name {
+    font-size: 14px;
+    color: ${({ theme }) => theme.colors.textTitle};
+  }
+
+  #box_info {
+    display: ${({ status }) => status ?  'flex' : 'none'};
+    /* display: flex; */
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: transparent;
+    text-align: center;
+
+    /* padding-top: 20px; */
+    margin-top: 60px;
+
+    > div {
+      width: 100%;
+      /* margin-top: 35px; */
+      background-color: #ffffff;
+
+      border-radius: 5px;
+      cursor: pointer;
+
+      box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.4);
+
+      button {
+        width: 100%;
+      }
+
+      a, button {
+        display: block;
+        padding: 8px 0;
+        font-size: 13px;
+        border-top: 1px solid #EEEEEE;
+        transition: background 0.2s;
+
+        &:hover {
+          background-color: rgba(122, 70, 219);
+          color: #ffffff;
+        }
+
+        &:first-child {
+          border: 0px;
+        }
+      }
+    }
+  }
+`;
+
+export const BoxContent = styled.div`
+  display: flex;
+  align-items: center;
+
+  svg {
+    color: ${({ theme }) => theme.colors.textTitle};
+  }
+`;  
