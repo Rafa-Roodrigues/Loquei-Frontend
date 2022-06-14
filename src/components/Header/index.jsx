@@ -1,12 +1,12 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-import { MdLogout, MdFormatListBulleted, MdAdd } from 'react-icons/md';
+import { MdLogout, MdFormatListBulleted, MdAdd,  MdOutlineLightMode, MdOutlineDarkMode } from 'react-icons/md';
+import { RiNotification2Line } from 'react-icons/ri';
 import { HeaderContainer, Perfil, BoxContent } from './styles';
 
 import { useTheme } from "../../hooks/useTheme";
 
 import { BiSearch, BiUser } from 'react-icons/bi';
-import { MdOutlineLightMode, MdOutlineDarkMode } from 'react-icons/md';
 import { HiMenu } from 'react-icons/hi';
 import { IoMdClose, IoMdNotificationsOutline } from 'react-icons/io';
 
@@ -35,7 +35,15 @@ export function Header() {
       <nav className="navigation">
         {authentication ? (
           <BoxContent>
-            <button><IoMdNotificationsOutline size={25} color="#7A46DB"/></button>
+            <button><RiNotification2Line className="icons" size={22}/></button>
+            <button type="button" onClick={changeTheme}>
+              {themeIsActive ? (
+                <MdOutlineLightMode className="icons" size={24} />
+              ) : (
+                <MdOutlineDarkMode className="icons" size={24} />
+              ) }
+              </button>
+
             <Perfil status={statusOptionsMenu} onClick={ () => setStatusOptionsMenu(!statusOptionsMenu)}>
               <div id="box_image">
                 {authentication.image?.url 
@@ -43,23 +51,23 @@ export function Header() {
                   : `${authentication.name[0]}${authentication.lastname[0]}`
                 }
               </div>
+
               <div id="box_name">
                 <p>Ola,</p>
                 <p>{authentication.name} {authentication.lastname}</p>
               </div>
 
-              <div id="box_info">
-                <div>
-                  <Link to="/anunciar">Anunciar</Link>
-                  <Link to="meus-anuncios">Meus anúncios</Link>
-                  <Link to="/perfil">Perfil</Link>
-                  <button onClick={destroyAuthentication}>Sair</button>
-                </div>
-              </div>
+              <ul id="box_info_login">
+                <li><Link to="/anunciar">Anunciar</Link></li>
+                <li><Link to="meus-anuncios">Meus anúncios</Link></li>
+                <li><Link to="/perfil">Perfil</Link></li>
+                <li><Link to="/buscar">Buscar</Link></li>
+                <li><button onClick={destroyAuthentication}>Sair</button></li>
+              </ul>
             </Perfil>
           </BoxContent>
         ) : (
-          <ul>
+          <ul id="box_info">
             <li className="search">
               <Link className="link" to="/buscar">Buscar</Link>
               <BiSearch className="icons" size={24} />
@@ -129,7 +137,7 @@ export function Header() {
               </li>
               <li>
                 <Link to="/chat">Notificações</Link>
-                <IoMdNotificationsOutline className="icons" size={24} />
+                <RiNotification2Line className="icons" size={24} />
               </li>
               <li>
                 <button onClick={() => {
@@ -162,7 +170,6 @@ export function Header() {
               </li>
             </ul>
           )}
-          
         </div>
       </div>
     </HeaderContainer>

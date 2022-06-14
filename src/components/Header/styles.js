@@ -14,13 +14,13 @@ export const HeaderContainer = styled.header `
 
     display: flex;
 
-    ul {
+    #box_info {
       list-style: none;
       display: flex;
       align-items: center;
       justify-content: center;
 
-      li {
+      > li {
         margin-right: 25px;
         display: flex;
         flex-direction: row-reverse;
@@ -204,7 +204,7 @@ export const Perfil = styled.button`
   align-items: center;
   justify-content: flex-start;
   text-align: left;
-  margin-left: 20px;
+  margin-left: 10px;
 
   position: relative;
   cursor: pointer;
@@ -236,48 +236,36 @@ export const Perfil = styled.button`
     color: ${({ theme }) => theme.colors.textTitle};
   }
 
-  #box_info {
+  #box_info_login {
     display: ${({ status }) => status ?  'flex' : 'none'};
-    /* display: flex; */
+    flex-direction: column;
+
     position: absolute;
-    z-index: 2;
     top: 0;
     left: 0;
     right: 0;
-    background-color: transparent;
-    text-align: center;
+    z-index: 999999;
+    
+    background-color: #FFFFFF;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
 
-    /* padding-top: 20px; */
     margin-top: 60px;
 
-    > div {
+    li {
       width: 100%;
-      /* margin-top: 35px; */
-      background-color: #ffffff;
-
-      border-radius: 5px;
-      cursor: pointer;
-
-      box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.4);
-
-      button {
-        width: 100%;
-      }
+      text-align: center;
+      /* background-color: red; */
+      list-style: none;
+      transition: background 0.2s;
 
       a, button {
+        padding: 6px 0;
         display: block;
-        padding: 8px 0;
-        font-size: 13px;
-        border-top: 1px solid #EEEEEE;
-        transition: background 0.2s;
+        width: 100%;
 
         &:hover {
-          background-color: rgba(122, 70, 219);
-          color: #ffffff;
-        }
-
-        &:first-child {
-          border: 0px;
+          background-color: #7A46DB;
+          color: #FFFFFF;
         }
       }
     }
@@ -287,6 +275,10 @@ export const Perfil = styled.button`
 export const BoxContent = styled.div`
   display: flex;
   align-items: center;
+
+  button {
+    margin-right: 15px;
+  }
 
   svg {
     color: ${({ theme }) => theme.colors.textTitle};
