@@ -7,7 +7,7 @@ import { mascaraCPF } from '../../utils/mascaraCpf';
 import { mascaraCelular } from '../../utils/mascaraCelular';
 import { api } from '../../services/axios';
 import toast from 'react-hot-toast';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 export function Cadastrar() {
     const [error, setError] = useState('');
@@ -127,11 +127,11 @@ export function Cadastrar() {
                         </Input>
                     </BoxInputs>
                     <button type='submit'>Cadastrar</button>
-                    <p>Ja tem uma conta? <a href='#'>Logar-se</a></p>
+                    <p>Você já tem uma conta? <Link to="/loginn">Fazer login</Link></p>
                 </form>
 
                 <Footer>
-                    <p>Você já tem uma conta? <a href="#">Fazer login</a></p>
+                    <p>Você já tem uma conta? <Link to="/loginn">Fazer login</Link></p>
                 </Footer>
             </ContentRight>
         </Container>

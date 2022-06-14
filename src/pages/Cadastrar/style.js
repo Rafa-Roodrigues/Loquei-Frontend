@@ -213,7 +213,6 @@ export const ContentRight = styled.div`
 
     font-size: 13px;
 
-    /* border: 1px solid red; */
     color: #e84118;
     border-radius: 5px;
     text-align: center;

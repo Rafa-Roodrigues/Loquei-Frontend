@@ -12,13 +12,16 @@ export const HeaderContainer = styled.header `
   justify-content: space-between;
 
   .navigation {
-    ul {
+
+    display: flex;
+
+    #box_info {
       list-style: none;
       display: flex;
       align-items: center;
       justify-content: center;
 
-      li {
+      > li {
         margin-right: 25px;
         display: flex;
         flex-direction: row-reverse;
@@ -133,6 +136,9 @@ export const HeaderContainer = styled.header `
           align-items: center;
           justify-content: space-between;
 
+          color: #ffffff;
+          font-size: 15px;
+
           button {
             transition: filter .2s;
 
@@ -163,7 +169,7 @@ export const HeaderContainer = styled.header `
               margin-bottom: 0;
             }
   
-            a {
+            a, button {
               color: ${({ theme }) => theme.colors.textBody};
               font-weight: 500;
               transition: color .2s;
@@ -193,3 +199,89 @@ export const HeaderContainer = styled.header `
     }
   }
 `;
+
+export const Perfil = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: left;
+  margin-left: 10px;
+
+  position: relative;
+  cursor: pointer;
+
+  img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+
+  #box_image {
+    background-color: #7A46DB;
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 18px;
+
+    color: #ffffff;
+  }
+
+  #box_name {
+    font-size: 14px;
+    color: ${({ theme }) => theme.colors.textTitle};
+  }
+
+  #box_info_login {
+    display: ${({ status }) => status ?  'flex' : 'none'};
+    flex-direction: column;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999999;
+    
+    background-color: #FFFFFF;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+
+    margin-top: 60px;
+
+    li {
+      width: 100%;
+      text-align: center;
+      /* background-color: red; */
+      list-style: none;
+      transition: background 0.2s;
+
+      a, button {
+        padding: 6px 0;
+        display: block;
+        width: 100%;
+
+        &:hover {
+          background-color: #7A46DB;
+          color: #FFFFFF;
+        }
+      }
+    }
+  }
+`;
+
+export const BoxContent = styled.div`
+  display: flex;
+  align-items: center;
+
+  button {
+    margin-right: 15px;
+  }
+
+  svg {
+    color: ${({ theme }) => theme.colors.textTitle};
+  }
+`;  
