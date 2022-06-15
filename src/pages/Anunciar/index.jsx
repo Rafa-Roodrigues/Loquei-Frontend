@@ -42,43 +42,14 @@ export function Anunciar() {
           <form>
             <div className="box_input">
               <h3>Tipo do espaço</h3>
-              <div className="grid_checkbox">
-                <label className="checkbox">
-                  Casa
-                  <input type="checkbox" placeholder="Casa" />
-                  <span className={themeIsActive && "dark_checkbox"}><FaCheck className="icons" /></span>
-                </label>
-                <label className="checkbox">
-                  Pequenos espaços
-                  <input type="checkbox" placeholder="Casa" />
-                  <span className={themeIsActive && "dark_checkbox"}><FaCheck className="icons" /></span>
-                </label>
-                <label className="checkbox">
-                  Garagem
-                  <input type="checkbox" placeholder="Casa" />
-                  <span className={themeIsActive && "dark_checkbox"}><FaCheck className="icons" /></span>
-                </label>
-                <label className="checkbox">
-                  Salão de festa
-                  <input type="checkbox" placeholder="Casa" />
-                  <span className={themeIsActive && "dark_checkbox"}><FaCheck className="icons" /></span>
-                </label>
-                <label className="checkbox">
-                  Comercial
-                  <input type="checkbox" placeholder="Casa" />
-                  <span className={themeIsActive && "dark_checkbox"}><FaCheck className="icons" /></span>
-                </label>
-                <label className="checkbox">
-                  Escritório
-                  <input type="checkbox" placeholder="Casa" />
-                  <span className={themeIsActive && "dark_checkbox"}><FaCheck className="icons" /></span>
-                </label>
-                <label className="checkbox">
-                  Box
-                  <input type="checkbox" placeholder="Casa" />
-                  <span className={themeIsActive && "dark_checkbox"}><FaCheck className="icons" /></span>
-                </label>
-              </div>
+              <select className={themeIsActive && "dark_input"}>
+                <option>Selecione uma categoria</option>
+                <option>Comercial</option>
+                <option>Box</option>
+                <option>Garagem</option>
+                <option>Espaço eventual</option>
+                <option>Outros espaços</option>
+              </select>
             </div>
 
             <div className="box_input">

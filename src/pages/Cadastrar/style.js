@@ -8,20 +8,27 @@ export const Container = styled.div`
 export const ContentLeft = styled.div`
     width: 50%;
     height: 100%;
-    background-color: #7A46DB;
+    background-color: ${({ theme }) => theme.colors.categoryContainer};
 
     display: flex;
     justify-content: center;
     align-items: center;
 
-    text-align: center;
+    text-align: left;
     color: #ffffff;
 
     div {
-        margin: 20px;
+        padding: 0 60px;
 
         h1 {
+            color: var(--branco);
             font-size: 2.5rem;
+            margin-bottom: 28px;
+        }
+
+        p {
+            color: var(--brando-escuro);
+            font-size: 1.5rem;
         }
     }
 
@@ -33,7 +40,7 @@ export const ContentLeft = styled.div`
 export const ContentRight = styled.div`
     width: 50%;
     height: 100%;
-    background-color: #FFFFFF;
+    background-color: ${({ theme }) => theme.colors.background};
 
     display: flex;
     flex-direction: column;
@@ -53,11 +60,12 @@ export const ContentRight = styled.div`
         width: 100%;
 
         > p {
-            margin-top: 5px;
+            margin-top: 10px;
             font-size: 13px;
-            color: #222222;
+            color: ${({ theme }) => theme.colors.textBody};
 
             a {
+                color: ${({ theme }) => theme.colors.textTitle};
                 text-decoration: underline;
             }
         }
@@ -109,7 +117,7 @@ export const ContentRight = styled.div`
 
 
     display: grid;
-    gap: 10px;
+    gap: 18px 10px;
     grid-template-areas:'nome sobrenome'
                         'cpf whats'
                         'email email'
@@ -182,7 +190,7 @@ export const ContentRight = styled.div`
  `;
 
  export const Error = styled.p`
-    color: #e84118;
+    color: ${({ theme }) => theme.colors.red};
     margin-left: 3px;
     font-size: 13px;
  `;
@@ -191,16 +199,25 @@ export const ContentRight = styled.div`
     display: block;
     font-size: 13px;
 
+    span {
+        color: ${({ theme }) => theme.colors.textBody};
+    }
+
     input {
         width: 100%;
         height: 40px;
 
-        background-color: #eeeeee;
+        background-color: ${({ theme }) => theme.colors.backgroundSecondary};
+        color: ${({ theme }) => theme.colors.inputsText};
 
         padding-left: 10px;
         border-radius: 5px;
 
-        border: 2px solid ${({error}) => error ? '#e84118': 'transparent'};
+        border: 2px solid ${({error}) => error ? ({ theme }) => theme.colors.red : 'transparent'};
+
+        &::placeholder {
+            color: ${({ theme }) => theme.colors.inputsPlaceholder};
+        }
     }
  `;
 
@@ -213,7 +230,7 @@ export const ContentRight = styled.div`
 
     font-size: 13px;
 
-    color: #e84118;
+    color: ${({ theme }) => theme.colors.red};
     border-radius: 5px;
     text-align: center;
  `;

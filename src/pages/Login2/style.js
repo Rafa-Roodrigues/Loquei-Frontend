@@ -14,14 +14,21 @@ export const ContentRight = styled.div`
     justify-content: center;
     align-items: center;
 
-    text-align: center;
+    text-align: right;
     color: #ffffff;
 
     div {
-        margin: 20px;
+        padding: 0 60px;
 
         h1 {
+            color: var(--branco);
             font-size: 2.5rem;
+            margin-bottom: 28px;
+        }
+
+        p {
+            color: ${({ theme }) => theme.colors.cinza};
+            font-size: 1.5rem;
         }
     }
 
@@ -54,11 +61,12 @@ export const ContentLeft = styled.div`
         width: 100%;
 
         > p {
-            margin-top: 5px;
+            margin-top: 10px;
             font-size: 13px;
-            color: #222222;
+            color: ${({ theme }) => theme.colors.textBody};
 
             a {
+                color: ${({ theme }) => theme.colors.textTitle};
                 text-decoration: underline;
             }
         }
@@ -128,7 +136,7 @@ export const ContentLeft = styled.div`
  `;
 
  export const Error = styled.p`
-    color: #e84118;
+    color: ${({ theme }) => theme.colors.red};
     margin-left: 3px;
     font-size: 13px;
  `;
@@ -137,21 +145,23 @@ export const ContentLeft = styled.div`
     display: block;
     font-size: 13px;
 
-    margin-bottom: 10px;
+    margin-bottom: 16px;
 
-
+    span {
+        color: ${({ theme }) => theme.colors.textBody};
+    }
 
     input {
         width: 100%;
         height: 40px;
 
-        background-color: ${({ theme }) => theme.colors.inputsBackground};
+        background-color: ${({ theme }) => theme.colors.backgroundSecondary};
         color: ${({ theme }) => theme.colors.inputsText};
 
         padding-left: 10px;
         border-radius: 5px;
 
-        border: 2px solid ${({error}) => error ? '#e84118': 'transparent'};
+        border: 2px solid ${({error}) => error ? ({ theme }) => theme.colors.red : 'transparent'};
 
         &::placeholder {
             color: ${({ theme }) => theme.colors.inputsPlaceholder};
@@ -168,7 +178,7 @@ export const BoxError = styled.div`
 
     font-size: 13px;
 
-    color: #e84118;
+    color: ${({ theme }) => theme.colors.red};
     border-radius: 5px;
     text-align: center;
 `;

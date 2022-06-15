@@ -8,6 +8,7 @@ import { mascaraCelular } from '../../utils/mascaraCelular';
 import { api } from '../../services/axios';
 import toast from 'react-hot-toast';
 import { useNavigate, Link } from 'react-router-dom';
+import { Logo } from '../../components/Logo';
 
 export function Cadastrar() {
     const [error, setError] = useState('');
@@ -69,53 +70,55 @@ export function Cadastrar() {
         <Container>
             <ContentLeft>
                 <div>
-                    <h1>Cadastre-se para ter uma<br></br> melhor experiência</h1>
-                    <p>Aqui você encontrará os melhores espaços para abrir seu negócio.</p>
+                    <h1>Cadastre-se</h1>
+                    <p>
+                        Aqui você encontrará os melhores espaços para abrir seu negócio. Faça já seu cadastro!
+                    </p>
                 </div>
             </ContentLeft>
             <ContentRight>
                 <form onSubmit={handleSubmit(handleForm)}>
-                    <h2>Cadastre-se</h2>
+                    <Logo marginBot={40} size={200} />
                     {error && <BoxError>{error}</BoxError>}
                     <BoxInputs>
                         <Input error={errors.nome} id="box_nome">
-                            Nome:
+                            <span>Nome:</span>
                             <input {...register('nome')} name="nome" placeholder='Digite seu nome'/>
                             {errors.nome && <Error>{errors.nome.message}</Error>}
                         </Input>
                         <Input error={errors.sobrenome} id="box_sobrenome">
-                            Sobrenome:
+                            <span>Sobrenome:</span>
                             <input {...register('sobrenome')} name="sobrenome" placeholder='Digite seu sobrenome'/>
                             {errors.sobrenome && <Error>{errors.sobrenome.message}</Error>}
 
                         </Input>
                         <Input error={errors.cpf} id="box_cpf">
-                            CPF:
+                            <span>CPF:</span>
                             <input {...register('cpf')} name="cpf" placeholder='Digite seu cpf'/>
                             {errors.cpf && <Error>{errors.cpf.message}</Error>}
 
                         </Input>
                         <Input error={errors.whatsapp} id="box_whatsapp">
-                            Whatsapp:
+                            <span>Whatsapp:</span>
                             <input {...register('whatsapp')} name="whatsapp" placeholder='Digite seu whatsapp'/>
                             {errors.whatsapp && <Error>{errors.whatsapp.message}</Error>}
 
                         </Input>
                         <Input error={errors.email} id="box_email">
-                            E-mail:
+                            <span>E-mail:</span>
                             <input {...register('email')} name="email" placeholder='Digite seu e-mail'/>
                             {errors.email && <Error>{errors.email.message}</Error>}
 
                         </Input>
                         
                         <Input error={errors.senha} id="box_senha">
-                            Senha:
+                            <span>Senha:</span>
                             <input {...register('senha')} type="password" name="senha" placeholder='Digite sua senha'/>
                             {errors.senha && <Error>{errors.senha.message}</Error>}
 
                         </Input>
                         <Input error={errors.confirmar_senha} id="box_confirmar">
-                            Confirmar senha:
+                            <span>Confirmar senha:</span>
                             <input 
                                 {...register('confirmar_senha')}
                                 type="password"

@@ -3,6 +3,7 @@ import { color } from "../stylesGlobal";
 export const light = {
     colors: {
         cinza: "#DFDFDF",
+        red: "#E83939",
 
         background: "#FFFFFF",
         backgroundSecondary: "#F5F7FD",

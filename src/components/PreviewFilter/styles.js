@@ -7,6 +7,7 @@ export const Container = styled.section`
   background-color: ${({ theme }) => theme.colors.categoryContainer};
 
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 
@@ -52,6 +53,12 @@ export const Container = styled.section`
         display: block;
       }
     }
+  }
+
+  h2 {
+    margin-bottom: 24px;
+    color: var(--branco);
+    font-weight: 400;
   }
 
   form {
@@ -115,6 +122,10 @@ export const Container = styled.section`
 
   @media screen and (max-width: 560px) {
     padding: 20px;
+
+    h2 {
+      font-size: 1rem;
+    }
 
     form {
       display: grid;

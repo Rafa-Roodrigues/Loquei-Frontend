@@ -1,12 +1,18 @@
 import { ContentLeft, ContentRight, Container, BoxInputs, Footer, Error, Input, BoxError } from './style';
+
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { Link, useNavigate } from 'react-router-dom';
+
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { Link, useNavigate } from 'react-router-dom';
-import { api } from '../../services/axios';
-import { useState } from 'react';
+
 import toast from 'react-hot-toast';
+
+import { api } from '../../services/axios';
 import { useAuthentication } from '../../hooks/useAutenticacao';
+
+import { Logo } from '../../components/Logo';
 
 export function Login2() {
     const {createAuthentication} = useAuthentication();
@@ -45,17 +51,17 @@ export function Login2() {
         <Container>
             <ContentLeft>
                 <form onSubmit={handleSubmit(handleForm)}>
-                    <h2>Efetuar o login</h2>
+                    <Logo marginBot={40} size={200} />
                     {error && <BoxError>{error}</BoxError>}
                     <BoxInputs>
                         <Input error={errors.email} id="box_email">
-                            E-mail:
+                            <span>E-mail:</span>
                             <input {...register('email')} name="email" placeholder='Digite seu e-mail'/>
                             {errors.email && <Error>{errors.email.message}</Error>}
                         </Input>
                         
                         <Input error={errors.senha} id="box_senha">
-                            Senha:
+                            <span>Senha:</span>
                             <input {...register('senha')} type="password" name="senha" placeholder='Digite sua senha'/>
                             {errors.senha && <Error>{errors.senha.message}</Error>}
 
@@ -72,8 +78,8 @@ export function Login2() {
 
             <ContentRight>
                 <div>
-                    <h1>Cadastre-se para ter uma<br></br> melhor experiência</h1>
-                    <p>Aqui você encontrará os melhores espaços para abrir seu negócio.</p>
+                    <h1>Entre com a sua conta</h1>
+                    <p>Aqui você encontrará os melhores espaços para abrir seu negócio. </p>
                 </div>
             </ContentRight>
         </Container>

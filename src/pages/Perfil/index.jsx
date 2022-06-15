@@ -1,14 +1,14 @@
-import { Container, Content, ConfigurationPanel, BoxInputs, InformationsProfile, PreviewProfile } from "./styles";
+import { Container, Content, ConfigurationPanel, InformationsProfile, ContainerTextProfile } from "./styles";
 
 import { Helmet } from "react-helmet";
 
 import { Header } from '../../components/Header';
+import { BoxInputs } from "./components/BoxInputs";
 
-import { useTheme } from "../../hooks/useTheme";
+import womanImg from "../../assets/img/woman.jpg";
+import { BiEdit } from "react-icons/bi";
 
 export function Perfil() {
-  const { themeIsActive } = useTheme();
-
   return (
     <Container>
       <Helmet>
@@ -17,60 +17,23 @@ export function Perfil() {
       <Header />
       <Content>
         <ConfigurationPanel> 
+          <InformationsProfile>
+            <button type="button">
+              <BiEdit size={28} />
+            </button>
+            <img src={womanImg} alt="Foto de perfil" />
+            <ContainerTextProfile>
+              <h1>Gustavo Alves</h1>
+            </ContainerTextProfile>
+          </InformationsProfile>
           <form>
-            <BoxInputs>
-              <input 
-                type="text" 
-                disabled 
-                value="Lindojonsom" 
-                className={themeIsActive && "dark_input"} 
-              />
-              <span>Nome</span>
-            </BoxInputs>
-            <BoxInputs>
-              <input 
-                type="text" 
-                disabled 
-                value="Silva" 
-                className={themeIsActive && "dark_input"} 
-              />
-              <span>Sobrenome</span>
-            </BoxInputs>
-            <BoxInputs>
-              <input 
-                type="text" 
-                disabled 
-                value="5**.***.**8-80" 
-                className={themeIsActive && "dark_input"} 
-              />
-              <span>CPF</span>
-            </BoxInputs>
-            <BoxInputs>
-              <input 
-                type="text" 
-                disabled 
-                value="(11) 98676-3137" 
-                className={themeIsActive && "dark_input"} 
-              />
-              <span>Whatsapp</span>
-            </BoxInputs>
-            <BoxInputs>
-              <input 
-                type="text" 
-                disabled 
-                value="user@exemple.com" 
-                className={themeIsActive && "dark_input"} 
-              />
-              <span>E-mail</span>
-            </BoxInputs>
+            <BoxInputs label="Nome:" type="text" value="Gustavo" disabled="true" />
+            <BoxInputs label="Sobrenome:" type="text" value="Alves" disabled="true" />
+            <BoxInputs label="CPF:" type="text" value="5**.***.**8-82" disabled="true" />
+            <BoxInputs label="Whatsapp:" type="text" value="(11) 98676-3137" disabled="true" />
+            <BoxInputs label="Email:" type="text" value="user@exemple.com" disabled="true" />
           </form>
         </ConfigurationPanel>
-        <InformationsProfile>
-          <PreviewProfile>
-            <img src="" alt="" />
-            <h1>Gustavo Silva</h1>
-          </PreviewProfile>
-        </InformationsProfile>
       </Content>
     </Container>
   );

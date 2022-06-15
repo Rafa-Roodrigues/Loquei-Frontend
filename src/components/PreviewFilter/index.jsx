@@ -6,6 +6,7 @@ import { HiOutlineLocationMarker } from 'react-icons/hi';
 export function PreviewFilter() {
   return (
     <Container>
+      <h2>Encontre o melhor espaço para o seu negócio</h2>
       <form>
         <select>
           <option>Selecione uma categoria</option>
@@ -20,7 +21,7 @@ export function PreviewFilter() {
           <BiSearch size={24} />
         </button>
         <div className="button_localizar">
-          <button type="button"><HiOutlineLocationMarker size="25 " /></button>
+          <button type="button"><HiOutlineLocationMarker size="25" /></button>
           <span>Localização atual</span>
         </div>
       </form>

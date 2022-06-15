@@ -57,7 +57,7 @@ export const ContainerAnunciar = styled.div `
             font-size: 0.8rem;
           }
 
-          input {
+          input, select {
             width: 100%;
             padding: 12px 10px;
             outline: none;
@@ -87,6 +87,17 @@ export const ContainerAnunciar = styled.div `
             }
           }
 
+          select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+
+            color: var(--cinza-claro);
+
+            option {
+              color: var(--cinza-escuro);
+            }
+          }
+
           span {
             display: block;
 
@@ -101,71 +112,6 @@ export const ContainerAnunciar = styled.div `
             top: calc(50% + 12px);
             right: 25px;
             transform: translateY(-50%);
-          }
-
-          .grid_checkbox {
-            display: grid;
-            grid-template-columns: 0.8fr 1.2fr;
-            grid-template-rows: repeat(4, auto);
-
-            .checkbox {
-              width: fit-content;
-              margin-top: 10px;
-              padding-left: 20px;
-              position: relative;
-
-              display: flex;
-              align-items: center;
-              justify-content: flex-start;
-
-              color: ${({ theme }) => theme.colors.textBody};
-              font-weight: 500;
-              font-size: 0.75rem;
-
-              input[type="checkbox"] {
-                opacity: 0;
-                position: absolute;
-                top: 50%;
-                left: -20px;
-                transform: translateY(-50%);
-
-                &:checked ~ span {
-                  background-color: var(--main);
-                  border: 2px solid var(--main);
-
-                  .icons {
-                    display: inline-block;
-                  }
-                }
-              }
-
-              span {
-                width: 15px;
-                height: 15px;
-                border: 2px solid var(--cinza);
-                border-radius: 4px;
-                background-color: transparent;
-
-                display: flex;
-                align-items: center;
-                justify-content: center;
-
-                position: absolute;
-                top: 50%;
-                left: 0;
-                transform: translateY(-50%);
-
-                &.dark_checkbox {
-                  background-color: ${({ theme }) => theme.colors.backgroundSecondary};
-                  border: 2px solid ${({ theme }) => theme.colors.backgroundSecondary};
-                }
-
-                .icons {
-                  display: none;
-                  color: var(--branco);
-                }
-              }
-            }
           }
         }
       }
@@ -365,14 +311,6 @@ export const ContainerAnunciar = styled.div `
         bottom: 0px;
         transform: translateY(100%);
         transition: bottom .4s;
-
-        form {
-          .box_input {
-            .grid_checkbox {
-              grid-template-columns: repeat(2, 1fr);
-            }
-          }
-        }
       }
     }
   }
