@@ -4,12 +4,23 @@ export const Container = styled.section`
   width: 100%;
   padding: 20px 0;
   position: relative;
+  overflow: hidden;
   background-color: ${({ theme }) => theme.colors.categoryContainer};
 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  img {
+    width: 50%;
+    opacity: 0.05;
+    position: absolute;
+    left: 0;
+    top: 20%;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
 
   .button_localizar {
     position: relative;
@@ -57,8 +68,10 @@ export const Container = styled.section`
 
   h2 {
     margin-bottom: 24px;
-    color: var(--branco);
-    font-weight: 400;
+    color: var(--branco-escuro);
+    font-weight: 500;
+    font-size: 1rem;
+    letter-spacing: 1px;
   }
 
   form {

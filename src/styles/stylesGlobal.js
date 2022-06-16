@@ -69,7 +69,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   input[disabled] {
-    opacity: 0.75;
+    opacity: 0.5;
 
   }
 
@@ -100,25 +100,29 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   .react-modal-content {
+    background-color: ${({ theme }) => theme.colors.backgroundSecondary};
     width: 380px;
     height: 200px;
-    border: 2px solid var(--preto);
+    padding: 20px 30px;
+
     border-radius: 5px;
-    background-color: ${({ theme }) => theme.colors.backgroundSecondary};
+    border: 2px solid var(--preto);
 
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
 
     h2 {
       margin-bottom: 10px;
       color: ${({ theme }) => theme.colors.textTitle};
+      font-size: 1.35rem;
     }
 
     p {
-      margin-bottom: 20px;
+      margin-bottom: 30px;
       color: ${({ theme }) => theme.colors.textBody};
+      font-size: 1.1rem;
     }
 
     .box_buttons {
@@ -127,28 +131,28 @@ export const GlobalStyles = createGlobalStyle`
       justify-content: center;
 
       button {
-        padding: 8px 16px;
+        padding: 5px 16px;
         border-radius: 5px;
       }
 
-      .delete {
+      .action {
         margin-right: 15px;
-        border: 2px solid ${({ theme }) => theme.colors.buttonRed};
+        border: 2px solid ${({ theme }) => theme.colors.buttonGreen};
         background-color: transparent;
         transition: background .2s;
         
-        color: ${({ theme }) => theme.colors.buttonRed};
+        color: ${({ theme }) => theme.colors.buttonGreen};
         transition: color .2s;
 
         &:hover {
-          background-color: ${({ theme }) => theme.colors.buttonRed};
+          background-color: ${({ theme }) => theme.colors.buttonGreen};
           color: var(--branco);
         }
       }
 
       .cancel {
-        border: 2px solid var(--main);
-        background-color: var(--main);
+        border: 2px solid ${({ theme }) => theme.colors.buttonRed};
+        background-color: ${({ theme }) => theme.colors.buttonRed};
         transition: filter .2s;
 
         color: var(--branco);

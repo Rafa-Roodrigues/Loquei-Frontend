@@ -24,9 +24,7 @@ export const light = {
         inputsPlaceholder: color.gray,
         inputsText: color.grayDark,
 
-        buttonsGreen: color.green,
+        buttonGreen: color.green,
         buttonRed: "#E83939",
-
-        inputsBackground: "#F5F5F5",
     }
 }

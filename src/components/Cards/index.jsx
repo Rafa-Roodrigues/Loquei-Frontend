@@ -42,7 +42,12 @@ export function CardVertical(props) {
         }
       </div>
 
-      <AlertModal isOpen={modalIsOpen} onRequestClose={haddleChangeStateModal} />
+      <AlertModal 
+        isOpen={modalIsOpen} 
+        onRequestClose={haddleChangeStateModal} 
+        text="Você deseja mesmo excluir este post?"
+        nameAction="Deletar"
+      />
     </CardVerticalContainer>
   );
 }
@@ -77,7 +82,12 @@ export function CardHorizontal(props) {
           : <button className="delete" onClick={haddleChangeStateModal}>Excluir anúncio</button>
         }
       </div>
-      <AlertModal isOpen={modalIsOpen} onRequestClose={haddleChangeStateModal} />
+      <AlertModal 
+        isOpen={modalIsOpen} 
+        onRequestClose={haddleChangeStateModal} 
+        text="Você deseja mesmo excluir este post?"
+        nameAction="Deletar"
+      />
     </CardHorizontalContainer>
   );
 }

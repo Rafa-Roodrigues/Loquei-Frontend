@@ -1,5 +1,7 @@
 import Modal from 'react-modal';
 
+import { AiOutlineAlert } from 'react-icons/ai';
+
 export function AlertModal(props) {
   return (
     <Modal
@@ -8,10 +10,10 @@ export function AlertModal(props) {
       overlayClassName="react-modal-overlay"
       className="react-modal-content"
     >
-      <h2>Confirme!</h2>
-      <p>Você deseja mesmo excluir este post?</p>
+      <h2><AiOutlineAlert /> Confirme</h2>
+      <p>{props.text}</p>
       <div className="box_buttons">
-        <button className="delete">Deletar</button>
+        <button className="action">{props.nameAction}</button>
         <button className="cancel" onClick={props.onRequestClose}>Cancelar</button>
       </div>
     </Modal>

@@ -17,7 +17,7 @@ export const Content = styled.main`
   justify-content: center;
 `;
 
-export const ConfigurationPanel = styled.div`
+export const ConfigurationPanel = styled.section`
   background-color: ${({ theme }) => theme.colors.backgroundSecondary};
   width: 100%;
   max-width: 720px;
@@ -29,6 +29,10 @@ export const ConfigurationPanel = styled.div`
   form {
     display: flex;
     flex-direction: column;
+  }
+
+  @media screen and (max-width: 720px) {
+    padding: 40px 20px;
   }
 `;
 
@@ -67,5 +71,22 @@ export const ContainerTextProfile = styled.div`
   h1 {
     color: ${({ theme }) => theme.colors.textTitle};
     font-size: 1.85rem;
+  }
+`;
+
+export const Divisions = styled.div`
+  background-color: ${({ theme }) => theme.colors.background};
+  width: 100%;
+  margin-bottom: 28px;
+  padding: 20px;
+
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 8%);
+
+  h4 {
+    color: ${({ theme }) => theme.colors.textTitle};
+    font-size: 1.2rem;
+
+    margin-bottom: 18px;
   }
 `;

@@ -3,10 +3,13 @@ import { Container } from "./styles";
 import { BiSearch } from 'react-icons/bi';
 import { HiOutlineLocationMarker } from 'react-icons/hi';
 
+import compassImg from '../../assets/img/compass-background.svg';
+
 export function PreviewFilter() {
   return (
     <Container>
-      <h2>Encontre o melhor espaço para o seu negócio</h2>
+      <img src={compassImg} />
+      <h2>Encontre espaço ideal para seus negócios:</h2>
       <form>
         <select>
           <option>Selecione uma categoria</option>

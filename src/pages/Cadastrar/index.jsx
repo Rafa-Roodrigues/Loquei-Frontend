@@ -1,13 +1,18 @@
 import { ContentLeft, ContentRight, Container, BoxInputs, Footer, Error, Input, BoxError } from './style';
+
+import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { useNavigate, Link } from 'react-router-dom';
+
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { useEffect, useState } from 'react';
+
+import toast from 'react-hot-toast';
+
+import { api } from '../../services/axios';
 import { mascaraCPF } from '../../utils/mascaraCpf';
 import { mascaraCelular } from '../../utils/mascaraCelular';
-import { api } from '../../services/axios';
-import toast from 'react-hot-toast';
-import { useNavigate, Link } from 'react-router-dom';
+
 import { Logo } from '../../components/Logo';
 
 export function Cadastrar() {

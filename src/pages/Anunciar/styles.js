@@ -224,7 +224,7 @@ export const ContainerAnunciar = styled.div `
       .button_publicar {
         padding: 10px 30px;
         border-radius: 5px;
-        background-color: ${({ theme }) => theme.colors.buttonsGreen};
+        background-color: ${({ theme }) => theme.colors.buttonGreen};
         transition: filter .2s;
 
         color: var(--branco);

@@ -24,7 +24,7 @@ export const dark = {
         inputsPlaceholder: "#C9C9C9",
         inputsText: color.white,
 
-        buttonsGreen: "#8fc227",
+        buttonGreen: "#8fc227",
         buttonRed: "#F03232",
     }
 }

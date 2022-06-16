@@ -62,7 +62,7 @@ export const HeaderContainer = styled.header `
         .button_registrar {
           padding: 10px 20px;
           border-radius: 5px;
-          background-color: ${({ theme }) => theme.colors.buttonsGreen};
+          background-color: ${({ theme }) => theme.colors.buttonGreen};
           transition: filter .2s;
 
           color: var(--branco);
@@ -97,7 +97,7 @@ export const HeaderContainer = styled.header `
         margin-right: 15px;
         padding: 10px 20px;
         border-radius: 5px;
-        background-color: ${({ theme }) => theme.colors.buttonsGreen};
+        background-color: ${({ theme }) => theme.colors.buttonGreen};
         transition: filter .2s;
 
         color: var(--branco);
