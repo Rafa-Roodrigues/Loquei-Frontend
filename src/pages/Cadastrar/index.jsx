@@ -3,6 +3,7 @@ import { ContentLeft, ContentRight, Container, BoxInputs, Footer, Error, Input, 
 import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate, Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -73,6 +74,9 @@ export function Cadastrar() {
 
     return (
         <Container>
+            <Helmet>
+                <title>Loquei | Cadastrar</title>
+            </Helmet>
             <ContentLeft>
                 <div>
                     <h1>Cadastre-se</h1>

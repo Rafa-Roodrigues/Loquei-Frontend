@@ -7,28 +7,24 @@ import { BiLeftArrowAlt, BiRightArrowAlt } from 'react-icons/bi';
 import imgNone from '../../assets/img/img-none.jpg';
 
 export function CarroselCards() {
-  const carousel = useRef(null)
+  const carousel = useRef(null);
 
-  function handleLeftClick(event) {
+  function handleLeftClick() {
     carousel.current.scrollLeft -= carousel.current.offsetWidth;
-
-    event.preventDefault();
   }
 
-  function handleRightClick(event) {
+  function handleRightClick() {
     carousel.current.scrollLeft += carousel.current.offsetWidth;
-    
-    event.preventDefault();
   }
 
   return (
     <Container>
       <span className="title">Destaque</span>
 
-      <button onClick={handleLeftClick} className="button_arrow">
+      <button type="button" onClick={handleLeftClick} className="button_arrow">
         <BiLeftArrowAlt size={20} color="#FFF" />
       </button>
-      <button onClick={handleRightClick} className="button_arrow">
+      <button type="button" onClick={handleRightClick} className="button_arrow">
         <BiRightArrowAlt size={20} color="#FFF" />
       </button>
 

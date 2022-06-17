@@ -181,7 +181,7 @@ export const BoxFilter = styled.aside`
           font-weight: 500;
           font-size: 0.75rem;
 
-          input[type="checkbox"] {
+          input[type='checkbox'] {
             opacity: 0;
             position: absolute;
             top: 50%;

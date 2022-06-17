@@ -3,6 +3,7 @@ import { ContentLeft, ContentRight, Container, BoxInputs, Footer, Error, Input, 
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -49,6 +50,9 @@ export function Login2() {
 
     return (
         <Container>
+            <Helmet>
+                <title>Loquei | Login</title>
+            </Helmet>
             <ContentLeft>
                 <form onSubmit={handleSubmit(handleForm)}>
                     <Logo marginBot={40} size={200} />

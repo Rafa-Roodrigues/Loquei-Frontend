@@ -8,6 +8,7 @@ import { Anunciar } from '../pages/Anunciar';
 import { Perfil } from '../pages/Perfil';
 import { Cadastrar } from '../pages/Cadastrar';
 import { Login2 } from '../pages/Login2';
+import { AdDetails } from '../pages/AdDetails';
 
 export function Router() {
     return (
@@ -22,6 +23,7 @@ export function Router() {
                 <Route path="/buscar" element={<Buscar />}/>
                 <Route path="/anunciar" element={<Anunciar />}/>
                 <Route path="/perfil" element={<Perfil />}/>
+                <Route path="/ad-details" element={<AdDetails />}/>
             </Routes>
         </BrowserRouter>
     )
