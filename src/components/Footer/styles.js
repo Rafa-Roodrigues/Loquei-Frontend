@@ -11,7 +11,7 @@ export const Content = styled.div `
   padding: 20px;
 
   > div {
-    margin-bottom: 20px;
+    margin-bottom: 0px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -45,6 +45,15 @@ export const Content = styled.div `
 
     li {
       margin-right: 20px;
+      cursor: pointer;
+
+      img#techmark {
+        height: 18px;
+      }
+
+      img#weame {
+        height: 23px;
+      }
 
       &:last-child {
         margin-right: 0;

@@ -44,6 +44,10 @@ export const GlobalStyles = createGlobalStyle`
     }
   }
 
+  ul, li {
+    list-style: none;
+  }
+
   body {
     background-color: ${({ theme }) => theme.colors.background};
     -webkit-font-smoothing: antialiased;

@@ -14,7 +14,19 @@ export const ContainerAnunciar = styled.div `
 
     column-gap: 5px;
     display: grid;
-    grid-template-columns: 0.7fr 1.6fr 0.7fr;
+    grid-template-columns: 1fr 2fr 1fr;
+
+    .box_anuncios {
+      flex: 1;
+
+      padding: 10px 0px;
+      display: flex;
+      justify-content: center;
+
+      img {
+        width: 75%;
+      }
+    }
 
     .box_mobile {
       display: none;

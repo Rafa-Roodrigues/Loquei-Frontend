@@ -12,6 +12,7 @@ import { FaCheck } from 'react-icons/fa';
 import { ContainerAnunciar } from "./styles";
 
 import iconImageUpload from '../../assets/img/image-upload.svg';
+import bannerWeAMe from '../../assets/banner/weame.jpeg';
 
 export function Anunciar() {
   const { themeIsActive } = useTheme();
@@ -136,7 +137,8 @@ export function Anunciar() {
         </button>
 
         <section className="box_anuncios">
-          anuncios
+          {/* anuncios */}
+          <img src={bannerWeAMe} alt="banner do nosso parceiro we a me"/>
         </section>
       </div>
     </ContainerAnunciar>
