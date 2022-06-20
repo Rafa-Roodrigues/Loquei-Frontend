@@ -23,6 +23,10 @@ function RoutePrivate() {
     return <Outlet/>;
 }
 
+export function NotFound() {
+    return <h1>Rota não encontrada!!!</h1>
+}
+
 export function Router() {
     return (
         <BrowserRouter>
@@ -33,13 +37,41 @@ export function Router() {
                 <Route path="/cadastrar" element={<RegisterUser/>}/>
                 <Route path="/buscar" element={<Buscar />}/>
 
-                <Route element={<RoutePrivate/>}>
-                    <Route path="/meus-anuncios" element={<MeusAnuncios />}/>
+                {/* <Route element={<RoutePrivate/>}> */}
                     <Route path="/anunciar" element={<Anunciar />}/>
                     <Route path="/perfil" element={<Perfil />}/>
                     <Route path="/ad-details" element={<AdDetails />}/>
-                </Route>
+                    <Route path="/meus-anuncios" element={<MeusAnuncios />}/>
+                {/* </Route> */}
+
+                <Route path="*" element={<NotFound/>}/>
             </Routes>
         </BrowserRouter>
     )
 }
+
+{/* <Route path="/" element={<Home />}/>
+<Route path="/login" element={<Login />}/>
+<Route path="/cadastrar" element={<RegisterUser/>}/>
+<Route path="/buscar" element={<Buscar />}/>
+
+<Route path="/meusAnuncios" element={
+    <RoutePrivate>
+        <MeusAnuncios />
+    </RoutePrivate>
+}/>
+<Route path="/anunciar" element={
+    <RoutePrivate>
+        <Anunciar />
+    </RoutePrivate>
+}/>
+<Route path="/perfil" element={
+    <RoutePrivate>
+        <Perfil />
+    </RoutePrivate>
+}/>
+<Route path="/ad-details" element={
+    <RoutePrivate>
+        <AdDetails />
+    </RoutePrivate>
+}/> */}

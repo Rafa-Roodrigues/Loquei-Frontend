@@ -48,7 +48,7 @@ export function Login() {
             navigate('/');
         })
         .catch((err) => {
-            if(err.status === 500){
+            if(err.response.status === 500){
                 toast.error('Não foi possível realizar seu cadastro!');
             }
 

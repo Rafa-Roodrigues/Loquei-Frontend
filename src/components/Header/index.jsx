@@ -115,7 +115,7 @@ export function Header() {
               </button>
             </li>
             <li>
-              <Link className="button_registrar" to="/registro">Cadastrar-se</Link>
+              <Link className="button_registrar" to="/cadastrar">Cadastrar-se</Link>
             </li>
           </ul>
         ) }
@@ -171,7 +171,7 @@ export function Header() {
               <li>
                 <button onClick={() => {
                   destroyAuthentication();
-                  navigate('/loginn');
+                  navigate('/login');
                 }}>Sair</button>
                 <MdLogout className="icons" size={24}/>
               </li>

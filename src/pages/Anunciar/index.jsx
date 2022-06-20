@@ -83,6 +83,7 @@ export function Anunciar() {
         <section className="box_content">
           <div className="box_preview_image">
             <div className="preview_container">
+              <img src="C:\Users\rodri\Pictures\Screenshots/image.png" />
             </div>
             <div className="preview_container">
             </div>
@@ -108,7 +109,7 @@ export function Anunciar() {
                 <input type="file" name="myImage" accept="image/*" />
                 <i><img src={iconImageUpload} /></i>
               </label>
-              {stateCard ? (
+              {/* {stateCard ? (
                 <CardHorizontal
                   title="Digite seu título"
                   address="Rua Exenplo, 01 - Bairro, Cidade, Estado"
@@ -120,7 +121,7 @@ export function Anunciar() {
                   address="Rua Exenplo, 01 - Bairro, Cidade, Estado"
                   creation
                 />
-              )}
+              )} */}
             </div>
           </div>
 
