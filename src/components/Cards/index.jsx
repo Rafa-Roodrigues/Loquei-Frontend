@@ -47,7 +47,12 @@ export function CardVertical({data, isDelete, listAnnouncements}) {
 
   return (
     <CardVerticalContainer>
-      <img src={data.images[0].url} alt="Imagem do anúncio" />
+      {!data.images[0] ? (
+        <div className="box_image">
+        </div>
+      ) : (
+        <img src={data.images[0].url} alt="Imagem do anúncio" />
+      )}
 
       <div className="box_info">
         <Link to="/">
@@ -113,7 +118,12 @@ export function CardHorizontal({data, isDelete, listAnnouncements}) {
 
   return (
     <CardHorizontalContainer>
-      <img src={data.images[0].url} alt="Imagem do anúncio" />
+      {!data.images[0] ? (
+        <div className="box_image">
+        </div>
+      ) : (
+        <img src={data.images[0].url} alt="Imagem do anúncio" />
+      )}
 
       <div className="box_info">
         <h2>{data.title}</h2>

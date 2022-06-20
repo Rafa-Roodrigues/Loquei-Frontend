@@ -14,6 +14,47 @@ import { ContainerAnunciar } from "./styles";
 import iconImageUpload from '../../assets/img/image-upload.svg';
 import bannerWeAMe from '../../assets/banner/weame.jpeg';
 
+const dados = {
+	meter: "150",
+	title: "Shopping União",
+	description: "Shopping que fica na cidade de osasco",
+	id: 12,
+	id_adress: 12,
+	id_category: 1,
+	id_user: 1,
+	
+	images: [
+		{
+			etag: "\"0x8DA52DF0C8FE708\"",
+			id: 35,
+			id_announcement: 12,
+			name: "8c8591235587d2ce3bbf5973f41ccfd2-Captura de Tela (2).png",
+			url: "https://imagestoredemoday.blob.core.windows.net/imagensprodutos/8c8591235587d2ce3bbf5973f41ccfd2-Captura de Tela (2).png"
+		}
+	],
+	
+	adress: [
+		{
+			adress: "Avenida dos Autonomistas",
+			city: "Osasco",
+			complement: "Casa",
+			district: "Vila Yara",
+			id: 12,
+			latitude: "-23.538978",
+			longitude: "-46.765336",
+			number: "1400",
+			state: "SP",
+			zip_code: "06020-010"
+		}
+	],
+	
+	category: {
+		id: 1,
+		id_image: 1,
+		name: "Loja"
+	}
+}
+
 export function Anunciar() {
   const { themeIsActive } = useTheme();
   const [stateMenu, setStateMenu] = useState(false);
@@ -109,19 +150,17 @@ export function Anunciar() {
                 <input type="file" name="myImage" accept="image/*" />
                 <i><img src={iconImageUpload} /></i>
               </label>
-              {/* {stateCard ? (
+              {stateCard ? (
                 <CardHorizontal
-                  title="Digite seu título"
-                  address="Rua Exenplo, 01 - Bairro, Cidade, Estado"
+                  data={dados}
                   creation
                 />
               ) : (
                 <CardVertical 
-                  title="Digite seu título"
-                  address="Rua Exenplo, 01 - Bairro, Cidade, Estado"
+                  data={dados}
                   creation
                 />
-              )} */}
+              )}
             </div>
           </div>
 
