@@ -7,7 +7,7 @@ export function ButtonSubmit({disabled = false, title }) {
         <Button type='submit' disabled={disabled}>
             {disabled ? (
                 <>
-                    {disabled && <div id="box_disabled"></div>}
+                    {/* {disabled && <div id="box_disabled"></div>} */}
                     <Spinner/>
                 </>
             ) : title}

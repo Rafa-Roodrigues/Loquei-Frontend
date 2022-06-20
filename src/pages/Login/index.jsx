@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
@@ -20,6 +20,7 @@ export function Login() {
     const [error, setError] = useState('');
     const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
+    const location = useLocation();
 
     const schema = yup.object({
         email: yup.string().email('E-mail inválido').required('Campo obrigatório'),
@@ -38,6 +39,12 @@ export function Login() {
         })
         .then((response) => {
             createAuthentication(response.data);
+
+            if(location?.state) {
+                navigate(location.state.from.pathname);
+                return;
+            }
+
             navigate('/');
         })
         .catch((err) => {
@@ -59,6 +66,7 @@ export function Login() {
                 <form onSubmit={handleSubmit(handleForm)}>
                     <Logo marginBot={40} size={200} />
                     {error && <BoxError>{error}</BoxError>}
+                    {location?.state && <BoxError>{location.state.message}</BoxError>}
                     <BoxInputs>
                         <Input 
                             register={register} 
