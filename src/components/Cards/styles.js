@@ -102,6 +102,7 @@ export const CardVerticalContainer = styled.article`
     }
 
     button {
+      min-width: 110px;
       width: fit-content;
       padding: 6px 8px;
       border-radius: 4px;
@@ -111,6 +112,10 @@ export const CardVerticalContainer = styled.article`
       color: #FFF;
       font-weight: 600;
       font-size: 12px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
       &:hover {
         filter: brightness(0.8);

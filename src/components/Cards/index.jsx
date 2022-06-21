@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import Modal from 'react-modal';
@@ -8,37 +8,69 @@ import { BsArrowRight } from 'react-icons/bs';
 
 import { CardVerticalContainer, CardHorizontalContainer } from "./styles";
 import { AlertModal } from '../AlertModal';
+import toast from 'react-hot-toast';
+import { api } from '../../services/axios';
+import { Spinner } from '../Spinner';
+import { useAuthentication } from '../../hooks/useAutenticacao';
 
-export function CardVertical(props) {
+export function CardVertical({data, isDelete, listAnnouncements}) {
   const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const { authentication } = useAuthentication();
 
   function haddleChangeStateModal() {
     setModalIsOpen(!modalIsOpen);
   }
 
+  function deleteAnnouncement(id) {
+    setLoading(true)
+    api.delete(`/users/announcements/${id}`, {
+      headers: {
+        Authorization: `Bearer ${authentication.token}`,
+      }
+    })
+    .then(() => {
+      toast.success('Seu anúncio foi deletado com sucesso!');
+      listAnnouncements(id);
+    })
+    .catch((err) => {
+
+      if(err.response.status === 500){
+        toast.error('Não foi possível deletar seu anúncio!');
+        return;
+      }
+
+      toast.error(err.response.data.message);
+    })
+    .finally(() => setLoading(false))
+  }
+
   return (
     <CardVerticalContainer>
-      {!props.imgURL ? (
+      {!data.images[0] ? (
         <div className="box_image">
         </div>
       ) : (
-        <img src={props.imgURL} alt={props.title} />
+        <img src={data.images[0].url} alt="Imagem do anúncio" />
       )}
+
       <div className="box_info">
         <Link to="/">
-          <h2>{props.title}</h2>
-          <p>{props.address}</p>
+          <h2>{data.title}</h2>
+          <p>{data.adress.adress}, {data.adress.number}, {data.adress.zip_code} - {data.adress.district} - {data.adress.city} - {data.adress.state}</p>
 
           <ul>
             <li>Detalhes:</li>
-            <li><BiArea className="icons" size={16} /> 100m²</li>
+            <li><BiArea className="icons" size={16} /> {data.meter}m²</li>
           </ul>
 
         </Link>
         {
-          !props.delete 
+          !isDelete 
           ? <Link className="details" to="/">Detalhes <BsArrowRight className="icons" size={16} /></Link> 
-          : <button onClick={haddleChangeStateModal}>Excluir anúncio</button>
+          : <button className="delete" onClick={() => deleteAnnouncement(data.id)} disabled={loading ? true : false}>
+              {loading ? <Spinner/> : 'Excluir anúncio'}
+            </button>
         }
       </div>
 
@@ -52,34 +84,62 @@ export function CardVertical(props) {
   );
 }
 
-export function CardHorizontal(props) {
+export function CardHorizontal({data, isDelete, listAnnouncements}) {
   const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const { authentication } = useAuthentication();
 
   function haddleChangeStateModal() {
     setModalIsOpen(!modalIsOpen);
   }
 
+  function deleteAnnouncement(id) {
+    setLoading(true)
+    api.delete(`/users/announcements/${id}`, {
+      headers: {
+        Authorization: `Bearer ${authentication.token}`,
+      }
+    })
+    .then(() => {
+      toast.success('Seu anúncio foi deletado com sucesso!');
+      listAnnouncements(id)
+    })
+    .catch((err) => {
+
+      if(err.response.status === 500){
+        toast.error('Não foi possível deletar seu anúncio!');
+        return;
+      }
+
+      toast.error(err.response.data.message);
+    })
+    .finally(() => setLoading(false))
+  }
+
   return (
     <CardHorizontalContainer>
-      {!props.imgURL ? (
+      {!data.images[0] ? (
         <div className="box_image">
         </div>
       ) : (
-        <img src={props.imgURL} alt={props.title} />
+        <img src={data.images[0].url} alt="Imagem do anúncio" />
       )}
+
       <div className="box_info">
-        <h2>{props.title}</h2>
-        <p>{props.address}</p>
+        <h2>{data.title}</h2>
+        <p>{data.adress.adress}, {data.adress.number}, {data.adress.zip_code} - {data.adress.district} - {data.adress.city} - {data.adress.state}</p>
 
         <ul>
           <li>Detalhes:</li>
-          <li><BiArea className="icons" size={16} /> 100m²</li>
+          <li><BiArea className="icons" size={16} /> {data.meter}m²</li>
         </ul>
 
         {
-          !props.delete 
+          !isDelete 
           ? <Link to="/">Detalhes <BsArrowRight className="icons" size={16} /></Link>
-          : <button className="delete" onClick={haddleChangeStateModal}>Excluir anúncio</button>
+          : <button className="delete" onClick={() => deleteAnnouncement(data.id)}>
+            {loading ? <Spinner/> : 'Excluir anúncio'}
+          </button>
         }
       </div>
       <AlertModal 

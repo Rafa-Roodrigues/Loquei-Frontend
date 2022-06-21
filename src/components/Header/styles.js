@@ -210,6 +210,12 @@ export const Perfil = styled.button`
   position: relative;
   cursor: pointer;
 
+  &:hover {
+    #box_info_login {
+      display: flex;
+    }
+  }
+
   img {
     width: 50px;
     height: 50px;
@@ -238,39 +244,69 @@ export const Perfil = styled.button`
   }
 
   #box_info_login {
-    display: ${({ status }) => status ?  'flex' : 'none'};
+    display: none;
     flex-direction: column;
 
     position: absolute;
-    top: 0;
+    top: 0px;
     left: 0;
     right: 0;
     z-index: 999999;
     
-    background-color: #FFFFFF;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+    padding-top: 60px;
 
-    margin-top: 60px;
+    ul {      
+      background-color: ${({ theme }) => theme.colors.background};
+      color: ${({ theme }) => theme.colors.textTitle};
+      box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
 
-    li {
-      width: 100%;
-      text-align: center;
-      /* background-color: red; */
-      list-style: none;
-      transition: background 0.2s;
+      border-radius: 5px;
 
-      a, button {
-        padding: 6px 0;
-        display: block;
-        width: 100%;
+      li {
+        border-bottom: 1px solid #d9d9d9;
 
-        &:hover {
-          background-color: #7A46DB;
-          color: #FFFFFF;
+        &:last-child {
+          border-bottom: 0px solid #d9d9d9;
         }
+
+        button:last-child {
+            border-radius: 0px 0px 5px 5px;
+        }
+
+        a:last-child {
+            border-radius: 5px 5px 0px 0px;
+        }
+
+        a, button {
+          width: 100%;
+          
+          padding: 13px;
+
+          transition: color .2s;
+
+          color: ${({ theme }) => theme.colors.textBody};
+          font-weight: 500;
+
+          display: flex;
+          align-items: center;
+
+          svg {
+            margin-right: 10px;
+            color: ${({ theme }) => theme.colors.textBody};
+          }
+
+          &:hover{
+            background-color: ${({ theme }) => theme.colors.backgroundSecondary};
+
+            svg {
+              color: ${({ theme }) => theme.colors.textBody};
+            }
+          }
+        }      
       }
     }
   }
+  
 `;
 
 export const BoxContent = styled.div`

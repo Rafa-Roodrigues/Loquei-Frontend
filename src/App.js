@@ -18,8 +18,6 @@ export function App() {
         <GlobalStyles/>
         <Toaster
           position="top-right"
-          reverseOrder={false}
-          toastOptions={{duration: '400'}}
         />
       </AuthenticationProvider>
     </ThemeProvider>

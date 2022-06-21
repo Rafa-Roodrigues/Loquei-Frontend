@@ -8,14 +8,13 @@ import { useTheme } from "../../hooks/useTheme";
 
 import { BiSearch, BiUser } from 'react-icons/bi';
 import { HiMenu } from 'react-icons/hi';
-import { IoMdClose, IoMdNotificationsOutline } from 'react-icons/io';
+import { IoMdClose } from 'react-icons/io';
 
 import { Logo } from '../Logo';
 import { useAuthentication } from '../../hooks/useAutenticacao';
 
 export function Header() {
   const [stateMenu, setStateMenu] = useState('none');
-  const [statusOptionsMenu, setStatusOptionsMenu] = useState(false);
 
   const { authentication, destroyAuthentication } = useAuthentication();
   const { themeIsActive, changeTheme } = useTheme();
@@ -44,7 +43,7 @@ export function Header() {
               ) }
               </button>
 
-            <Perfil status={statusOptionsMenu} onClick={ () => setStatusOptionsMenu(!statusOptionsMenu)}>
+            <Perfil>
               <div id="box_image">
                 {authentication.image?.url 
                   ? <img src={authentication.image.url} alt="imagem do usuário" />
@@ -57,13 +56,43 @@ export function Header() {
                 <p>{authentication.name} {authentication.lastname}</p>
               </div>
 
-              <ul id="box_info_login">
-                <li><Link to="/anunciar">Anunciar</Link></li>
-                <li><Link to="meus-anuncios">Meus anúncios</Link></li>
-                <li><Link to="/perfil">Perfil</Link></li>
-                <li><Link to="/buscar">Buscar</Link></li>
-                <li><button onClick={destroyAuthentication}>Sair</button></li>
-              </ul>
+              <div id="box_info_login">
+                <ul>
+                  <li>
+                    <Link to="/anunciar">
+                      <MdAdd className="icons" size={24}/>
+                      Anunciar
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="meus-anuncios">
+                      <MdFormatListBulleted className="icons" size={24}/>
+                      Meus anúncios
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/perfil">
+                      <BiUser className="icons" size={24} />
+                      Perfil
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/buscar">
+                      <BiSearch className="icons" size={24} />
+                      Buscar
+                    </Link>
+                  </li>
+                  <li>
+                    <button onClick={() => {
+                      destroyAuthentication();
+                      navigate('/login');
+                    }}>
+                      <MdLogout className="icons" size={24}/>
+                      Sair
+                    </button>
+                  </li>
+                </ul>
+              </div>
             </Perfil>
           </BoxContent>
         ) : (
@@ -86,7 +115,7 @@ export function Header() {
               </button>
             </li>
             <li>
-              <Link className="button_registrar" to="/registro">Cadastrar-se</Link>
+              <Link className="button_registrar" to="/cadastrar">Cadastrar-se</Link>
             </li>
           </ul>
         ) }
@@ -142,7 +171,7 @@ export function Header() {
               <li>
                 <button onClick={() => {
                   destroyAuthentication();
-                  navigate('/loginn');
+                  navigate('/login');
                 }}>Sair</button>
                 <MdLogout className="icons" size={24}/>
               </li>

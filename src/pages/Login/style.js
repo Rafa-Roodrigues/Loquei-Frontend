@@ -80,16 +80,6 @@ export const ContentLeft = styled.div`
 
     }
 
-    button {
-        height: 40px;
-        grid-area: botao;
-        background-color: #A6E327;
-        display: block;
-        border-radius: 5px;
-        font-weight: 700;
-        color: #FFFFFF;
-    }
-
     @media screen and (max-width: 800px) {
         width: 100%;
         position: relative;
@@ -113,6 +103,10 @@ export const ContentLeft = styled.div`
     > p {
         font-size: 13px;
     }
+
+    label {
+        margin-bottom: 10px;
+    }
  `;
 
  export const Footer = styled.footer`
@@ -132,40 +126,6 @@ export const ContentLeft = styled.div`
 
     @media screen and (max-width: 800px) {
         display: flex;
-    }
- `;
-
- export const Error = styled.p`
-    color: ${({ theme }) => theme.colors.red};
-    margin-left: 3px;
-    font-size: 13px;
- `;
-
- export const Input = styled.label`
-    display: block;
-    font-size: 13px;
-
-    margin-bottom: 16px;
-
-    span {
-        color: ${({ theme }) => theme.colors.textBody};
-    }
-
-    input {
-        width: 100%;
-        height: 40px;
-
-        background-color: ${({ theme }) => theme.colors.backgroundSecondary};
-        color: ${({ theme }) => theme.colors.inputsText};
-
-        padding-left: 10px;
-        border-radius: 5px;
-
-        border: 2px solid ${({error}) => error ? ({ theme }) => theme.colors.red : 'transparent'};
-
-        &::placeholder {
-            color: ${({ theme }) => theme.colors.inputsPlaceholder};
-        }
     }
  `;
 

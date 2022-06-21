@@ -84,11 +84,6 @@ export const ContentRight = styled.div`
     button {
         height: 40px;
         grid-area: botao;
-        background-color: #A6E327;
-        display: block;
-        border-radius: 5px;
-        font-weight: 700;
-        color: #FFFFFF;
     }
 
     @media screen and (max-width: 800px) {
@@ -122,51 +117,39 @@ export const ContentRight = styled.div`
                         'cpf whats'
                         'email email'
                         'senha senha'
-                        'confirmar confirmar'
-                        'botao botao';
+                        'confirmar confirmar';
 
     > p {
         font-size: 13px;
     }
 
-    #box_nome {
+    label#box_nome {
         grid-area: nome;
     }
 
-    #box_sobrenome {
+    label#box_sobrenome {
         grid-area: sobrenome;
     }
 
-    #box_cpf {
+    label#box_cpf {
         grid-area: cpf;
     }
 
-    #box_whatsapp {
+    label#box_whatsapp {
         grid-area: whats;
     }
 
-    #box_email {
+    label#box_email {
         grid-area: email;
     }
 
-    #box_senha {
+    label#box_senha {
         grid-area: senha;
     }
 
-    #box_confirmar {
+    label#box_confirmar {
         grid-area: confirmar;
     }
-
-    /* @media screen and (max-width: 450px) {
-        grid-template-areas:'nome nome'
-                            'sobrenome sobrenome'
-                            'cpf cpf'
-                            'whats whats'
-                            'email email'
-                            'senha senha'
-                            'confirmar confirmar'
-                            'botao botao';
-    } */
  `;
 
  export const Footer = styled.footer`
@@ -186,38 +169,6 @@ export const ContentRight = styled.div`
 
     @media screen and (max-width: 800px) {
         display: flex;
-    }
- `;
-
- export const Error = styled.p`
-    color: ${({ theme }) => theme.colors.red};
-    margin-left: 3px;
-    font-size: 13px;
- `;
-
- export const Input = styled.label`
-    display: block;
-    font-size: 13px;
-
-    span {
-        color: ${({ theme }) => theme.colors.textBody};
-    }
-
-    input {
-        width: 100%;
-        height: 40px;
-
-        background-color: ${({ theme }) => theme.colors.backgroundSecondary};
-        color: ${({ theme }) => theme.colors.inputsText};
-
-        padding-left: 10px;
-        border-radius: 5px;
-
-        border: 2px solid ${({error}) => error ? ({ theme }) => theme.colors.red : 'transparent'};
-
-        &::placeholder {
-            color: ${({ theme }) => theme.colors.inputsPlaceholder};
-        }
     }
  `;
 
