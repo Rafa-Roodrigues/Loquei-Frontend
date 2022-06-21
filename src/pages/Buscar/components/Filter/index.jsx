@@ -14,8 +14,6 @@ import { get } from 'react-hook-form';
 //https://api.tomtom.com/search/2/search/Rua.json?countrySet=brazil&minFuzzyLevel=1&maxFuzzyLevel=2&view=Unified&relatedPois=off&key=a1UphnSvWEVz0BN9R28fb0FmJXCFpgvW
 
 export function Filter() {
-  const states = ['Acre', 'Alagoas', 'Amapá', 'Amazonas', 'Bahia', 'Ceará', 'Distrito Federal', 'Espírito Santo', 'Goiás', 'Maranhão', 'Mato Grosso', 'Mato Grosso do Sul', 'Minas Gerais', 'Pará', 'Paraíba', 'Paraná', 'Pernambuco', 'Piauí', 'Rio de Janeiro', 'Rio Grande do Norte', 'Rio Grande do Sul', 'Rondônia', 'Roraima', 'Santa Catarina', 'São Paulo', 'Sergipe', 'Tocantins'];
-
   const { themeIsActive } = useTheme();
 
   const [ valueInput, setValueInput ] = useState('');
@@ -80,8 +78,9 @@ export function Filter() {
         <h3>Estado e cidade</h3>
 
         <select onChange={event => handleSearchCity(event.target.value)}>
+          <option>...</option> 
           {getState.map(states => (
-            <option>{states.sigla} | {states.nome}</option>
+            <option>{states.sigla}<span> | {states.nome}</span></option>
           ))}
         </select>
 

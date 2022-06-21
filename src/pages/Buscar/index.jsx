@@ -42,7 +42,7 @@ export function Buscar() {
             zoom={16} 
             style={{ width: "100%", height: "100%" }}
           >
-            <TileLayer url={`https://api.mapbox.com/styles/v1/mapbox/${themeIsActive ? 'dark-v10' : 'light-v10'}/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoiZ3VzdGF2MGsiLCJhIjoiY2tnODluaHlmMGYwOTJzb3puNGQ5M3JtYyJ9.oCWjv8e5vZqFdl_jja_Ecg`} />
+            <TileLayer url={`https://api.mapbox.com/styles/v1/mapbox/${themeIsActive ? 'navigation-guidance-night-v4' : 'navigation-guidance-day-v4'}/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoiZ3VzdGF2MGsiLCJhIjoiY2tnODluaHlmMGYwOTJzb3puNGQ5M3JtYyJ9.oCWjv8e5vZqFdl_jja_Ecg`} />
             <Marker 
               position={[coords[0], coords[1]]} 
               icon={IconLocal}
