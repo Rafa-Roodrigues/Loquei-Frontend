@@ -49,10 +49,25 @@ export const Content = styled.div `
 
       img#techmark {
         height: 18px;
+        filter: grayscale(100%);
+        opacity: 0.4;
+
+        &:hover {
+          filter: grayscale(0%);
+          opacity: 1;
+        }
       }
 
       img#weame {
         height: 23px;
+        filter: grayscale(100%);
+        opacity: 0.4;
+
+        &:hover {
+          filter: grayscale(0%);
+          opacity: 1;
+
+        }
       }
 
       &:last-child {

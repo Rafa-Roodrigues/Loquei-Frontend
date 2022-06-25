@@ -7,8 +7,10 @@ import commercialImg from '../../assets/img/commercial.jpg';
 import othersImg from '../../assets/img/others-space.jpg';
 
 import { Container, CategoryCards } from "./styles";
+import { useEffect, useState } from "react";
+import { api } from "../../services/axios";
 
-export function CategorySpecifications() {
+export function CategorySpecifications() {  
   return (
     <Container>
       <span className="title_box">O que se encaixa em</span>

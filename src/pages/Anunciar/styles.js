@@ -23,12 +23,18 @@ export const ContainerAnunciar = styled.div `
       display: flex;
       justify-content: center;
 
+      /* background-color: #f5f6fa; */
+
       img {
         width: 75%;
       }
     }
 
     .box_mobile {
+      display: none;
+    }
+
+    .none {
       display: none;
     }
 
@@ -52,18 +58,22 @@ export const ContainerAnunciar = styled.div `
         background: rgba(0, 0, 0, 3%);
       }
 
-      form {
+      #content_left {
         width: 100%;
         height: fit-content;
         background-color: transparent;
 
+        .box_hidden {
+          display: none;
+        }
+
         .box_input {
-          padding: 15px;
-          border-bottom: 1px solid ${({ theme }) => theme.colors.backgroundSecondary};
+          padding: 5px 15px;
+          /* border-bottom: 1px solid ${({ theme }) => theme.colors.backgroundSecondary}; */
           position: relative;
 
           h3 {
-            margin-bottom: 5px;
+            margin-bottom: 3px;
             display: block;
             color: ${({ theme }) => theme.colors.textBody};
             font-size: 0.8rem;
@@ -141,6 +151,47 @@ export const ContainerAnunciar = styled.div `
       align-items: center;
       justify-content: space-between;
 
+      .box_preview_image_content {
+        width: 100%;
+        height: 80px;
+        background-color: transparent;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .preview_container_content {
+          position: relative;
+          width: 100px;
+          height: 100px;
+          margin-right: 20px;
+          border-radius: 5px;
+          overflow: hidden;
+          background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='5' ry='5' stroke='%23A0A0A0FF' stroke-width='4' stroke-dasharray='7%2c 12' stroke-dashoffset='24' stroke-linecap='square'/%3e%3c/svg%3e");
+
+          &:last-child {
+            margin-right: 0;
+          }
+
+          img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 5px;
+          }
+
+          button {
+            width: 27px;
+            height: 27px;
+
+            background-color: #ffffff;
+            position: absolute;
+            right: 0px;
+            top: 0px;
+          }
+        }
+      }
+
       .box_preview_image {
         width: 100%;
         height: 80px;
@@ -151,14 +202,35 @@ export const ContainerAnunciar = styled.div `
         justify-content: center;
 
         .preview_container {
-          width: 80px;
-          height: 80px;
+          position: relative;
+          width: 100px;
+          height: 100px;
           margin-right: 20px;
           border-radius: 5px;
+          overflow: hidden;
           background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='5' ry='5' stroke='%23A0A0A0FF' stroke-width='4' stroke-dasharray='7%2c 12' stroke-dashoffset='24' stroke-linecap='square'/%3e%3c/svg%3e");
 
           &:last-child {
             margin-right: 0;
+          }
+
+          img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 5px;
+          }
+
+          button {
+            width: 25px;
+            height: 22px;
+
+            background-color: #ffffff;
+            position: absolute;
+            right: 0px;
+            top: 0px;
+
+            /* border-radius: 0 0 0 20px; */
           }
         }
       }
@@ -166,8 +238,11 @@ export const ContainerAnunciar = styled.div `
       .box_card {
         min-height: 295px;
 
+        /* background-color: red; */
+        margin-top: 10px;
+
         .alternative {
-          margin-bottom: 20px;
+          margin-bottom: 8px;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -246,6 +321,11 @@ export const ContainerAnunciar = styled.div `
         &:hover {
           filter: brightness(0.9);
         }
+
+        &:disabled {
+          filter: brightness(0.7);
+          cursor: default;
+        }
       }
     }
   }
@@ -265,6 +345,19 @@ export const ContainerAnunciar = styled.div `
         .box_preview_image {
           height: 60px;
           .preview_container {
+            width: 60px;
+            height: 60px;
+            margin-right: 10px;
+
+            &:last-child {
+              margin-right: 0;
+            }
+          }
+        }
+
+        .box_preview_image_content {
+          height: 60px;
+          .preview_container_content {
             width: 60px;
             height: 60px;
             margin-right: 10px;
@@ -317,7 +410,8 @@ export const ContainerAnunciar = styled.div `
       }
 
       .box_filtro {
-        padding-bottom: 50px;
+        /* padding-bottom: 100px; */
+        /* height: fit-content; */
         position: absolute;
         z-index: 9;
         bottom: 0px;
@@ -326,4 +420,87 @@ export const ContainerAnunciar = styled.div `
       }
     }
   }
+`;
+
+export const BoxInput = styled.div`
+  padding: 5px 15px;
+  /* border-bottom: 1px solid ${({ theme }) => theme.colors.backgroundSecondary}; */
+  position: relative;
+
+  h3 {
+    margin-bottom: 3px;
+    display: block;
+    color: ${({ theme }) => theme.colors.textBody};
+    font-size: 0.8rem;
+  }
+
+  button {
+    text-align: left;
+  }
+
+  #box_description {
+    height: 100px;
+    resize: none;
+  }
+
+  #box_address {
+    height: 50px;
+    padding: 5px 5px;
+    resize: none;
+  }
+
+  input, select, button, textarea {
+    width: 100%;
+    padding: 10px 10px;
+    outline: none;
+    border: 2px solid var(--cinza);
+    border-radius: 5px;
+    background-color: transparent;
+
+    border: 2px solid ${({error}) => error ? ({ theme }) => theme.colors.red : '#DFDFDF'};
+
+    color: var(--cinza-escuro);
+
+    &::placeholder {
+      color: var(--cinza);
+    }
+
+    &.dark_input {
+      border-color: transparent;
+      background-color: ${({  theme }) => theme.colors.backgroundSecondary};
+      color: ${({  theme }) => theme.colors.cinza};
+      transition: color .2s;
+
+      &::placeholder {
+        color: ${({  theme }) => theme.colors.cinza};
+      }
+
+      &:focus {
+        color: ${({  theme }) => theme.colors.textBody};
+      }
+    }
+  }
+
+  select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    color: var(--cinza-claro);
+
+    option {
+      color: var(--cinza-escuro);
+    }
+  }
+
+  span {
+    display: block;
+
+    color: ${({error}) => error ? ({ theme }) => theme.colors.red : 'transparent'};
+    font-weight: 500;
+    font-size: 0.7rem;
+  }
+`;
+
+export const BoxInputHidden = styled.div`
+  display: none;
 `;

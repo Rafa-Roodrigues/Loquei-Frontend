@@ -37,12 +37,12 @@ export function Router() {
                 <Route path="/cadastrar" element={<RegisterUser/>}/>
                 <Route path="/buscar" element={<Buscar />}/>
 
-                {/* <Route element={<RoutePrivate/>}> */}
+                <Route element={<RoutePrivate/>}>
                     <Route path="/anunciar" element={<Anunciar />}/>
                     <Route path="/perfil" element={<Perfil />}/>
                     <Route path="/ad-details" element={<AdDetails />}/>
                     <Route path="/meus-anuncios" element={<MeusAnuncios />}/>
-                {/* </Route> */}
+                </Route>
 
                 <Route path="*" element={<NotFound/>}/>
             </Routes>

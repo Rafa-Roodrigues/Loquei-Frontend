@@ -42,7 +42,7 @@ export function CardVertical({data, isDelete, listAnnouncements}) {
 
       toast.error(err.response.data.message);
     })
-    .finally(() => setLoading(false))
+    .finally(() => setLoading(false));
   }
 
   return (
