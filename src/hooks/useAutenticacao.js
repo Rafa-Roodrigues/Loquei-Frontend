@@ -15,8 +15,9 @@ export function AuthenticationProvider({ children }) {
     });
 
     function createAuthentication(data) {
-        delete data.cpf;
 
+        if(data.cpf) delete data.cpf;
+        
         setAuthentication(data);
         localStorage.setItem('@AUTHENTICATION', JSON.stringify(data));
     }
@@ -26,8 +27,12 @@ export function AuthenticationProvider({ children }) {
         localStorage.removeItem('@AUTHENTICATION');
     }
 
+    function getAuthentication() {
+        return JSON.parse(localStorage.getItem('@AUTHENTICATION'));
+    }
+
     return (
-        <AuthenticationContext.Provider value={{authentication, createAuthentication, destroyAuthentication}}>
+        <AuthenticationContext.Provider value={{authentication, createAuthentication, destroyAuthentication, getAuthentication}}>
             {children}
         </AuthenticationContext.Provider>
     )

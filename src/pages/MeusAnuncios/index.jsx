@@ -6,7 +6,6 @@ import { Header } from '../../components/Header';
 import { CardHorizontal, CardVertical } from "../../components/Cards";
 
 import { MeusAnunciosContainer } from "./styles";
-import imgNone from '../../assets/img/img-none.jpg';
 import { useEffect, useState } from "react";
 import { api } from "../../services/axios";
 import { useAuthentication } from "../../hooks/useAutenticacao";
@@ -15,14 +14,13 @@ import toast from "react-hot-toast";
 export function MeusAnuncios() {
   const [announcements, setAnnouncements] = useState([]);
   const { authentication, destroyAuthentication } = useAuthentication();
+
   const navigate = useNavigate();
 
   function listAnnouncements(id) {
     const newAnnouncements = announcements.filter(announcement => announcement.id != id);
     setAnnouncements(newAnnouncements);
   }
-
-  console.log(announcements);
 
   useEffect(() => {
     api.get('/users/announcements', {
@@ -50,53 +48,55 @@ export function MeusAnuncios() {
   }, []);
 
   return (
-    <MeusAnunciosContainer>
-      <Helmet>
-        <title>Loquei | Meus Anuncios</title>
-      </Helmet>
-      <Header />
-      <div class="box_grid">
-        <aside>
-          <form>
-            <h3>Encontar meus anúncios</h3>
-            <input type="text" placeholder="Digite alguma informação do anuncio" />
-          </form>
+    <>
+      <MeusAnunciosContainer>
+        <Helmet>
+          <title>Loquei | Meus Anuncios</title>
+        </Helmet>
+        <Header />
+        <div class="box_grid">
+          <aside>
+            <form>
+              <h3>Encontar meus anúncios</h3>
+              <input type="text" placeholder="Digite alguma informação do anuncio" />
+            </form>
 
-          <Link to="/anunciar">
-            <span></span>
-            <p>Criar um anúncio</p>
-          </Link>
-        </aside>
-        <section className="box_content">
-          {announcements.length === 0 ? (
-            <h1>Você ainda não tem nenhum anúncio.</h1>
-          ) : (
-            <>
-              <div className="card_vertical">
+            <Link to="/anunciar">
+              <span></span>
+              <p>Criar um anúncio</p>
+            </Link>
+          </aside>
+          <section className="box_content">
+            {announcements.length === 0 ? (
+              <h1>Você ainda não tem nenhum anúncio.</h1>
+            ) : (
+              <>
+                <div className="card_vertical">
+                  {announcements.map(announcement => (
+                    <CardVertical 
+                      data={announcement}
+                      isDelete={true}
+                      listAnnouncements={listAnnouncements}
+                    />
+                  ))}
+                </div>
+
+                <div className="card_horizontal">
+
                 {announcements.map(announcement => (
-                  <CardVertical 
+                  <CardHorizontal 
                     data={announcement}
                     isDelete={true}
                     listAnnouncements={listAnnouncements}
                   />
                 ))}
-              </div>
 
-              <div className="card_horizontal">
-
-              {announcements.map(announcement => (
-                <CardHorizontal 
-                  data={announcement}
-                  isDelete={true}
-                  listAnnouncements={listAnnouncements}
-                />
-              ))}
-
-              </div>
-            </>
-          )}
-        </section>
-      </div>
-    </MeusAnunciosContainer>
+                </div>
+              </>
+            )}
+          </section>
+        </div>
+      </MeusAnunciosContainer>
+    </>
   );
 }

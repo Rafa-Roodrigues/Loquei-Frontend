@@ -14,7 +14,7 @@ import { Logo } from '../../components/Logo';
 import { ButtonSubmit } from '../../components/ButtonSubmit';
 import { Input } from '../../components/Input';
 
-import { ContentLeft, ContentRight, Container, BoxInputs, Footer, BoxError } from './style';
+import { ContentLeft, ContentRight, Container, BoxInputs, Footer, BoxError, Button } from './style';
 
 export function RegisterUser() {
     const [error, setError] = useState('');
@@ -152,7 +152,9 @@ export function RegisterUser() {
                         />
                     </BoxInputs>
 
-                    <ButtonSubmit disabled={loading} title="Cadastrar"/>
+                    <Button disabled={loading} title="Cadastrar">
+                        {loading ? 'Cadastrando...' : 'Cadastrar-se'}
+                    </Button>
 
                     <p>Você já tem uma conta? <Link to="/login">Fazer login</Link></p>
                 </form>

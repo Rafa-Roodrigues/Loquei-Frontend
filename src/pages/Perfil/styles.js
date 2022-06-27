@@ -17,7 +17,7 @@ export const Content = styled.main`
   justify-content: center;
 `;
 
-export const ConfigurationPanel = styled.section`
+export const Form = styled.form`
   background-color: ${({ theme }) => theme.colors.backgroundSecondary};
   width: 100%;
   max-width: 720px;
@@ -26,7 +26,7 @@ export const ConfigurationPanel = styled.section`
   padding: 70px 50px;
   overflow-y: auto;
 
-  form {
+  #box_divisions {
     display: flex;
     flex-direction: column;
   }
@@ -43,6 +43,10 @@ export const InformationsProfile = styled.div`
   margin-bottom: 32px;
   position: relative;
 
+  #hidden {
+    display: none;
+  }
+
   > button {
     transition: filter .2s;
     position: absolute;
@@ -56,21 +60,13 @@ export const InformationsProfile = styled.div`
       filter: brightness(0.7);
     }
   }
-
-  img {
-    width: 80px;
-    height: 80px;
-    margin-right: 25px;
-
-    object-fit: cover;
-    border-radius: 50px;
-  }
 `;
 
 export const ContainerTextProfile = styled.div`
   h1 {
     color: ${({ theme }) => theme.colors.textTitle};
-    font-size: 1.85rem;
+    font-size: 1.5rem;
+    margin-left: 10px;
   }
 `;
 
@@ -88,5 +84,69 @@ export const Divisions = styled.div`
     font-size: 1.2rem;
 
     margin-bottom: 18px;
+  }
+`;
+
+export const ContainerPhoto = styled.div`
+  #image_exists {
+    width: 80px;
+    height: 80px;
+    position: relative;
+
+    border-radius: 50%;
+
+    img {
+      width: 80px;
+      height: 80px;
+      margin-right: 25px;
+
+      object-fit: cover;
+      border-radius: 50px;
+    }
+
+    > button {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+
+      border-radius: 50%;
+
+      background-color: rgba(0, 0, 0, 0.5);
+      transition:  0.2s;
+      color: #ffffff;
+      width: 100%;
+
+      font-size: 12px;
+      display: none;
+    }
+
+    > input {
+      background-color: orange;
+    }
+
+    #not_image {
+      background-color: purple;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      font-size: 22px;
+      color: #ffffff;
+    }
+
+    #hidden_input {
+      display: none;
+    }
+
+    &:hover {
+      > button {
+        display: block;
+      }
+    }
   }
 `;

@@ -290,7 +290,7 @@ export function Anunciar() {
               {previewImages.map((image, index) => (
                 <div className="preview_container">
                   <img src={image} />
-                  <button onClick={ () => withdrawImage(index)}><MdClose/></button>
+                  <button type="button" onClick={() => withdrawImage(index)}><MdClose/></button>
                 </div>
               ))}
             </div>
