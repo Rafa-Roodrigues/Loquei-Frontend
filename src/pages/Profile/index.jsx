@@ -22,7 +22,7 @@ import { useAuthentication } from "../../hooks/useAutenticacao";
 import { BoxInputMask } from "./components/BoxInputMask";
 import { useNavigate } from "react-router-dom";
 
-export function Perfil() {
+export function Profile() {
   const { authentication, getAuthentication, createAuthentication, destroyAuthentication } = useAuthentication();
   const [fullName, setFullName] = useState('');
   const [image, setImage] = useState({});
@@ -58,6 +58,12 @@ export function Perfil() {
 
   function cancelUpdate() {
     setEnableEditing(false);
+
+    setValue('name', user.name);
+    setValue('lastname', user.lastname);
+    setValue('whatsapp', user.whatsapp);
+    setValue('email', user.email);
+    setValue('phone', user.telefone_fixo);
   }
 
   function handlePhoto() {
