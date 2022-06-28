@@ -13,7 +13,7 @@ import { Logo } from '../../components/Logo';
 import { ButtonSubmit } from '../../components/ButtonSubmit';
 import { Input } from '../../components/Input';
 
-import { ContentLeft, ContentRight, Container, BoxInputs, Footer, BoxError } from './style';
+import { ContentLeft, ContentRight, Container, BoxInputs, Footer, BoxError, Button } from './style';
 
 export function Login() {
     const { createAuthentication } = useAuthentication();
@@ -85,7 +85,9 @@ export function Login() {
                             placeholder='Digite sua senha' 
                         />
                     </BoxInputs>
-                    <ButtonSubmit title="Entrar" disabled={loading}/>
+                    <Button title="Entrar" disabled={loading}>
+                        {loading ? 'Entrando...' : 'Entrar'}
+                    </Button>
                     <p>Não tem uma conta? <Link to="/cadastrar">Cadastre-se</Link></p>
                 </form>
 

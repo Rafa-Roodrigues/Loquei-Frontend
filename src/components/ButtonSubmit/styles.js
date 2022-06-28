@@ -28,5 +28,4 @@ export const Button = styled.button`
     &:disabled {
         cursor: default;
     }
-    
 `;

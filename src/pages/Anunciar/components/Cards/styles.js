@@ -120,10 +120,6 @@ export const CardVerticalContainer = styled.article`
       &:hover {
         filter: brightness(0.8);
       }
-
-      &:disabled {
-        filter: brightness(0.7);
-      }
     }
   }
 `;

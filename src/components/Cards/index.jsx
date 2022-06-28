@@ -16,10 +16,6 @@ export function CardVertical({data, isDelete, listAnnouncements}) {
   const [loading, setLoading] = useState(false);
   const { authentication } = useAuthentication();
 
-  function haddleChangeStateModal() {
-    setModalIsOpen(!modalIsOpen);
-  }
-
   function deleteAnnouncement(id) {
     setLoading(true)
     api.delete(`/users/announcements/${id}`, {
@@ -32,7 +28,6 @@ export function CardVertical({data, isDelete, listAnnouncements}) {
       listAnnouncements(id);
     })
     .catch((err) => {
-
       if(err.response.status === 500){
         toast.error('Não foi possível deletar seu anúncio!');
         return;
@@ -40,7 +35,7 @@ export function CardVertical({data, isDelete, listAnnouncements}) {
 
       toast.error(err.response.data.message);
     })
-    .finally(() => setLoading(false))
+    .finally(() => setLoading(false));
   }
 
   return (
@@ -66,17 +61,19 @@ export function CardVertical({data, isDelete, listAnnouncements}) {
         {
           !isDelete 
           ? <Link className="details" to="/">Detalhes <BsArrowRight className="icons" size={16} /></Link> 
-          : <button className="delete" onClick={() => deleteAnnouncement(data.id)} disabled={loading ? true : false}>
-              {loading ? <Spinner/> : 'Excluir anúncio'}
+          : <button className="delete" onClick={() => setModalIsOpen(true)} disabled={loading ? true : false}>
+              {loading ? 'Excluindo...' : 'Excluir anúncio'}
             </button>
         }
       </div>
 
       <AlertModal 
         isOpen={modalIsOpen} 
-        onRequestClose={haddleChangeStateModal} 
-        text="Você deseja mesmo excluir este post?"
+        onRequestClose={() => setModalIsOpen(false)} 
+        text="Você deseja mesmo excluir este anúncio?"
         nameAction="Deletar"
+        cancel={() => setModalIsOpen(false)}
+        save={() => deleteAnnouncement(data.id)}
       />
     </CardVerticalContainer>
   );
@@ -86,10 +83,6 @@ export function CardHorizontal({data, isDelete, listAnnouncements}) {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [loading, setLoading] = useState(false);
   const { authentication } = useAuthentication();
-
-  function haddleChangeStateModal() {
-    setModalIsOpen(!modalIsOpen);
-  }
 
   function deleteAnnouncement(id) {
     setLoading(true)
@@ -135,16 +128,18 @@ export function CardHorizontal({data, isDelete, listAnnouncements}) {
         {
           !isDelete 
           ? <Link to="/">Detalhes <BsArrowRight className="icons" size={16} /></Link>
-          : <button className="delete" onClick={() => deleteAnnouncement(data.id)}>
-            {loading ? <Spinner/> : 'Excluir anúncio'}
+          : <button disabled={loading ? true : false} className="delete" onClick={() => setModalIsOpen(true)}>
+            {loading ? 'Excluindo' : 'Excluir anúncio'}
           </button>
         }
       </div>
       <AlertModal 
         isOpen={modalIsOpen} 
-        onRequestClose={haddleChangeStateModal} 
-        text="Você deseja mesmo excluir este post?"
+        onRequestClose={() => setModalIsOpen(false)} 
+        text="Você deseja mesmo excluir este anúncio?"
         nameAction="Deletar"
+        cancel={() => setModalIsOpen(false)}
+        save={() => deleteAnnouncement(data.id)}
       />
     </CardHorizontalContainer>
   );
