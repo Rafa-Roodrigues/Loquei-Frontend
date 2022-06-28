@@ -12,14 +12,14 @@ import { BsWhatsapp } from 'react-icons/bs';
 import { HiOutlineLocationMarker } from 'react-icons/hi';
 
 const adInformation = {
-  title: 'Garagem grande',
-  description: 'Garagem espaçosa que pode virar um comercio na zona norte de São Paulo. Esta localizado no bairro Parque Amazonas.',
+  title: 'Garagem grande - SP/ZN',
+  description: 'Garagem espaçosa que pode virar um comercio na zona norte de São Paulo. Esta localizado no bairro Parque Casa de Pedra.',
   place: {
-    cep: "65031-350",
-    logradouro: "Rua Parintins",
-    bairro: "Sé",
-    cidade: "São Luís",
-    uf: "MA",
+    cep: "02319-120",
+    logradouro: "Rua Elias de Almeida",
+    bairro: "Parque Casa de Pedra",
+    cidade: "São Paulo",
+    uf: "SP",
   },
   imagesUrl: [
     'https://claudia.abril.com.br/wp-content/uploads/2020/02/garagem1-1.jpg',
@@ -101,7 +101,7 @@ export function AdDetails() {
             </li>
             <li>
               <BiArea size={26} color="#7A46DB" />
-              <p>100m² - Metros quadrados</p>
+              <p>30m² - Metros quadrados</p>
             </li>
           </InformationList>
         </Left>

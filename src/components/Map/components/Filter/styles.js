@@ -1,12 +1,19 @@
 import styled from "styled-components";
 
 export const Container = styled.form`
-  width: 100%;
-  height: 100%;
-  margin-right: 5px;
-  padding-right: 5px;
+  width: 324px;
+  padding: 9px 5px 5px 5px;
   overflow-y: auto;
+
   background-color: ${({ theme }) => theme.colors.background};
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+
+  position: absolute;
+  top: 37%;
+  left: 20px;
+  z-index: 99999;
+  transform: translateY(-50%);
 
   &::-webkit-scrollbar-track {
     background-color: ${({ theme }) => theme.colors.background};
@@ -28,18 +35,22 @@ export const Container = styled.form`
 `;
 
 export const BoxInputs = styled.div`
-  padding: 20px 15px;
-  border-bottom: 1px solid ${({ theme }) => theme.colors.backgroundSecondary};
   position: relative;
+  padding: 10px 15px;
+  border-bottom: 1px solid ${({ theme }) => theme.colors.backgroundSecondary};
 
-  h3 {
-    margin-bottom: 8px;
-    display: block;
-    color: ${({ theme }) => theme.colors.textBody};
-    font-size: 0.8rem;
+  &:last-child {
+    border-bottom: none;
   }
 
-  input, select {
+  h3 {
+    margin-bottom: 6px;
+    display: block;
+    color: ${({ theme }) => theme.colors.textBody};
+    font-size: 0.75rem;
+  }
+
+  input {
     width: 100%;
     padding: 12px 10px;
     outline: none;
@@ -48,6 +59,10 @@ export const BoxInputs = styled.div`
     background-color: transparent;
 
     color: var(--cinza-escuro);
+
+    &:focus ~ .box-autocomplete {
+      display: block !important;
+    }
 
     &::placeholder {
       color: var(--cinza);
@@ -74,21 +89,36 @@ export const BoxInputs = styled.div`
   }
 
   select {
-    width: 59px;
-    padding: 12px 18px;
+    width: 50px;
+    position: relative;
+    margin-right: 10px;
+    padding: 12px 10px;
+
+    background-color: transparent;
+    border: 2px solid var(--cinza);
+    border-radius: 10px;
+
+    color: ${({ theme }) => theme.colors.textBody};
+    text-align: center;
 
     -webkit-appearance: none;
     -moz-appearance: none;
-
-    &:last-child {
-      width: calc(100% - 71px);
-      margin-left: 10px;
-      padding: 12px 10px;
+    
+    &:nth-child(3) {
+      width: calc(100% - 60px);
+      margin-right: 0;
+      padding-right: 40px;
+      
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      text-align: left;
     }
 
-    option {
-      color: ${({ theme }) => theme.colors.textTitle};
-      letter-spacing: 1px;
+    &.dark_input {
+      border: none;
+      background-color: ${({  theme }) => theme.colors.backgroundSecondary};
+      color: ${({  theme }) => theme.colors.cinza};
     }
   }
 
@@ -176,6 +206,84 @@ export const BoxInputs = styled.div`
   }
 `;
 
+export const BoxButtons = styled.div`
+  padding: 20px 15px;
+
+  button {
+    background-color: ${({ theme }) => theme.colors.buttonGreen};
+    padding: 10px;
+    border-radius: 5px;
+
+    color: var(--branco);
+    font-size: 0.95rem;
+    transition: filter .2s;
+
+    gap: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      filter: brightness(0.85);
+    }
+  }
+`;
+
+export const BoxAutoComplete = styled.div`
+  background-color: ${({ theme }) => theme.colors.backgroundSecondary};
+  border-radius: 10px;
+  display: none;
+
+  width: calc(100% - 10px);
+  max-height: 300px;
+  padding: 10px;
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  z-index: 99999;
+  transform: translateX(-50%);
+
+  overflow: auto;
+
+  ::-webkit-scrollbar-track {
+    background-color: ${({ theme }) => theme.colors.backgroundSecondary};
+  }
+  ::-webkit-scrollbar {
+    width: 7px;
+    background-color: ${({ theme }) => theme.colors.backgroundSecondary};
+  }
+  ::-webkit-scrollbar-thumb {
+    padding-top: 10px;
+    border-radius: 50px;
+    background: rgba(0, 0, 0, 10%);
+  }
+
+  &:hover {
+    display: block;
+  }
+
+  button {
+    width: 100%;
+    margin-bottom: 10px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid ${({ theme }) => theme.colors.cinza};
+    
+    text-align: left;
+
+    &:last-child {
+      border-bottom: 0;
+    }
+    p {
+      transition: color .2s;
+      color: ${({ theme }) => theme.colors.textTitle};
+      font-size: 0.85rem;
+    }
+    &:hover > p {
+      color: var(--main);
+    }
+  }
+`;
+
 export const GridInput = styled.div`
   width: fit-content;
   margin-top: 5px;
@@ -198,52 +306,5 @@ export const GridInput = styled.div`
     color: ${({ theme }) => theme.colors.cinza};;
     font-weight: 500;
     font-size: 0.7rem;
-  }
-`;
-
-export const BoxAutoComplete = styled.div`
-  background-color: ${({ theme }) => theme.colors.backgroundSecondary};
-  border-radius: 10px;
-
-  width: calc(100% - 30px);
-  max-height: 400px;
-  padding: 10px;
-  position: absolute;
-  z-index: 2;
-  transform: translateY(5px);
-
-  overflow: auto;
-
-
-  &::-webkit-scrollbar-thumb {
-    border-radius: 50px;
-    background: rgba(0, 0, 0, 10%);
-  }
-
-  button {
-    width: 100%;
-    margin-bottom: 5px;
-    padding-bottom: 5px;
-    border-bottom: 1px solid ${({ theme }) => theme.colors.cinza};
-    
-    text-align: left;
-
-    &:last-child {
-      border-bottom: 0;
-    }
-
-    h4 {
-      white-space: nowrap;
-      text-overflow: ellipsis;
-      overflow: hidden;
-
-      color: ${({ theme }) => theme.colors.textTitle};
-      font-size: 0.8rem;
-    }
-
-    p {
-      color: ${({ theme }) => theme.colors.textBody};
-      font-size: 0.75rem;
-    }
   }
 `;

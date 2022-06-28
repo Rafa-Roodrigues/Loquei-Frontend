@@ -10,11 +10,11 @@ export function Footer() {
   return (
     <Container>
       <Content>
-        <div>
+        {/* <div>
           <a href="https://whimsical.com/loquei-time-de-desenvolvimento-UMEpzSbfdNXpcZk4YWUpcY" target="_blank">
             Conheça nossos parceiros
           </a>
-        </div>
+        </div> */}
         <ul>
           <li>
             <img id="weame" src={weame} alt="Logo do parceiro We e Me"/>

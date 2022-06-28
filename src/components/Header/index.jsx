@@ -6,7 +6,7 @@ import { HeaderContainer, Perfil, BoxContent } from './styles';
 
 import { useTheme } from "../../hooks/useTheme";
 
-import { BiSearch, BiUser } from 'react-icons/bi';
+import { BiUser } from 'react-icons/bi';
 import { HiMenu } from 'react-icons/hi';
 import { IoMdClose } from 'react-icons/io';
 
@@ -77,12 +77,6 @@ export function Header() {
                     </Link>
                   </li>
                   <li>
-                    <Link to="/buscar">
-                      <BiSearch className="icons" size={24} />
-                      Buscar
-                    </Link>
-                  </li>
-                  <li>
                     <button onClick={() => {
                       destroyAuthentication();
                       navigate('/login');
@@ -97,10 +91,6 @@ export function Header() {
           </BoxContent>
         ) : (
           <ul id="box_info">
-            <li className="search">
-              <Link className="link" to="/buscar">Buscar</Link>
-              <BiSearch className="icons" size={24} />
-            </li>
             <li>
               <Link className="link" to="/login">Entrar</Link>
               <BiUser className="icons" size={24} />
@@ -161,10 +151,6 @@ export function Header() {
                 <BiUser className="icons" size={24} />
               </li>
               <li>
-                <Link to="/buscar">Buscar</Link>
-                <BiSearch className="icons" size={24} />
-              </li>
-              <li>
                 <Link to="/chat">Notificações</Link>
                 <RiNotification2Line className="icons" size={24} />
               </li>
@@ -189,10 +175,6 @@ export function Header() {
             </ul>
           ) : (
             <ul>
-              <li>
-                <Link to="/buscar">Buscar</Link>
-                <BiSearch className="icons" size={24} />
-              </li>
               <li>
                 <Link to="/login">Entrar</Link>
                 <BiUser className="icons" size={24} />

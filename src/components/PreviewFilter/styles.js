@@ -2,160 +2,68 @@ import styled, {} from 'styled-components';
 
 export const Container = styled.section`
   width: 100%;
-  padding: 20px 0;
+  height: 120px;
   position: relative;
   background-color: ${({ theme }) => theme.colors.categoryContainer};
 
+  display: grid;
+  grid-template-columns: 0.55fr 1.45fr;
+`;
+
+export const ContentLeft = styled.div`
+  position: relative;
+  padding: 15px 20px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+`;
 
-  .button_localizar {
-    position: relative;
-    margin-left: 8px;
+export const ContentRight = styled.div`
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  background: black;
+  padding: 20px;
 
-    span {
-      padding: 5px;
-      border-radius: 5px;
-      background-color: rgba(0, 0, 0, 80%);
-      position: absolute;
-      left: calc(50% + 5px);
-      bottom: -3px;
-      transform: translate(-50%, 100%);
+  &::after {
+    content: '';
+    width: 0;
+    height: 0;
 
-      color: var(--branco);
-      font-size: 0.7rem;
-      text-align: center;
+    border-top: 65px solid transparent;
+    border-bottom: 65px solid ${({ theme }) => theme.colors.categoryContainer};
+    border-left: 65px solid transparent;
+    border-right: 65px solid ${({ theme }) => theme.colors.categoryContainer};
+    transform: rotate(90deg);
 
-      opacity: 0.95;
-
-      display: none;
-    }
-
-    button {
-      width: 50px;
-      height: 55px;
-      border-radius: 5px;
-      background-color: ${({ theme }) => theme.colors.inputsBackground};
-      color: var(--main);
-      transition: filter .2s;
-  
-      display: flex;
-      align-items: center;
-      justify-content: center;
-  
-      &:hover {
-        filter: brightness(0.9);
-      }
-
-      &:hover ~ span {
-        display: block;
-      }
-    }
+    position: absolute;
+    bottom: 0;
+    left: 0;
   }
 
-  h2 {
-    margin-bottom: 24px;
-    color: var(--branco-escuro);
-    font-weight: 500;
-    font-size: 1rem;
-    letter-spacing: 1px;
-  }
-
-  form {
+  img {
     width: 100%;
-    max-width: 720px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-
-    input, select {
-      width: 100%;
-      max-width: 500px; 
-      height: 55px; 
-      padding: 0 20px;
-      margin-right: 8px;
-      
-      outline: none;
-      border-radius: 5px;
-      background-color: ${({ theme }) => theme.colors.inputsBackground};
-
-      font-size: 1rem;
-      color: ${({ theme }) => theme.colors.inputsText};
-
-      &::placeholder {
-        color: ${({ theme }) => theme.colors.inputsPlaceholder}
-      }
-    }
-    
-    select {
-      max-width: 260px;
-      color: ${({ theme }) => theme.colors.inputsPlaceholder};
-
-      -webkit-appearance: none;
-      -moz-appearance: none;
-
-      option {
-        color: ${({ theme }) => theme.colors.textTitle};
-      }
-    }
-
-    button[type="submit"] {
-      padding: 12px;
-      height: 55px;
-      border-radius: 5px;
-
-      background-color: ${({ theme }) => theme.colors.inputsBackground};
-      color: ${({ theme }) => theme.colors.inputsPlaceholder};
-      transition: filter .2s;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      &:hover {
-        filter: brightness(0.9);
-      }
-    }
-
+    object-fit: cover;
+    position: absolute;
+    left: 0;
+    bottom: -100px;
+    z-index: 0;
+    opacity: 0.4;
+    pointer-events: none;
   }
 
-  @media screen and (max-width: 560px) {
-    padding: 20px;
+  p {
+    width: 100%;
+    max-width: 700px;
 
-    h2 {
-      font-size: 1rem;
-    }
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    transform: translate(-50%, -50%);
 
-    form {
-      display: grid;
-      gap: 10px;
-      grid-template-columns: 1.8fr 0.2fr;
-      grid-template-areas: 'select localization'
-                           'text search';
-
-      select {
-        grid-area: select;
-        margin: 0;
-        max-width: 100%;
-      }
-
-      input {
-        grid-area: text;
-        margin: 0;
-        max-width: 100%;
-      }
-
-      .button_localizar {
-        grid-area: localization;
-        margin: 0;
-      }
-
-      > button {
-        grid-area: search;
-      }
-    }
+    color: var(--branco);
+    font-size: 1.2rem;
   }
 `;

@@ -15,7 +15,7 @@ export const IconLocal = new L.Icon({
 
 export const IconSpace = new L.Icon({
   iconUrl: spaceLocationIcon,
-  iconSize: new L.Point(14, 17),
+  iconSize: new L.Point(20, 23),
   popupAnchor: [-1, -15],
 
   shadowUrl: null,

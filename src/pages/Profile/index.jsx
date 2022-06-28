@@ -11,7 +11,7 @@ import { BiEdit, BiSave } from "react-icons/bi";
 import womanImg from "../../assets/img/woman.jpg";
 import { AlertModal } from "../../components/AlertModal";
 
-export function Perfil() {
+export function Profile() {
   const [enableEditing, setEnableEditing] = useState(false);
   const [modalIsOpen, setModalIsOpen] = useState(false);
 

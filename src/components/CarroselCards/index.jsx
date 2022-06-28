@@ -7,9 +7,9 @@ import { BiLeftArrowAlt, BiRightArrowAlt } from 'react-icons/bi';
 import imgNone from '../../assets/img/img-none.jpg';
 
 const dados = {
-	meter: "150",
-	title: "Shopping União",
-	description: "Shopping que fica na cidade de osasco",
+	meter: "30",
+	title: "Garagem grande - SP/ZN",
+	description: "Garagem espaçosa que pode virar um comercio na zona norte de São Paulo. Esta localizado no bairro Parque Casa de Pedra.",
 	id: 12,
 	id_adress: 12,
 	id_category: 1,
@@ -21,16 +21,16 @@ const dados = {
 			id: 35,
 			id_announcement: 12,
 			name: "8c8591235587d2ce3bbf5973f41ccfd2-Captura de Tela (2).png",
-			url: "https://imagestoredemoday.blob.core.windows.net/imagensprodutos/8c8591235587d2ce3bbf5973f41ccfd2-Captura de Tela (2).png"
+			url: "https://claudia.abril.com.br/wp-content/uploads/2020/02/garagem1-1.jpg"
 		}
 	],
 	
 	adress: [
 		{
-			adress: "Avenida dos Autonomistas",
-			city: "Osasco",
-			complement: "Casa",
-			district: "Vila Yara",
+			adress: "Rua Elias de Almeida",
+			city: "São Paulo",
+			complement: "Garagem",
+			district: "Parque Casa de Pedra",
 			id: 12,
 			latitude: "-23.538978",
 			longitude: "-46.765336",

@@ -45,14 +45,25 @@ export const Content = styled.div `
 
     li {
       margin-right: 20px;
-      cursor: pointer;
+
+      img {
+        filter: grayscale(100%);
+        transition: filter .2s;
+        opacity: 0.5;
+        transition: opacity .2s;
+
+        &:hover {
+          filter: grayscale(0);
+          opacity: 1;
+        }
+      }
 
       img#techmark {
-        height: 18px;
+        height: 28px;
       }
 
       img#weame {
-        height: 23px;
+        height: 28px;
       }
 
       &:last-child {

@@ -1,7 +1,5 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
-
-import Modal from 'react-modal';
 
 import { BiArea } from 'react-icons/bi';
 import { BsArrowRight } from 'react-icons/bs';
