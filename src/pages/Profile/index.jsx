@@ -58,6 +58,12 @@ export function Profile() {
 
   function cancelUpdate() {
     setEnableEditing(false);
+
+    setValue('name', user.name);
+    setValue('lastname', user.lastname);
+    setValue('whatsapp', user.whatsapp);
+    setValue('email', user.email);
+    setValue('phone', user.telefone_fixo);
   }
 
   function handlePhoto() {
