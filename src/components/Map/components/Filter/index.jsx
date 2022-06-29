@@ -1,4 +1,4 @@
-import { Container, BoxInputs, BoxButtons, BoxAutoComplete, GridInput } from './styles';
+import { Container, ButtonMinimize, ButtonOpen, BoxInputs, BoxButtons, BoxAutoComplete, GridInput } from './styles';
 
 import { useEffect, useState } from "react";
 
@@ -12,6 +12,8 @@ import axios from "axios";
 export function Filter() {
   const { themeIsActive } = useTheme();
 
+  const [ stateMenu, setStateMenu ] = useState(false);
+
   const [ responseState, setResponseState ] = useState([]);
   const [ responseCity, setResponseCity ] = useState([]);
 
@@ -21,19 +23,11 @@ export function Filter() {
   const [ valueInput, setValueInput ] = useState('');
   const [ responseAddress, setResponseAddress ] = useState([]);
   const [userInformation, setUserInformation] = useState([]);
-  
-  async function searchStates() {
-    const response = await axios.get(`https://servicodados.ibge.gov.br/api/v1/localidades/estados`);
 
-    const data = [];
-
-    response.data.map(state => {
-      data.push(state.sigla);
-    });
-
-    setResponseState(data.sort());
+  function handleChangeStateMenu() {
+    setStateMenu(!stateMenu);
   }
-
+  
   function handleSearchCity(state) {
     fetch(`./states/${state}.json`, {
       headers: {
@@ -44,6 +38,18 @@ export function Filter() {
       setResponseCity(res);
       setCurrentSelectValueState(state);
     });
+  }
+
+  async function searchStates() {
+    const response = await axios.get(`https://servicodados.ibge.gov.br/api/v1/localidades/estados`);
+
+    const data = [];
+
+    response.data.map(state => {
+      data.push(state.sigla);
+    });
+
+    setResponseState(data.sort());
   }
 
   async function getInformationViaIp() {
@@ -80,7 +86,13 @@ export function Filter() {
   }, [valueInput]);
 
   return (
+    stateMenu ? (
+      <ButtonOpen type="button" onClick={handleChangeStateMenu}>
+        <BiSearch size={30} />
+      </ButtonOpen>
+    ) : (
     <Container>
+      <ButtonMinimize type="button" onClick={handleChangeStateMenu}></ButtonMinimize>
       <BoxInputs>
         <h3>Pesquise por endereço</h3>
         <input 
@@ -171,5 +183,6 @@ export function Filter() {
         <button><BiSearch size={20} /> Buscar</button>
       </BoxButtons>
     </Container>
+    )
   );
 }

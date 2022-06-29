@@ -37,6 +37,7 @@ export const Container = styled.div `
         align-self: center;
         justify-items: center;
         grid-template-columns: repeat(4, 1fr);
+        row-gap: 40px;
       }
     }
 

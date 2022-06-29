@@ -22,7 +22,7 @@ import { useAuthentication } from "../../hooks/useAutenticacao";
 import { BoxInputMask } from "./components/BoxInputMask";
 import { useNavigate } from "react-router-dom";
 
-export function Perfil() {
+export function Profile() {
   const { authentication, getAuthentication, createAuthentication, destroyAuthentication } = useAuthentication();
   const [fullName, setFullName] = useState('');
   const [image, setImage] = useState({});

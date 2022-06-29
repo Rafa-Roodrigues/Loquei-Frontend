@@ -7,8 +7,7 @@ import { Footer } from "../../components/Footer";
 import { CardVertical, CardHorizontal } from "../../components/Cards";
 
 import { Map } from "../../components/Map";
-import { PreviewFilter } from "../../components/PreviewFilter";
-import { CategorySpecifications } from "../../components/CategorySpecifications";
+import { CategoryCarousel } from "../../components/CategoryCarousel";
 
 const dados = {
 	meter: "30",
@@ -59,7 +58,7 @@ export function Home() {
       </Helmet>
 
       <Header />
-      <PreviewFilter />
+      <CategoryCarousel />
 			<Map />
       <main className="content">
         <section className="box_cards_vertical">
@@ -69,16 +68,35 @@ export function Home() {
             <div className="cards">
               <CardVertical data={dados} />
             </div>
+            <div className="cards">
+              <CardVertical data={dados} />
+            </div>
+            <div className="cards">
+              <CardVertical data={dados} />
+            </div>
+            <div className="cards">
+              <CardVertical data={dados} />
+            </div>
+            <div className="cards">
+              <CardVertical data={dados} />
+            </div>
+            <div className="cards">
+              <CardVertical data={dados} />
+            </div>
+            <div className="cards">
+              <CardVertical data={dados} />
+            </div>
           </div>
         </section>
 
         <section className="box_cards_horizontal">
-          <CardHorizontal 
-            data={dados}
-          />
+          <CardHorizontal data={dados} />
+          <CardHorizontal data={dados} />
+          <CardHorizontal data={dados} />
+          <CardHorizontal data={dados} />
+          <CardHorizontal data={dados} />
+          <CardHorizontal data={dados} />
         </section>
-
-        {/* <CategorySpecifications /> */}
       </main>
       <Footer/>
     </Container>
