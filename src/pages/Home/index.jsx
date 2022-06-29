@@ -54,33 +54,31 @@ const dados = {
 export function Home() {
   return (
     <Container>
-      <Helmet>
-        <title>Loquei | Home</title>
-      </Helmet>
+		<Helmet>
+		<title>Loquei | Home</title>
+		</Helmet>
 
-      <Header />
-      <PreviewFilter />
-			<Map />
-      <main className="content">
-        <section className="box_cards_vertical">
-          <span className="title_box">Resultados da sua busca:</span>
+		<Header />
+		<PreviewFilter />
+		<Map />
+		<main className="content">
+			<section className="box_cards_vertical">
+				<span className="title_box">Resultados da sua busca:</span>
 
-          <div className="box_margin">
-            <div className="cards">
-              <CardVertical data={dados} />
-            </div>
-          </div>
-        </section>
+				<div className="box_margin">
+				<div className="cards">
+					<CardVertical data={dados} />
+				</div>
+				</div>
+			</section>
 
-        <section className="box_cards_horizontal">
-          <CardHorizontal 
-            data={dados}
-          />
-        </section>
-
-        {/* <CategorySpecifications /> */}
-      </main>
-      <Footer/>
+			<section className="box_cards_horizontal">
+				<CardHorizontal 
+				data={dados}
+				/>
+			</section>
+		</main>
+		<Footer/>
     </Container>
   );
 }

@@ -21,6 +21,11 @@ export function Filter() {
   const [ valueInput, setValueInput ] = useState('');
   const [ responseAddress, setResponseAddress ] = useState([]);
   const [userInformation, setUserInformation] = useState([]);
+
+  const [state, setState] = useState('');
+  const [city, setCity] = useState('');
+  const [categories, setCategories] = useState([]);
+  const [meters, setMeters] = useState('');
   
   async function searchStates() {
     const response = await axios.get(`https://servicodados.ibge.gov.br/api/v1/localidades/estados`);
@@ -79,8 +84,10 @@ export function Filter() {
     }
   }, [valueInput]);
 
+  console.log("AQUIII", valueInput);
+
   return (
-    <Container>
+    <Container method='get' autocomplete="off">
       <BoxInputs>
         <h3>Pesquise por endereço</h3>
         <input 

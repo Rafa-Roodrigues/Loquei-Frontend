@@ -38,6 +38,7 @@ export function Login() {
             password: data.senha
         })
         .then((response) => {
+            console.log("FOI", response)
             createAuthentication(response.data);
 
             if(location?.state) {
@@ -48,6 +49,7 @@ export function Login() {
             navigate('/');
         })
         .catch((err) => {
+            console.log("ERRO", err)
             if(err.response.status === 500){
                 toast.error('Não foi possível realizar seu cadastro!');
             }
