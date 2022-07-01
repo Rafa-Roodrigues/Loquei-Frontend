@@ -28,23 +28,23 @@ export function MeusAnuncios() {
         Authorization: `Bearer ${authentication.token}`,
       }
     })
-    .then(response => setAnnouncements(response.data))
-    .catch((err) => {
+      .then(response => setAnnouncements(response.data))
+      .catch((err) => {
 
-      console.log(err);
-      if(err.response.status === 500){
-        toast.error('Não foi possível buscar seus anuncios!');
-        return;
-      }
+        console.log(err);
+        if (err.response.status === 500) {
+          toast.error('Não foi possível buscar seus anuncios!');
+          return;
+        }
 
-      if(err.response.status === 401) {
-        destroyAuthentication();
-        navigate('/login');
-        return;
-      }
+        if (err.response.status === 401) {
+          destroyAuthentication();
+          navigate('/login');
+          return;
+        }
 
-      toast.error(err.response.data.message);
-    })
+        toast.error(err.response.data.message);
+      })
   }, []);
 
   return (
@@ -73,7 +73,7 @@ export function MeusAnuncios() {
               <>
                 <div className="card_vertical">
                   {announcements.map(announcement => (
-                    <CardVertical 
+                    <CardVertical
                       data={announcement}
                       isDelete={true}
                       listAnnouncements={listAnnouncements}
@@ -83,13 +83,13 @@ export function MeusAnuncios() {
 
                 <div className="card_horizontal">
 
-                {announcements.map(announcement => (
-                  <CardHorizontal 
-                    data={announcement}
-                    isDelete={true}
-                    listAnnouncements={listAnnouncements}
-                  />
-                ))}
+                  {announcements.map(announcement => (
+                    <CardHorizontal
+                      data={announcement}
+                      isDelete={true}
+                      listAnnouncements={listAnnouncements}
+                    />
+                  ))}
 
                 </div>
               </>

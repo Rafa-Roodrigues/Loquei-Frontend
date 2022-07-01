@@ -54,8 +54,8 @@ export function Anunciar() {
     setStateMenu(!stateMenu);
   }
 
-  function handleSelectImages(e){
-    if (!e.target.files){
+  function handleSelectImages(e) {
+    if (!e.target.files) {
       return;
     }
 
@@ -73,16 +73,16 @@ export function Anunciar() {
     const cep = getValues('cep').trim();
 
     const response = await axios.get(`https://viacep.com.br/ws/${cep}/json`);
-  
+
     setValue('address', response.data.logradouro);
     setValue('city', response.data.localidade);
     setValue('state', response.data.uf);
     setValue('district', response.data.bairro);
 
-    const addressFull = (response.data.logradouro && response.data.logradouro + ', ') 
-    + (response.data.bairro && response.data.bairro + ', \n') 
-    + (response.data.localidade && response.data.localidade + ', ')
-    + (response.data.uf && response.data.uf);
+    const addressFull = (response.data.logradouro && response.data.logradouro + ', ')
+      + (response.data.bairro && response.data.bairro + ', \n')
+      + (response.data.localidade && response.data.localidade + ', ')
+      + (response.data.uf && response.data.uf);
 
     setFullAddress(addressFull);
   }
@@ -123,8 +123,8 @@ export function Anunciar() {
     formData.append('meter', data.meters);
     formData.append('title', data.title);
     formData.append('id_category', data.categories);
-    
-    if(images.length > 0) {
+
+    if (images.length > 0) {
       images.forEach(image => {
         formData.append('image', image);
       });
@@ -135,23 +135,23 @@ export function Anunciar() {
         Authorization: `Bearer ${authentication.token}`,
       }
     })
-    .then(() => {
-      resetForm();
-      toast.success('Anúncio cadastrado com sucesso!');
-    })
-    .catch((err) => {
-      if(err.status === 500){
-        toast.error('Não foi possível publicar o anúncio!');
-      }
+      .then(() => {
+        resetForm();
+        toast.success('Anúncio cadastrado com sucesso!');
+      })
+      .catch((err) => {
+        if (err.status === 500) {
+          toast.error('Não foi possível publicar o anúncio!');
+        }
 
-      toast.error(err.response.data.message);
-    })
-    .finally(() => setLoading(false));
+        toast.error(err.response.data.message);
+      })
+      .finally(() => setLoading(false));
   }
 
   function withdrawImage(index) {
     const newImages = images.filter((image, i) => {
-      if(i != index) {
+      if (i != index) {
         return image;
       }
     });
@@ -159,7 +159,7 @@ export function Anunciar() {
     setImages(newImages);
 
     const newPreview = previewImages.filter((image, i) => {
-      if(i != index) {
+      if (i != index) {
         return image;
       }
     });
@@ -176,24 +176,24 @@ export function Anunciar() {
 
       <form onSubmit={handleSubmit(handleForm)} className="box_grid">
 
-        <aside className="box_filtro" style={stateMenu ? {bottom: "80%"} : {bottom: "0"}}>
+        <aside className="box_filtro" style={stateMenu ? { bottom: "80%" } : { bottom: "0" }}>
           <div id="content_left" onSubmit={handleSubmit(handleForm)}>
-            <ListCategories register={register} error={errors}/>
+            <ListCategories register={register} error={errors} />
             <BoxInput error={errors.title}>
-                <h3>Título *</h3>
-                <input
-                  {...register('title')} 
-                  className={themeIsActive && "dark_input"} 
-                  placeholder="Digite o título do anúncio" 
-                />
-                {errors.title && <span>{errors.title.message}</span>}
+              <h3>Título *</h3>
+              <input
+                {...register('title')}
+                className={themeIsActive && "dark_input"}
+                placeholder="Digite o título do anúncio"
+              />
+              {errors.title && <span>{errors.title.message}</span>}
 
             </BoxInput>
 
             <BoxInput error={errors.cep}>
               <h3>CEP *</h3>
-              <input 
-                {...register('cep')} 
+              <input
+                {...register('cep')}
                 className={themeIsActive && "dark_input"}
                 placeholder="Digite o cep do local"
                 onBlur={getAdress}
@@ -204,13 +204,13 @@ export function Anunciar() {
 
             <BoxInput>
               <h3>Endereço</h3>
-              <textarea className={themeIsActive && "dark_input"} id="box_address" value={fullAddress}  disabled />
+              <textarea className={themeIsActive && "dark_input"} id="box_address" value={fullAddress} disabled />
             </BoxInput>
 
             <BoxInput>
               <h3>Número *</h3>
-              <input 
-                {...register('number')} 
+              <input
+                {...register('number')}
                 className={themeIsActive && "dark_input"}
                 placeholder="Digite o numero do local"
               />
@@ -218,8 +218,8 @@ export function Anunciar() {
 
             <BoxInput>
               <h3>Complemento</h3>
-              <input 
-                {...register('complement')} 
+              <input
+                {...register('complement')}
                 className={themeIsActive && "dark_input"}
                 placeholder="Digite o complemento do local"
               />
@@ -227,18 +227,18 @@ export function Anunciar() {
 
             <BoxInput error={errors.meters}>
               <h3>Metragem do espaço - m² *</h3>
-              <input 
-                {...register('meters')} 
+              <input
+                {...register('meters')}
                 className={themeIsActive && "dark_input"}
                 placeholder="Digite metragem do espaço em m²"
-                />
+              />
               {errors.meters && <span>{errors.meters.message}</span>}
             </BoxInput>
 
             <BoxInput error={errors.description}>
               <h3>Descrição *</h3>
-              <textarea 
-                {...register('description')} 
+              <textarea
+                {...register('description')}
                 id="box_description"
                 className={themeIsActive && "dark_input"}
                 placeholder="Descrição do anúncio"
@@ -247,26 +247,26 @@ export function Anunciar() {
             </BoxInput>
 
             <BoxInputHidden>
-              <input 
-                {...register('address')} 
+              <input
+                {...register('address')}
               />
             </BoxInputHidden>
 
             <BoxInputHidden>
-              <input 
-                {...register('city')} 
+              <input
+                {...register('city')}
               />
             </BoxInputHidden>
 
             <BoxInputHidden>
-              <input 
-                {...register('state')} 
+              <input
+                {...register('state')}
               />
             </BoxInputHidden>
 
             <BoxInputHidden>
-              <input 
-                {...register('district')} 
+              <input
+                {...register('district')}
               />
             </BoxInputHidden>
 
@@ -290,12 +290,12 @@ export function Anunciar() {
               {previewImages.map((image, index) => (
                 <div className="preview_container">
                   <img src={image} />
-                  <button type="button" onClick={() => withdrawImage(index)}><MdClose/></button>
+                  <button type="button" onClick={() => withdrawImage(index)}><MdClose /></button>
                 </div>
               ))}
             </div>
           )}
-         
+
           <div className="box_card">
             <div className="alternative">
               <BiGridAlt className="icons" size="22" />
@@ -307,10 +307,10 @@ export function Anunciar() {
             </div>
 
             <div className="card">
-                <label className={stateCard ? "upload horizontal" : "upload"}>
-                  <input multiple onChange={handleSelectImages} type="file"/>
-                  <i><img src={iconImageUpload} /></i>
-                </label> 
+              <label className={stateCard ? "upload horizontal" : "upload"}>
+                <input multiple onChange={handleSelectImages} type="file" />
+                <i><img src={iconImageUpload} /></i>
+              </label>
 
               {stateCard ? (
                 <CardHorizontal
@@ -331,17 +331,17 @@ export function Anunciar() {
           </button>
         </section>
 
-        <button 
-          className="box_mobile" 
+        <button
+          className="box_mobile"
           onClick={handleChangeStateMenu}
-          style={stateMenu ? {bottom: "80%"} : {bottom: "0"}}
+          style={stateMenu ? { bottom: "80%" } : { bottom: "0" }}
         >
           <div></div>
           Inserir as informações do anúncio
         </button>
 
         <section className="box_anuncios">
-          <img src={bannerWeAMe} alt="banner do nosso parceiro we a me"/>
+          <img src={bannerWeAMe} alt="banner do nosso parceiro we a me" />
         </section>
       </form>
     </ContainerAnunciar>

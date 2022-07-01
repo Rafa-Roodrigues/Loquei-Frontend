@@ -1,7 +1,35 @@
 import styled from "styled-components";
 
+export const ButtonOpen = styled.button`
+  padding: 10px;
+  transition: filter .2s;
+  
+  border-radius: 50px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+  background-color: var(--main);
+  color: var(--branco);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+  z-index: 999;
+
+  &:hover {
+    filter: brightness(0.9);
+  }
+
+  @media screen and (max-width: 600px) {
+    bottom: 20px;
+    left: 20px;
+  }
+`;
+
 export const Container = styled.form`
-  width: 324px;
+  width: 100%;
+  max-width: 324px;
   padding: 9px 5px 5px 5px;
   overflow-y: auto;
 
@@ -12,7 +40,7 @@ export const Container = styled.form`
   position: absolute;
   top: 37%;
   left: 20px;
-  z-index: 99999;
+  z-index: 999;
   transform: translateY(-50%);
 
   &::-webkit-scrollbar-track {
@@ -27,10 +55,40 @@ export const Container = styled.form`
     background: rgba(0, 0, 0, 3%);
   }
 
-  @media screen and (max-width: 800px) {
-    display: none;
+  @media screen and (max-width: 870px) {
+    transform: translate(-50%, 0);
+    top: 5px;
+    left: 50%;
+  }
+`;
+
+export const ButtonMinimize = styled.button`
+  background-color: var(--main);
+  border-radius: 50px;
+  transition: filter .2s;
+
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  z-index: 999;
+  width: 20px;
+  height: 20px;
+
+  &::before {
+    content: '';
+    width: 12px;
+    height: 2px;
+    border-radius: 50px;
+    background-color: var(--branco);
+   
+    transform: translate(-50%, -50%);
     position: absolute;
-    top: -1px;
+    top: 50%;
+    left: 50%;
+  }
+
+  &:hover {
+    filter: brightness(0.9);
   }
 `;
 

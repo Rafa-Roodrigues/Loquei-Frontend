@@ -1,16 +1,11 @@
 import { Container, ContentLeft, ContentRight, BoxAutoComplete } from "./styles";
 
-import { BiSearch } from 'react-icons/bi';
-
 import garageImg from '../../assets/img/garage.jpg';
 import eventualImg from '../../assets/img/eventual-space.jpg';
 import commercialImg from '../../assets/img/commercial.jpg';
 import othersImg from '../../assets/img/others-space.jpg';
 
-//https://api.tomtom.com/search/2/search/Rua.json?countrySet=brazil&minFuzzyLevel=1&maxFuzzyLevel=2&view=Unified&relatedPois=off&key=a1UphnSvWEVz0BN9R28fb0FmJXCFpgvW
-
-export function PreviewFilter() {
-
+export function CategoryCarousel() {
   return (
     <Container>
       <ContentLeft>

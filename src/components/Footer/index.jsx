@@ -4,26 +4,22 @@ import { Container, Content, PolicyAndTerms } from './styles';
 
 import weame from '../../assets/parceiros/weame.svg';
 import techmark from '../../assets/parceiros/techmark.svg';
+import braillincode from '../../assets/parceiros/braillincode.svg';
 
 export function Footer() {
 
   return (
     <Container>
       <Content>
-        {/* <div>
-          <a href="https://whimsical.com/loquei-time-de-desenvolvimento-UMEpzSbfdNXpcZk4YWUpcY" target="_blank">
-            Conheça nossos parceiros
-          </a>
-        </div> */}
         <ul>
           <li>
-            <img id="weame" src={weame} alt="Logo do parceiro We e Me"/>
+            <img id="techmark" src={techmark} alt="Logo do parceiro Techmark" />
           </li>
           <li>
-            <img id="techmark" src={techmark} alt="Logo do parceiro We e Me"/>
+            <img id="weame" src={weame} alt="Logo do parceiro We e Me" />
           </li>
           <li>
-            <img id="weame" src={weame} alt="Logo do parceiro We e Me"/>
+            <img id="braillincode" src={braillincode} alt="Logo do parceiro BraillinCode" />
           </li>
         </ul>
       </Content>

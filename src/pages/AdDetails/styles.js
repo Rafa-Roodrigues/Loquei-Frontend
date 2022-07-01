@@ -5,17 +5,34 @@ export const Container = styled.div`
   width: 100%;
   min-height: 100vh;
   max-height: 100vh;
-  overflow-x: hidden;
   background-color: ${({ theme }) => theme.colors.background};
+
+  margin-bottom: 50px;
 `;
 
 export const Content = styled.main`
   width: 100%;
   max-width: var(--max-width);
+  height: calc(100vh - 90px);
+
   padding: 20px 50px;
+  margin: 0 auto;
 
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
+  gap: 50px;
+
+  @media screen and (max-width: 1000px) {
+    display: block;
+  }
+
+  @media screen and (max-width: 720px) {
+    padding: 20px;
+  }
+
+  @media screen and (max-width: 420px) {
+    padding: 10px;
+  }
 `;
 
 export const Left = styled.section`
@@ -24,7 +41,9 @@ export const Left = styled.section`
 
 export const BoxImage = styled.div`
   width: 100%;
+  max-width: 640px;
   height: 300px;
+  margin-bottom: 20px;
 
   display: flex;
   align-items: center;
@@ -112,11 +131,37 @@ export const BoxImage = styled.div`
       }
     }
   }
+
+  @media screen and (max-width: 720px) {
+    height: fit-content;
+    margin-bottom: 40px;
+    flex-direction: column;
+
+    div {
+      width: 100%;
+      height: 240px;
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
+
+    ul {
+      width: 100%;
+      height: 50px;
+      flex-direction: row;
+      justify-content: flex-start;
+
+      li {
+        width: 50px;
+        height: 100%;
+        margin-bottom: 0;
+        margin-right: 10px;
+      }
+    }
+  }
 `;
 
 export const BoxButtons = styled.div`
   width: 100%;
-  margin-top: 20px;
 
   display: flex;
   justify-content: flex-start;
@@ -188,4 +233,12 @@ export const InformationList = styled.ul`
 
 export const Right = styled.section`
   width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  background-color: transparent;
+
+  @media screen and (max-width: 1000px) {
+    margin-top: 40px;
+    overflow-y: visible;
+  }
 `;

@@ -38,7 +38,7 @@ export function Router() {
                 <Route element={<RoutePrivate/>}>
                     <Route path="/anunciar" element={<Anunciar />}/>
                     <Route path="/perfil" element={<Profile />}/>
-                    <Route path="/ad-details" element={<AdDetails />}/>
+                    <Route path="/anuncio/:id" element={<AdDetails />}/>
                     <Route path="/meus-anuncios" element={<MeusAnuncios />}/>
                 </Route>
 

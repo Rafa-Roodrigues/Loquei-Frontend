@@ -8,6 +8,15 @@ export const Container = styled.section`
 
   display: grid;
   grid-template-columns: 0.55fr 1.45fr;
+
+  @media screen and (max-width: 870px) {
+    height: 100px;
+    grid-template-columns: 0.3fr 1.7fr;
+  }
+
+  @media screen and (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 export const ContentLeft = styled.div`
@@ -16,6 +25,10 @@ export const ContentLeft = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+
+  @media screen and (max-width: 600px) {
+    display: none;
+  }
 `;
 
 export const ContentRight = styled.div`
@@ -55,7 +68,7 @@ export const ContentRight = styled.div`
 
   p {
     width: 100%;
-    max-width: 700px;
+    max-width: 600px;
 
     position: absolute;
     left: 50%;
@@ -65,5 +78,40 @@ export const ContentRight = styled.div`
 
     color: var(--branco);
     font-size: 1.2rem;
+  }
+
+  @media screen and (max-width: 1100px) {
+    p {
+      max-width: 560px;
+      left: 55%;
+    }
+  }
+
+  @media screen and (max-width: 950px) {
+    p {
+      font-size: 1.1rem;
+      max-width: 500px;
+      left: 58%;
+    }
+  }
+
+  @media screen and (max-width: 870px) {
+    p {
+      left: 50%;
+    }
+  }
+
+  @media screen and (max-width: 520px) {
+    &::after {
+      border-top: 50px solid transparent;
+      border-bottom: 50px solid ${({ theme }) => theme.colors.categoryContainer};
+      border-left: 50px solid transparent;
+      border-right: 50px solid ${({ theme }) => theme.colors.categoryContainer};
+    }
+
+    p {
+      padding: 20px;
+      font-size: 0.95rem;
+    }
   }
 `;

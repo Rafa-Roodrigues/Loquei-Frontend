@@ -29,6 +29,7 @@ export const Container = styled.div`
   .leaflet-left {
     right: 20px;
     left: initial;
+    z-index: 998;
   }
   .leaflet-top {
     top: 8px;
@@ -36,5 +37,4 @@ export const Container = styled.div`
   .leaflet-bottom {
     display: none;
   }
-  
 `;

@@ -66,6 +66,11 @@ export const Content = styled.div `
         height: 28px;
       }
 
+      img#braillincode {
+        height: 28px;
+        /* box-shadow: 2px 2px #000000; */
+      }
+
       &:last-child {
         margin-right: 0;
       }
