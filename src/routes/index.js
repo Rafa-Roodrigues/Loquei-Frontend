@@ -7,6 +7,7 @@ import { RegisterUser } from '../pages/RegisterUser';
 import { Login } from '../pages/Login';
 import { AdDetails } from '../pages/AdDetails';
 import { useAuthentication } from '../hooks/useAutenticacao';
+import { EasterEgg } from '../pages/EasterEgg';
 
 function RoutePrivate() {
     const { authentication } = useAuthentication();
@@ -34,6 +35,7 @@ export function Router() {
                 <Route path="/" element={<Home />}/>
                 <Route path="/login" element={<Login />}/>
                 <Route path="/cadastrar" element={<RegisterUser />}/>
+                <Route path="/easteregg" element={<EasterEgg />}/>
 
                 <Route element={<RoutePrivate/>}>
                     <Route path="/anunciar" element={<Anunciar />}/>

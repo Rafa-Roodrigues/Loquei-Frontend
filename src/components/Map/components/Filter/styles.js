@@ -206,6 +206,7 @@ export const BoxInputs = styled.div`
       color: ${({ theme }) => theme.colors.textBody};
       font-weight: 500;
       font-size: 0.75rem;
+      text-transform: capitalize;
 
       input[type='checkbox'] {
         opacity: 0;

@@ -10,7 +10,7 @@ import { FaCheck } from 'react-icons/fa';
 import axios from "axios";
 import { api } from '../../../../services/axios';
 
-export function Filter({ setAnnouncementsFiltered }) {
+export function Filter({ userCoordinates, setAnnouncementsFiltered, setUserCoordinates }) {
   const { themeIsActive } = useTheme();
 
   const [stateMenu, setStateMenu] = useState(false);
@@ -54,14 +54,6 @@ export function Filter({ setAnnouncementsFiltered }) {
     setResponseState(data.sort());
   }
 
-  async function getInformationViaIp() {
-    const resIp = await axios.get('https://api.ipify.org?format=json');
-
-    const resInformation = await axios.get(`http://ip-api.com/json/${resIp.data.ip}`);
-
-    setUserInformation([resInformation.data.region, resInformation.data.city]);
-  }
-
   async function handleSearchAddress() {
     if (!currentSelectValueState && !currentSelectValueCity) {
       const response = await axios.get(`https://viacep.com.br/ws/${userInformation[0]}/${userInformation[1]}/${valueInput}/json/`);
@@ -88,17 +80,36 @@ export function Filter({ setAnnouncementsFiltered }) {
       api.get(`/announcements/filter?endereco=${address}&cidade=${city}&estado=${state}&cep=${zip}`)
         .then(response => {
           console.log(response.data)
-          setAnnouncementsFiltered(response.data)
+          setAnnouncementsFiltered(response.data.announcements)
+          setUserCoordinates([response.data.user_lat, response.data.user_lng])
         })
     }
   }
 
+  async function getAddressByLocale() {
+    if (!userCoordinates[0] == 0 && !userCoordinates[1] == 0) {
+      const response = await axios.post('http://www.mapquestapi.com/geocoding/v1/reverse?key=yYg4Anyz9aM6grzG9jivrFi1MwDg0wfi', {
+        location: {
+          latLng: {
+            lat: `${userCoordinates[0]}`,
+            lng: `${userCoordinates[1]}`
+          }
+        },
+        options: {
+          thumbMaps: false
+        }
+      });
 
+      const resCep = await axios.get(`https://viacep.com.br/ws/${response.data.results[0].locations[0].postalCode.replace('-', '')}/json/`);
+
+      setUserInformation([resCep.data.uf, resCep.data.localidade]);
+    }
+  }
 
   useEffect(() => {
-    getInformationViaIp();
     searchStates();
     getCategories();
+    getAddressByLocale();
   }, []);
 
   useEffect(() => {
@@ -115,6 +126,32 @@ export function Filter({ setAnnouncementsFiltered }) {
     ) : (
       <Container onSubmit={handleForm}>
         <ButtonMinimize type="button" onClick={handleChangeStateMenu}></ButtonMinimize>
+
+        <BoxInputs>
+          <h3>Localidade - UF</h3>
+          <select
+            className={themeIsActive && "dark_input"}
+            onChange={event => handleSearchCity(event.target.value)}
+          >
+            <option>{userInformation[0]}</option>
+            {responseState.map((states, index) => (
+              <option key={index}>{states}</option>
+            ))}
+          </select>
+
+          <select
+            className={themeIsActive && "dark_input"}
+            onChange={event => handleValueInChangeSelectCity(event.target.value)}
+          >
+            <option>{userInformation[1]}</option>
+            <option>SÃO PAULO</option>
+
+            {responseCity.map((city, index) => (
+              <option key={index}>{city.split(':')[1]}</option>
+            ))}
+          </select>
+        </BoxInputs>
+
         <BoxInputs>
           <h3>Pesquise por endereço</h3>
           <input
@@ -135,57 +172,18 @@ export function Filter({ setAnnouncementsFiltered }) {
             </BoxAutoComplete>
           )}
         </BoxInputs>
-        <BoxInputs>
-          <h3>Localidade - UF</h3>
-          <select
-            className={themeIsActive && "dark_input"}
-            onChange={event => handleSearchCity(event.target.value)}
-          >
-            <option>...</option>
-            {responseState.map(states => (
-              <option>{states}</option>
-            ))}
-          </select>
-
-          <select
-            className={themeIsActive && "dark_input"}
-            onChange={event => handleValueInChangeSelectCity(event.target.value)}
-          >
-            <option></option>
-            {responseCity.map((city) => (
-              <option>{city.split(':')[1]}</option>
-            ))}
-          </select>
-        </BoxInputs>
 
         <BoxInputs>
           <h3>Tipo de espaço</h3>
           <div className="grid_checkbox">
-            <label className="checkbox">
-              Comercial
-              <input type="checkbox" placeholder="Comercial" />
-              <span className={themeIsActive && "dark_checkbox"}><FaCheck className="icons" /></span>
-            </label>
-            <label className="checkbox">
-              Espaço eventual
-              <input type="checkbox" placeholder="Espaço eventual" />
-              <span className={themeIsActive && "dark_checkbox"}><FaCheck className="icons" /></span>
-            </label>
-            <label className="checkbox">
-              Garagem
-              <input type="checkbox" placeholder="Garagem" />
-              <span className={themeIsActive && "dark_checkbox"}><FaCheck className="icons" /></span>
-            </label>
-            <label className="checkbox">
-              Outros espaços
-              <input type="checkbox" placeholder="Outros espaços" />
-              <span className={themeIsActive && "dark_checkbox"}><FaCheck className="icons" /></span>
-            </label>
-            <label className="checkbox">
-              Box
-              <input type="checkbox" placeholder="Box" />
-              <span className={themeIsActive && "dark_checkbox"}><FaCheck className="icons" /></span>
-            </label>
+            {categories.map((category) => (
+              <label className="checkbox">
+                {category.name}
+                <input type="checkbox" name={category.name.toLowerCase()} value={category.name} />
+                <span className={themeIsActive && "dark_checkbox"}><FaCheck className="icons" /></span>
+              </label>
+            ))}
+
           </div>
         </BoxInputs>
 

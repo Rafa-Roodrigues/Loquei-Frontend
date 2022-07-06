@@ -119,7 +119,7 @@ export function Anunciar() {
     formData.append('state', data.state);
     formData.append('zip_code', data.cep);
     formData.append('complement', data.complement);
-    formData.append('description', 'Casa muito foda.');
+    formData.append('description', data.description);
     formData.append('meter', data.meters);
     formData.append('title', data.title);
     formData.append('id_category', data.categories);

@@ -93,6 +93,8 @@ export function AdDetails() {
 
   const { id } = useParams();
 
+  console.log(announcement)
+
   function handleNextImage() {
     if (indexImagem < images.length) {
       setIndexImage(indexImagem + 1);
@@ -152,6 +154,8 @@ export function AdDetails() {
     request();
   }, [id]);
 
+  console.log()
+
   return (
     <>
       <Container>
@@ -197,7 +201,7 @@ export function AdDetails() {
             </BoxButtons>
 
             <Title>{announcement?.title}</Title>
-            <Description className="description">{announcement?.description}</Description>
+            <Description className="description">Garagem espaçosa que pode virar um comercio na zona norte de São Paulo. Esta localizado no bairro da Lapa</Description>
 
             <InformationList>
               <li>
@@ -216,8 +220,9 @@ export function AdDetails() {
             ))}
           </Right>
         </Content>
+        <Footer />
+
       </Container>
-      {/* <Footer /> */}
     </>
   );
 }

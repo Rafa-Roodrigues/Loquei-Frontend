@@ -4,11 +4,24 @@ export const Container = styled.div `
   width: 100%;
   position: relative;
   background-color: ${({ theme }) => theme.colors.backgroundSecondary};
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
 `
 
 export const Content = styled.div `
   width: 100%;
   padding: 20px;
+
+  h2 {
+    margin-bottom: 28px;
+
+    color: ${({ theme }) => theme.colors.textBody};
+    font-weight: 800;
+    font-size: 1.2rem;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 0 0 2px ${({ theme }) => theme.colors.textBody};
+    letter-spacing: 1px;
+  }
 
   > div {
     margin-bottom: 0px;
@@ -44,13 +57,15 @@ export const Content = styled.div `
     justify-content: center;
 
     li {
-      margin-right: 20px;
+      margin-right: 38px;
 
       img {
         filter: grayscale(100%);
         transition: filter .2s;
         opacity: 0.5;
         transition: opacity .2s;
+
+        cursor: pointer;
 
         &:hover {
           filter: grayscale(0);
@@ -59,7 +74,7 @@ export const Content = styled.div `
       }
 
       img#techmark {
-        height: 28px;
+        height: 23px;
       }
 
       img#weame {
@@ -68,7 +83,18 @@ export const Content = styled.div `
 
       img#braillincode {
         height: 28px;
-        /* box-shadow: 2px 2px #000000; */
+      }
+
+      img#jm {
+        width: 80px;
+      }
+
+      img#imoveis {
+        height: 40px;
+      }
+
+      img#eventos {
+        width: 70px;
       }
 
       &:last-child {

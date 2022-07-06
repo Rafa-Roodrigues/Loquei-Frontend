@@ -13,6 +13,11 @@ export const Container = styled.div `
     padding: 50px;
     position: relative;
 
+    #not_found {
+      text-align: center;
+      color: ${({ theme }) => theme.colors.textBody};
+    }
+
     .title_box {
       color: ${({ theme }) => theme.colors.textBody};
       font-size: .9rem;

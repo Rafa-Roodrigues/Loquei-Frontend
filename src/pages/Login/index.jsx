@@ -30,33 +30,33 @@ export function Login() {
     const { register, handleSubmit, formState: { errors } } = useForm({
         resolver: yupResolver(schema),
     });
-    
-    function handleForm(data){
+
+    function handleForm(data) {
         setLoading(true);
         api.post('/authenticate', {
             email: data.email,
             password: data.senha
         })
-        .then((response) => {
-            console.log("FOI", response)
-            createAuthentication(response.data);
+            .then((response) => {
+                console.log("FOI", response)
+                createAuthentication(response.data);
 
-            if(location?.state) {
-                navigate(location.state.from.pathname);
-                return;
-            }
+                if (location?.state) {
+                    navigate(location.state.from.pathname);
+                    return;
+                }
 
-            navigate('/');
-        })
-        .catch((err) => {
-            console.log("ERRO", err)
-            if(err.response.status === 500){
-                toast.error('Não foi possível realizar seu cadastro!');
-            }
+                navigate('/');
+            })
+            .catch((err) => {
+                console.log("ERRO", err)
+                if (err.response.status === 500) {
+                    toast.error('Não foi possível realizar seu cadastro!');
+                }
 
-            setError(err.response.data.message);
-        })
-        .finally(() => setLoading(false))
+                setError(err.response.data.message);
+            })
+            .finally(() => setLoading(false))
     }
 
     return (
@@ -70,21 +70,21 @@ export function Login() {
                     {error && <BoxError>{error}</BoxError>}
                     {location?.state && <BoxError>{location.state.message}</BoxError>}
                     <BoxInputs>
-                        <Input 
-                            register={register} 
-                            name="email" 
-                            label="email" 
-                            placeholder="Digite seu e-mail" 
-                            error={errors.email} 
+                        <Input
+                            register={register}
+                            name="email"
+                            label="email"
+                            placeholder="Digite seu e-mail"
+                            error={errors.email}
                         />
-                        
-                        <Input 
-                            error={errors.senha} 
-                            register={register} 
-                            type="password" 
-                            name="senha" 
-                            label="senha" 
-                            placeholder='Digite sua senha' 
+
+                        <Input
+                            error={errors.senha}
+                            register={register}
+                            type="password"
+                            name="senha"
+                            label="senha"
+                            placeholder='Digite sua senha'
                         />
                     </BoxInputs>
                     <Button title="Entrar" disabled={loading}>

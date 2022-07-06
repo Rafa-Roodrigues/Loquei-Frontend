@@ -1,6 +1,6 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-import { MdLogout, MdFormatListBulleted, MdAdd,  MdOutlineLightMode, MdOutlineDarkMode } from 'react-icons/md';
+import { MdLogout, MdFormatListBulleted, MdAdd, MdOutlineLightMode, MdOutlineDarkMode } from 'react-icons/md';
 import { RiNotification2Line } from 'react-icons/ri';
 import { HeaderContainer, Perfil, BoxContent } from './styles';
 
@@ -34,18 +34,18 @@ export function Header() {
       <nav className="navigation">
         {authentication ? (
           <BoxContent>
-            <button><RiNotification2Line className="icons" size={22}/></button>
+            <button><RiNotification2Line className="icons" size={22} /></button>
             <button type="button" onClick={changeTheme}>
               {themeIsActive ? (
                 <MdOutlineLightMode className="icons" size={24} />
               ) : (
                 <MdOutlineDarkMode className="icons" size={24} />
-              ) }
-              </button>
+              )}
+            </button>
 
             <Perfil>
               <div id="box_image">
-                {authentication.image?.url 
+                {authentication.image?.url
                   ? <img src={authentication.image.url} alt="imagem do usuário" />
                   : `${authentication.name[0]}${authentication.lastname[0]}`
                 }
@@ -60,13 +60,13 @@ export function Header() {
                 <ul>
                   <li>
                     <Link to="/anunciar">
-                      <MdAdd className="icons" size={24}/>
+                      <MdAdd className="icons" size={24} />
                       Anunciar
                     </Link>
                   </li>
                   <li>
-                    <Link to="meus-anuncios">
-                      <MdFormatListBulleted className="icons" size={24}/>
+                    <Link to="/meus-anuncios">
+                      <MdFormatListBulleted className="icons" size={24} />
                       Meus anúncios
                     </Link>
                   </li>
@@ -81,7 +81,7 @@ export function Header() {
                       destroyAuthentication();
                       navigate('/login');
                     }}>
-                      <MdLogout className="icons" size={24}/>
+                      <MdLogout className="icons" size={24} />
                       Sair
                     </button>
                   </li>
@@ -97,18 +97,18 @@ export function Header() {
             </li>
             <li>
               <button type="button" onClick={changeTheme}>
-              {themeIsActive ? (
-                <MdOutlineLightMode className="icons" size={24} />
-              ) : (
-                <MdOutlineDarkMode className="icons" size={24} />
-              ) }
+                {themeIsActive ? (
+                  <MdOutlineLightMode className="icons" size={24} />
+                ) : (
+                  <MdOutlineDarkMode className="icons" size={24} />
+                )}
               </button>
             </li>
             <li>
               <Link className="button_registrar" to="/cadastrar">Cadastrar-se</Link>
             </li>
           </ul>
-        ) }
+        )}
       </nav>
 
       <nav className="navigation_mobile">
@@ -122,7 +122,7 @@ export function Header() {
         </button>
       </nav>
 
-      <div className="box_menu" style={{display: stateMenu}}>
+      <div className="box_menu" style={{ display: stateMenu }}>
         <div className="menu">
           <header>
             {authentication && (
@@ -131,7 +131,7 @@ export function Header() {
                 <p>{`${authentication.name} ${authentication.lastname}`}</p>
               </div>
             )}
-            
+
             <button onClick={changeStateMenu}>
               <IoMdClose size={35} color="#fff" />
             </button>
@@ -140,11 +140,11 @@ export function Header() {
             <ul>
               <li>
                 <Link to="/anunciar">Anunciar</Link>
-                <MdAdd className="icons" size={24}/>
+                <MdAdd className="icons" size={24} />
               </li>
               <li>
-                <Link to="meus-anuncios">Meus anúncios</Link>
-                <MdFormatListBulleted className="icons" size={24}/>
+                <Link to="/meus-anuncios">Meus anúncios</Link>
+                <MdFormatListBulleted className="icons" size={24} />
               </li>
               <li>
                 <Link to="/perfil">Perfil</Link>
@@ -159,18 +159,18 @@ export function Header() {
                   destroyAuthentication();
                   navigate('/login');
                 }}>Sair</button>
-                <MdLogout className="icons" size={24}/>
+                <MdLogout className="icons" size={24} />
               </li>
               <li>
                 <button type="button" onClick={changeTheme}>
                   {themeIsActive ? 'Modo Escuro' : 'Modo Claro'}
                 </button>
-                
-                  {themeIsActive ? (
-                  <MdOutlineLightMode className="icons" size={24}/>
+
+                {themeIsActive ? (
+                  <MdOutlineLightMode className="icons" size={24} />
                 ) : (
-                  <MdOutlineDarkMode className="icons" size={24}/>
-                ) }
+                  <MdOutlineDarkMode className="icons" size={24} />
+                )}
               </li>
             </ul>
           ) : (
