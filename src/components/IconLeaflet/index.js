@@ -1,11 +1,13 @@
 import L from 'leaflet';
 
-import autoLocationIcon from '../../assets/img/icon-autoLocation.svg';
-import spaceLocationIcon from '../../assets/img/icon-spaceLocation.svg';
-import easterEgg from '../../assets/img/easteregg.png';
+import autoLocationIconPurple from '../../assets/img/icon-autoLocationPurple.svg';
+import autoLocationIconGreen from '../../assets/img/icon-autoLocationGreen.svg';
 
-export const IconLocal = new L.Icon({
-  iconUrl: autoLocationIcon,
+import spaceLocationIconPurple from '../../assets/img/icon-spaceLocationPurple.svg';
+import spaceLocationIconGreen from '../../assets/img/icon-spaceLocationGreen.svg';
+
+export const IconLocalPurple = new L.Icon({
+  iconUrl: autoLocationIconPurple,
   iconSize: new L.Point(31, 31),
   popupAnchor: [-1, -15],
 
@@ -14,8 +16,8 @@ export const IconLocal = new L.Icon({
   shadowAnchor: null,
 });
 
-export const IconSpace = new L.Icon({
-  iconUrl: spaceLocationIcon,
+export const IconSpacePurple = new L.Icon({
+  iconUrl: spaceLocationIconPurple,
   iconSize: new L.Point(20, 23),
   popupAnchor: [-1, -15],
 
@@ -24,8 +26,18 @@ export const IconSpace = new L.Icon({
   shadowAnchor: null,
 });
 
-export const IconEasterEgg = new L.Icon({
-  iconUrl: easterEgg,
+export const IconLocalGreen = new L.Icon({
+  iconUrl: autoLocationIconGreen,
+  iconSize: new L.Point(31, 31),
+  popupAnchor: [-1, -15],
+
+  shadowUrl: null,
+  shadowSize: null,
+  shadowAnchor: null,
+});
+
+export const IconSpaceGreen = new L.Icon({
+  iconUrl: spaceLocationIconGreen,
   iconSize: new L.Point(20, 23),
   popupAnchor: [-1, -15],
 

@@ -288,7 +288,7 @@ export function Anunciar() {
           {previewImages.length > 0 && (
             <div className="box_preview_image">
               {previewImages.map((image, index) => (
-                <div className="preview_container">
+                <div className="preview_container" key={index}>
                   <img src={image} />
                   <button type="button" onClick={() => withdrawImage(index)}><MdClose /></button>
                 </div>

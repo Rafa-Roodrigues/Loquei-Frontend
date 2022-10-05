@@ -1,9 +1,5 @@
-export function apiWhatsapp(userId, userName, number, adId, adTitle) {
-  //https://api.whatsapp.com/send?phone=number&text=sua%20mensagem
+export function apiWhatsapp(userName, number, adTitle) {
+  const message = `Olá sou o ${userName}, usuário da plataforma Loquei.\nMe interessei no seu anúncio "${adTitle}"`;
 
-  const message = window.encodeURIComponent(`Olá sou o ${userName} usuário da plataforma Loquei, meu ID é ${userId}.\nMe interessei no seu anúncio "${adTitle}"`);
-
-  const url = `https://api.whatsapp.com/send?phone=55${number}&text=${message}`;
-
-  return url;
+  return `https://api.whatsapp.com/send?phone=55${number}&text=${message}`;
 }

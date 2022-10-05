@@ -72,8 +72,9 @@ export function MeusAnuncios() {
             ) : (
               <>
                 <div className="card_vertical">
-                  {announcements.map(announcement => (
+                  {announcements.map((announcement, index) => (
                     <CardVertical
+                      key={index}
                       data={announcement}
                       isDelete={true}
                       listAnnouncements={listAnnouncements}
@@ -83,8 +84,9 @@ export function MeusAnuncios() {
 
                 <div className="card_horizontal">
 
-                  {announcements.map(announcement => (
+                  {announcements.map((announcement, index) => (
                     <CardHorizontal
+                      key={index}
                       data={announcement}
                       isDelete={true}
                       listAnnouncements={listAnnouncements}
